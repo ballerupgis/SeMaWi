@@ -1,0 +1,1701 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.9/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.9/ http://www.mediawiki.org/xml/export-0.9.xsd" version="0.9" xml:lang="da">
+  <siteinfo>
+    <sitename>SeMaWi</sitename>
+    <dbname>wiki</dbname>
+    <base>http://semawi.notanumber.dk/index.php/Forside</base>
+    <generator>MediaWiki 1.24.2</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Speciel</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Diskussion</namespace>
+      <namespace key="2" case="first-letter">Bruger</namespace>
+      <namespace key="3" case="first-letter">Brugerdiskussion</namespace>
+      <namespace key="4" case="first-letter">SeMaWi</namespace>
+      <namespace key="5" case="first-letter">SeMaWi diskussion</namespace>
+      <namespace key="6" case="first-letter">Fil</namespace>
+      <namespace key="7" case="first-letter">Fildiskussion</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki diskussion</namespace>
+      <namespace key="10" case="first-letter">Skabelon</namespace>
+      <namespace key="11" case="first-letter">Skabelondiskussion</namespace>
+      <namespace key="12" case="first-letter">Hjælp</namespace>
+      <namespace key="13" case="first-letter">Hjælp diskussion</namespace>
+      <namespace key="14" case="first-letter">Kategori</namespace>
+      <namespace key="15" case="first-letter">Kategoridiskussion</namespace>
+      <namespace key="102" case="first-letter">Property</namespace>
+      <namespace key="103" case="first-letter">Property talk</namespace>
+      <namespace key="104" case="first-letter">Type</namespace>
+      <namespace key="105" case="first-letter">Type talk</namespace>
+      <namespace key="106" case="first-letter">Form</namespace>
+      <namespace key="107" case="first-letter">Form talk</namespace>
+      <namespace key="108" case="first-letter">Concept</namespace>
+      <namespace key="109" case="first-letter">Concept talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Bruger:Josef</title>
+    <ns>2</ns>
+    <id>2</id>
+    <revision>
+      <id>474</id>
+      <parentid>4</parentid>
+      <timestamp>2015-05-29T07:07:59Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="326">[[Category:SeMaWi]]
+
+Jeg hedder Josef Assad. Jeg er freelance konsulent og arkitekt på implementering af denne prototype.
+
+Kontaktinfo er som følgende:
+
+* E-mail: [mailto:josef@josefassad.com Josef Assad]
+* Telefon: +45 81 51 19 84
+* Skype: josef.assad
+
+=Testsider=
+
+[[Bruger:Josef/PII_report Rapport om personfølsom data]]</text>
+      <sha1>njfa6u4k0l2x3ezsdpiu515xwj0y0q5</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Kategori:SeMaWi</title>
+    <ns>14</ns>
+    <id>3</id>
+    <revision>
+      <id>5</id>
+      <timestamp>2015-05-21T12:27:50Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>Oprettede siden med &quot;[[Category:SeMaWi]] __HIDDENCAT__  Dette kategori indeholder alle sider der er implementeret som del af prototype implementeringsforløbet.&quot;</comment>
+      <text xml:space="preserve" bytes="139">[[Category:SeMaWi]]
+__HIDDENCAT__
+
+Dette kategori indeholder alle sider der er implementeret som del af prototype implementeringsforløbet.</text>
+      <sha1>l09ug46tymuj7p9nq82x2no5psyh51x</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>DeploymentNotes</title>
+    <ns>0</ns>
+    <id>4</id>
+    <revision>
+      <id>492</id>
+      <parentid>491</parentid>
+      <timestamp>2015-05-29T09:31:58Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>/* TODO */</comment>
+      <text xml:space="preserve" bytes="6633">[[Category:SeMaWi]]
+
+=Deployment Notes=
+
+==29 maj 2015==
+
+* Ny rapport der handler om personfølsom information
+** Nye kalkulerede properties på Bruger og OrganisatoriskEnhed skabelonerne
+* Finjustering af deriverede egenskaber på Leverandør skabelonet
+* Links i sidebar til systemer/leverandører/brugere
+* forskellig overvågning og småredigeringer i kundens edits
+* Fix javascript fejl i extensions/SemanticResultFormats/resources/jquery/jquery.blockUI.js (søg efter JOSEF0001 i filen)
+
+==28 maj 2015==
+
+* Konvertering af alle brugere fra regnearket til importerbar CSV
+* Test af brugerimport (test OK)
+* Import af alle brugere med roller ifm. C-MT systemer
+* Oprettelse af placeholder MW brugerkonti
+* IDM status Implementeret
+** [[Property:SystemIDMVenligt]]
+* Implementering af dokumentationsurl [[Property:SystemDokumentation]]; inklusion i [[Template:System]] og [[Form:System]]
+* Implementering af systemnummer [[Property:SystemNummer]]; inklusion i [[Template:System]] og [[Form:System]]
+
+==27 maj 2015==
+
+* Properties and classes for entity Bruger
+** [[Property:BrugerNavn]]
+** [[Property:BrugerStilling]]
+** [[Property:BrugerOrgEnhed]]
+** [[Property:BrugerEmail]]
+** [[Property:BrugerTelefon]]
+** [[Template:Bruger]]
+** [[Form:Bruger]]
+* Properties and classes for entity System
+** [[Property:SystemStatus]]
+** [[Property:SystemMålgruppe]]
+** [[Property:SystemMålgruppeOE]]
+** [[Property:SystemLeverandør]]
+** [[Property:SystemDriftsleverandør]]
+** [[Property:SystemDriftsplacering]]
+** [[Property:SystemHarPersonFølsomInfo]]
+** [[Property:SystemAnmeldtDatatilsynet]]
+** [[Property:SystemPersonfølsomType]]
+** [[Property:SystemAfhængighed]]
+** [[Property:SystemEjer]]
+** [[Property:SystemAdministrator]]
+** [[Property:SystemBudgetansvarlig]]
+** [[Template:System]]
+** [[Form:System]]
+* Installation af udvidelsen [http://www.mediawiki.org/wiki/Extension:Data_Transfer DataTransfer] så vi kan begynde dataimport fra regnearket
+* [[:Category:Leverandører|117 unikke Leverandører]] oprettet ud fra datakonvertering fra det oprindelige regneark
+
+==26 maj 2015==
+
+* Properties and classes for entity OrganisatoriskEnhed
+** [[Property:OrganisatoriskEnhedNavn]]
+** [[Skabelon:OrganisatoriskEnhed]]
+** [[Form:OrganisatoriskEnhed]]
+** [[:Kategori:Organisatoriske_Enheder]]
+** Tilføjet [[C-MT|Center for Miljø og Teknik]]
+
+==22 maj 2015==
+
+* Properties and classes for the entity Leverandør created.
+** [[Property:LeverandørNavn]]
+** [[Property:LeverandørType]]
+** [[Property:LeverandørURL]]
+** [[Template:Leverandør]]
+** [[Form:Leverandør]]
+* Properties and classes for the entity Afhængighed created.
+** [[Property:AfhængighedKlassifikation]]
+** [[Property:AfhængighedLeverandør]]
+** [[Template:Afhængighed]]
+** [[Form:Afhængighed]]
+* Oprettet brugere for [[User:LarsDalgaard|Lars]] og [[User:AndersKraghBarfod|Anders]]
+
+==21 maj 2015==
+
+* Server is a Linode 2048
+* URL employed: http://semawi.notanumber.dk
+* regular user account josef established
+* Installed postfix mail server; SeMaWi needs to be able to send notifications
+* Verified mail server security
+* Install fail2ban; improve security (SeMaWi is on a public server, security needs are above average)
+* Switch ssh to non-standard port 16117
+* install LAMP stack
+* install MediaWiki 1.24.2
+* establish hidden SeMaWi category to contain prototype pages
+* establish DeploymentNotes page
+* establish TODO page
+* Changed logo to balk.png
+* Install [https://getcomposer.org/doc/00-intro.md#installation-nix Composer]; prerequisite for installing Semantic MediaWiki
+* [https://semantic-mediawiki.org/wiki/Help:Installation/Using_Composer_with_MediaWiki_1.22%2B Install Semantic MediaWiki]
+* [https://www.mediawiki.org/wiki/Extension:Semantic_Forms/Download_and_installation Install SemanticForms]
+* [https://semantic-mediawiki.org/wiki/Semantic_Result_Formats#Installation Install Semantic Result Formats]
+
+=Design notes=
+
+==Brugere/Roller==
+
+Der skal integreres til BALK's AD på sigt, men det vil ikke ske i denne prototypefase. Det påvirker alligevel prototypens design i denne tidlige fase, da vi skal designe hvordan de forskellige stakeholders og ansvarshavende skal modelleres i [[SeMaWi]].
+
+Et System skal pege på N&gt;1 personer; foreløbigt i tre roller, ejer, administrator, og budgetansvarlig. Ambitionen er, at alle 3 personer er [[SeMaWi]] brugere så det giver god funktionel mening at pege på sider i &quot;User&quot; namespacet. Hvis vi gør det vil de sider potentielt blive oprettet med indhold inden opkobling til AD (for eksempel [[Bruger:LarsDalgaard]] som sandsynligvis fra AD vil hedde nogeti retningen af [[Bruger:LDG]]), og så skal den indhold flyttes manuelt da systemet ikke ved at der er tale om samme person.
+
+Designbeslutning i øjeblikket er, at holde fast i almindelige brugersider med tilføjelse af en passende Semantisk klasse og tilhørende form. Senere ved opkobling til AD regnes der ikke med, at problemstillingen er så stor da antallet af oprettede brugere inden opkobling til AD ikke vil være kolossal stor; hvis det ikke kan lade sig gøre at scripte omdøbning af brugersider så vil det ikke være meget manuelt arbejde i værste fald.
+
+=TODO=
+
+* Certificate based ssh logins
+* Consider inbound mail options
+* Vendor class could use contact person field(s)
+* Dialog mmed BALK angående ydereligere interessante properties på:
+** Leverandør
+** Afhængighed
+* [[Property:AfhængighedKlassifikation]] kan udvides så den peger på noget mere intelligent end en banal liste, som for eksempel en ny klasse.
+* Leverandørklassen kan udbygges med kontaktpersoner osv.
+* Der skal implementeres en Funktion klasse som tilknyttes systemer så der kan bl.a. spottes funktionelt overlap i systemindkøb.
+* Kolonnen InstallKrav: sparring nødvendig
+* Kolonnen UdvikTypeNavn: sparring nødvendig
+* IDM venligt skal udfases hvis/når der implementeres funktionenne klasser
+* De 3 rolle dropdowns i [[Form:System]] skal gerne vise navn i stedet for initialer.
+* Der er en del systemer med Budgetansvarlig sat til [[C-MT]] i stedet for en specifik person. Foreløbigt er den rolle fjernet sa prototypen er designet så en rolle varetages af en bestemt person. Det kan laves om, men det skal drøftes først hvis det skal være.
+* Vi mangler datamodel til servere og driftsfaciliteter. Backburner.
+* Der skal køres et cronjob der refresher data. Sandsynligvis [https://gist.github.com/mtyeh411/6117098 dette script]. Måske også noget der kalder runJobs.php med jævn mellemrum.
+* Serverens timezone skal skiftes til CET.
+* Alle skabeloner skal have default værdier så der kan søges på &quot;tomme&quot; eller &quot;uudfyldte&quot; felter</text>
+      <sha1>nq0szy8s2rra8s5fpbwzb6sxzt66bs0</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Forside</title>
+    <ns>0</ns>
+    <id>1</id>
+    <revision>
+      <id>425</id>
+      <parentid>89</parentid>
+      <timestamp>2015-05-28T12:38:26Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>nye brugernavne</comment>
+      <text xml:space="preserve" bytes="727">[[Category:SeMaWi]]
+
+Velkommen til SeMaWi, Ballerup Kommunes prototype Semantic MediaWiki.
+
+Der skal nok komme mere interessant indhold på forsiden, men fokus i første omgang er på rå funktionalitet.
+
+Kontaktpersoner på implementering af prototypen er:
+
+* [[User:Ldg|Lars Dalgaard]], Ballerup Kommune - Projektansvarlig
+* [[User:Andb|Anders Kragh Barfod]], Ballerup Kommune - Teknisk kontaktperson
+* [[User:Josef|Josef Assad]] - Not a Number - Design og implementering
+
+Der er oprettet en [[Sandkasse]] så man kan afprøve denne wikis syntax.
+
+=Relevante sider=
+
+* [[DeploymentNotes|Noter om deployering af denne prototype]]
+* [[:Category:SeMaWi]] viser en oversigt over samtlige sider der er designet til denne prototype</text>
+      <sha1>b71cxbidg7g511w6smh77ztokg67ofc</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:LeverandørNavn</title>
+    <ns>102</ns>
+    <id>5</id>
+    <revision>
+      <id>18</id>
+      <parentid>17</parentid>
+      <timestamp>2015-05-22T10:23:21Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="143">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Text]].
+
+Dette property indeholder Leverandørens navn. Det skal gerne være unikt.</text>
+      <sha1>8cvgivohi8mg9vyty88aoztf55gtja5</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:LeverandørType</title>
+    <ns>102</ns>
+    <id>6</id>
+    <revision>
+      <id>20</id>
+      <parentid>19</parentid>
+      <timestamp>2015-05-22T10:25:19Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>tilføjet beskrivelse og kategori</comment>
+      <text xml:space="preserve" bytes="367">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Text]].
+
+The allowed values for this property are:
+* [[Allows value::Privat]]
+* [[Allows value::Offentlig]]
+
+Dette property skal gøre det muligt at udføre segmentanalyse på leverandører alt efter om de er offentlige eller private. Det er for eksempel interessant iht. organisationstyper som OS2 og T!NG.</text>
+      <sha1>0noby314tdh8exlzlxzijtsq1h4w6hn</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:LeverandørURL</title>
+    <ns>102</ns>
+    <id>7</id>
+    <revision>
+      <id>22</id>
+      <parentid>21</parentid>
+      <timestamp>2015-05-22T10:31:53Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>tilføjet beskrivelse og kategori</comment>
+      <text xml:space="preserve" bytes="133">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::URL]].
+
+Det er rart at kunne tilføje link til leverandørens hjemmeside.</text>
+      <sha1>kyvibiupv5lqytmkkakth0u7acstfpk</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Skabelon:Leverandør</title>
+    <ns>10</ns>
+    <id>8</id>
+    <revision>
+      <id>450</id>
+      <parentid>440</parentid>
+      <timestamp>2015-05-28T14:20:14Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>tilføj afhængigheder, skift outformat til list</comment>
+      <text xml:space="preserve" bytes="818">&lt;noinclude&gt;
+[[Category:SeMaWi]]
+
+This is the &quot;Leverandør&quot; template.
+It should be called in the following format:
+&lt;pre&gt;
+{{Leverandør
+|Navn=
+|Type=
+|URL=
+}}
+&lt;/pre&gt;
+Edit the page to see the template text.
+&lt;/noinclude&gt;&lt;includeonly&gt;{| class=&quot;wikitable&quot;
+! Navn
+| [[LeverandørNavn::{{{Navn|}}}]] 
+|-
+! Type
+| [[LeverandørType::{{{Type|}}}]] 
+|-
+! URL
+| [[LeverandørURL::{{{URL|}}}]] 
+|}
+
+{| class=&quot;wikitable&quot;
+|+ Deriverede egenskaber
+! Leverer
+| {{#ask: [[Category:Systemer]] [[SystemLeverandør::{{FULLPAGENAME}}]] | format=list}}
+|- 
+! Drifter
+| {{#ask: [[Category:Systemer]] [[SystemDriftsleverandør::{{FULLPAGENAME}}]] | format=list}}
+|- 
+! Ansvarlig for afhængigheder
+| {{#ask: [[Category:Afhængigheder]] [[AfhængighedLeverandør::{{FULLPAGENAME}}]] | format=list}}
+|}
+
+[[Kategori:Leverandører]]
+&lt;/includeonly&gt;</text>
+      <sha1>7nfujw96ahuuq24keamrze2yhnqxmkx</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Form:Leverandør</title>
+    <ns>106</ns>
+    <id>9</id>
+    <revision>
+      <id>28</id>
+      <parentid>27</parentid>
+      <timestamp>2015-05-22T10:52:36Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>begrænse navnefelt til 1 række</comment>
+      <text xml:space="preserve" bytes="912">&lt;noinclude&gt;
+[[Category:SeMaWi]]
+
+This is the &quot;Leverandør&quot; form.
+To create a page with this form, enter the page name below;
+if a page with that name already exists, you will be sent to a form to edit that page.
+
+
+{{#forminput:form=Leverandør}}
+
+&lt;/noinclude&gt;&lt;includeonly&gt;
+&lt;div id=&quot;wikiPreview&quot; style=&quot;display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;&quot;&gt;&lt;/div&gt;
+{{{for template|Leverandør}}}
+{| class=&quot;formtable&quot;
+! Navn: 
+| {{{field|Navn|rows=1|mandatory|placeholder=Indtast et unikt leverandørnavn}}}
+|-
+! Type: 
+| {{{field|Type|mandatory}}}
+|-
+! URL: 
+| {{{field|URL}}}
+|}
+{{{end template}}}
+
+'''Free text:'''
+
+{{{standard input|free text|rows=10}}}
+
+
+{{{standard input|summary}}}
+
+{{{standard input|minor edit}}} {{{standard input|watch}}}
+
+{{{standard input|save}}} {{{standard input|preview}}} {{{standard input|changes}}} {{{standard input|cancel}}}
+&lt;/includeonly&gt;</text>
+      <sha1>ciwlga20nrd0aj0damykr814yegj7if</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Kategori:Leverandører</title>
+    <ns>14</ns>
+    <id>11</id>
+    <revision>
+      <id>30</id>
+      <timestamp>2015-05-22T11:36:27Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategorisering, og specificering af den anvendte form</comment>
+      <text xml:space="preserve" bytes="50">[[Category:SeMaWi]]
+
+{{#default_form:Leverandør}}</text>
+      <sha1>lxb5krbt6ht2lcich5ylvavet4rcmni</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:AfhængighedLeverandør</title>
+    <ns>102</ns>
+    <id>12</id>
+    <revision>
+      <id>436</id>
+      <parentid>34</parentid>
+      <timestamp>2015-05-28T14:00:30Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>automatisk valg af korrekte form</comment>
+      <text xml:space="preserve" bytes="424">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::Leverandør]].
+
+Røde links bruger form [[Creates pages with form::Leverandør]].
+
+Dette property anvendes til at indikere hvilken leverandør er ansvarlig for denne afhængighed.
+
+Et eksempel: hvis et system i porteføljen har SQL Server som afhængighed så er værdien af dette property Microsoft.</text>
+      <sha1>9nmoxfjfulvvojqaovbsphtkafmq26z</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:AfhængighedKlassifikation</title>
+    <ns>102</ns>
+    <id>13</id>
+    <revision>
+      <id>38</id>
+      <parentid>35</parentid>
+      <timestamp>2015-05-22T12:36:04Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>tilføjet beskrivelse og kategori</comment>
+      <text xml:space="preserve" bytes="491">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Text]].
+
+The allowed values for this property are:
+* [[Allows value::Webserver]]
+* [[Allows value::RDBMS]]
+* [[Allows value::Programmeringssprog]]
+* [[Allows value::Framework]]
+* [[Allows value::Klientprogram]]
+
+Afhængigheder kan klassificeres forskelligt. For eksempel, php er et programmeringssprog. SQL Server er en RDBMS. Det er interessant for vores porteføljeforvaltning at kunne segmentere på afhængighedsklassifikation.</text>
+      <sha1>ny4jrhqf0qlp1xodeann5eau1wbajy4</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Skabelon:Afhængighed</title>
+    <ns>10</ns>
+    <id>14</id>
+    <revision>
+      <id>40</id>
+      <parentid>39</parentid>
+      <timestamp>2015-05-22T12:38:06Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategori tilføjet</comment>
+      <text xml:space="preserve" bytes="470">&lt;noinclude&gt;
+[[Category:SeMaWi]]
+
+This is the &quot;Afhængighed&quot; template.
+It should be called in the following format:
+&lt;pre&gt;
+{{Afhængighed
+|Leverandør=
+|Klassifikation=
+}}
+&lt;/pre&gt;
+Edit the page to see the template text.
+&lt;/noinclude&gt;&lt;includeonly&gt;{| class=&quot;wikitable&quot;
+! Leverandør
+| [[AfhængighedLeverandør::{{{Leverandør|}}}]] 
+|-
+! Klassifikation
+| {{#arraymap:{{{Klassifikation|}}}|,|x|[[AfhængighedKlassifikation::x]]}}
+|}
+
+[[Kategori:Afhængigheder]]
+&lt;/includeonly&gt;</text>
+      <sha1>0lbytfz6uacsoav1dkgua1uz6gth97t</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Form:Afhængighed</title>
+    <ns>106</ns>
+    <id>15</id>
+    <revision>
+      <id>44</id>
+      <parentid>42</parentid>
+      <timestamp>2015-05-22T12:46:47Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="903">&lt;noinclude&gt;
+[[Category:SeMaWi]]
+
+This is the &quot;Afhængighed&quot; form.
+To create a page with this form, enter the page name below;
+if a page with that name already exists, you will be sent to a form to edit that page.
+
+
+{{#forminput:form=Afhængighed}}
+
+&lt;/noinclude&gt;&lt;includeonly&gt;
+&lt;div id=&quot;wikiPreview&quot; style=&quot;display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;&quot;&gt;&lt;/div&gt;
+{{{for template|Afhængighed}}}
+{| class=&quot;formtable&quot;
+! Leverandør: 
+| {{{field|Leverandør|input type=combobox|values from category=Leverandører}}}
+|-
+! Klassifikation: 
+| {{{field|Klassifikation}}}
+|}
+{{{end template}}}
+
+'''Free text:'''
+
+{{{standard input|free text|rows=10}}}
+
+
+{{{standard input|summary}}}
+
+{{{standard input|minor edit}}} {{{standard input|watch}}}
+
+{{{standard input|save}}} {{{standard input|preview}}} {{{standard input|changes}}} {{{standard input|cancel}}}
+&lt;/includeonly&gt;</text>
+      <sha1>83tz0d645hj7imc2rno33v6ftjuzv6s</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Kategori:Afhængigheder</title>
+    <ns>14</ns>
+    <id>18</id>
+    <revision>
+      <id>46</id>
+      <timestamp>2015-05-22T12:48:26Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategorisering, og specificering af den anvendte form</comment>
+      <text xml:space="preserve" bytes="51">[[Category:SeMaWi]]
+
+{{#default_form:Afhængighed}}</text>
+      <sha1>7ofgc9gwq7bmhgk5h4cy819uxrvdpn2</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:OrganisatoriskEnhedNavn</title>
+    <ns>102</ns>
+    <id>21</id>
+    <revision>
+      <id>55</id>
+      <parentid>54</parentid>
+      <timestamp>2015-05-26T09:25:01Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategori tilføjet</comment>
+      <text xml:space="preserve" bytes="199">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Text]].
+
+Dette property indeholder den organisatoriske enheds entydige navn. Navne skal være unikke.
+
+Eksempler:
+
+* Marketing
+* C-MT
+* 677</text>
+      <sha1>22nze922zviepyfbfgnmp39iupufkam</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Skabelon:OrganisatoriskEnhed</title>
+    <ns>10</ns>
+    <id>22</id>
+    <revision>
+      <id>481</id>
+      <parentid>57</parentid>
+      <timestamp>2015-05-29T08:48:34Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>tilføj 2 nye kalkulerede properties</comment>
+      <text xml:space="preserve" bytes="705">&lt;noinclude&gt;
+[[Category:SeMaWi]]
+
+This is the &quot;OrganisatoriskEnhed&quot; template.
+It should be called in the following format:
+&lt;pre&gt;
+{{OrganisatoriskEnhed
+|Navn=
+}}
+&lt;/pre&gt;
+Edit the page to see the template text.
+&lt;/noinclude&gt;&lt;includeonly&gt;{| class=&quot;wikitable&quot;
+! Navn
+| [[OrganisatoriskEnhedNavn::{{{Navn|}}}]] 
+|}
+
+[[OEHarSystemerMedPFI::{{#ask: [[Category:Systemer]] [[SystemMålgruppeOE::{{FULLPAGENAME}}]] [[SystemHarPersonFølsomInfo::Yes]] | format=count}}| ]]
+
+[[OEHarSystemerMedPFIUanmeldt::{{#ask: [[Category:Systemer]] [[SystemMålgruppeOE::{{FULLPAGENAME}}]] [[SystemHarPersonFølsomInfo::Yes]] [[SystemAnmeldtDatatilsynet::No]] | format=count}}| ]]
+
+[[Kategori:Organisatoriske Enheder]]
+&lt;/includeonly&gt;</text>
+      <sha1>0ihcohmm5c7xmxgjallmgb2r9218p1w</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Form:OrganisatoriskEnhed</title>
+    <ns>106</ns>
+    <id>23</id>
+    <revision>
+      <id>59</id>
+      <parentid>58</parentid>
+      <timestamp>2015-05-26T09:31:05Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategori tilføjet</comment>
+      <text xml:space="preserve" bytes="861">&lt;noinclude&gt;
+[[Category:SeMaWi]]
+
+This is the &quot;OrganisatoriskEnhed&quot; form.
+To create a page with this form, enter the page name below;
+if a page with that name already exists, you will be sent to a form to edit that page.
+
+
+{{#forminput:form=OrganisatoriskEnhed}}
+
+&lt;/noinclude&gt;&lt;includeonly&gt;
+&lt;div id=&quot;wikiPreview&quot; style=&quot;display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;&quot;&gt;&lt;/div&gt;
+{{{for template|OrganisatoriskEnhed}}}
+{| class=&quot;formtable&quot;
+! Navn: 
+| {{{field|Navn|rows=1|placeholder=indtast venligst enhedens unikke navn}}}
+|}
+{{{end template}}}
+
+'''Free text:'''
+
+{{{standard input|free text|rows=10}}}
+
+
+{{{standard input|summary}}}
+
+{{{standard input|minor edit}}} {{{standard input|watch}}}
+
+{{{standard input|save}}} {{{standard input|preview}}} {{{standard input|changes}}} {{{standard input|cancel}}}
+&lt;/includeonly&gt;</text>
+      <sha1>kp5gxf0hxpkduzmn6q9cozc8s8suwm9</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:BrugerNavn</title>
+    <ns>102</ns>
+    <id>30</id>
+    <revision>
+      <id>75</id>
+      <parentid>74</parentid>
+      <timestamp>2015-05-27T08:41:13Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategori tilføjet</comment>
+      <text xml:space="preserve" bytes="123">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Text]].
+
+Brugerens navn. Kan godt være samme som sidens titel.</text>
+      <sha1>4jbqrsrb7fwy981f2rfdmzwre3cn3hc</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:BrugerStilling</title>
+    <ns>102</ns>
+    <id>31</id>
+    <revision>
+      <id>77</id>
+      <parentid>76</parentid>
+      <timestamp>2015-05-27T08:43:00Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="67">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Text]].</text>
+      <sha1>fpidybtc3odu8xvvcqimfccn86d87qg</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:BrugerOrgEnhed</title>
+    <ns>102</ns>
+    <id>32</id>
+    <revision>
+      <id>79</id>
+      <parentid>78</parentid>
+      <timestamp>2015-05-27T08:48:45Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategori tilføjet</comment>
+      <text xml:space="preserve" bytes="146">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::OrganisatoriskEnhed]].</text>
+      <sha1>ttjhw3u3jc0rwa741hvkk2zmg48bdfn</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:BrugerEmail</title>
+    <ns>102</ns>
+    <id>33</id>
+    <revision>
+      <id>81</id>
+      <parentid>80</parentid>
+      <timestamp>2015-05-27T08:49:15Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategori tilføjet</comment>
+      <text xml:space="preserve" bytes="68">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Email]].</text>
+      <sha1>enfbshh2a30urcf9wfz35t3ynorwyp9</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:BrugerTelefon</title>
+    <ns>102</ns>
+    <id>34</id>
+    <revision>
+      <id>83</id>
+      <parentid>82</parentid>
+      <timestamp>2015-05-27T08:49:43Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategori tilføjet</comment>
+      <text xml:space="preserve" bytes="79">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Telephone number]].</text>
+      <sha1>iwigp5p8vb4hyqy6httkabc6u2olkf0</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Skabelon:Bruger</title>
+    <ns>10</ns>
+    <id>35</id>
+    <revision>
+      <id>480</id>
+      <parentid>479</parentid>
+      <timestamp>2015-05-29T08:35:57Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>stavefejl i property</comment>
+      <text xml:space="preserve" bytes="1285">&lt;noinclude&gt;
+[[Category:SeMaWi]]
+
+This is the &quot;Bruger&quot; template.
+It should be called in the following format:
+&lt;pre&gt;
+{{Bruger
+|Navn=
+|Stilling=
+|OrgEnhed=
+|Email=
+|Telefon=
+}}
+&lt;/pre&gt;
+Edit the page to see the template text.
+&lt;/noinclude&gt;&lt;includeonly&gt;{| class=&quot;wikitable&quot;
+! Navn
+| [[BrugerNavn::{{{Navn|}}}]] 
+|-
+! Stilling
+| [[BrugerStilling::{{{Stilling|}}}]] 
+|-
+! Organisatorisk enhed
+| [[BrugerOrgEnhed::{{{OrgEnhed|}}}]] 
+|-
+! Email
+| [[BrugerEmail::{{{Email|}}}]] 
+|-
+! Telefon
+| [[BrugerTelefon::{{{Telefon|}}}]] 
+|}
+
+{| class=&quot;wikitable&quot;
+|+ Deriverede egenskaber
+! Systemejer på:
+| {{#ask: [[Category:Systemer]] [[SystemEjer::{{FULLPAGENAME}}]] | format=list}}
+|- 
+! Systemadministrator på:
+| {{#ask: [[Category:Systemer]] [[SystemAdministrator::{{FULLPAGENAME}}]] | format=list}}
+|- 
+! Budgetansvarlig for:
+| {{#ask: [[Category:Systemer]] [[SystemBudgetansvarlig::{{FULLPAGENAME}}]] | format=list}}
+|}
+
+[[BrugerEjerSystemerMedPFI::{{#ask: [[Category:Systemer]] [[SystemEjer::{{FULLPAGENAME}}]] [[SystemHarPersonFølsomInfo::Yes]] | format=count}}| ]]
+
+[[BrugerEjerSystemerMedPFIUanmeldt::{{#ask: [[Category:Systemer]] [[SystemEjer::{{FULLPAGENAME}}]] [[SystemHarPersonFølsomInfo::Yes]] [[SystemAnmeldtDatatilsynet::No]] | format=count}}| ]]
+
+[[Kategori:Brugere]]
+&lt;/includeonly&gt;</text>
+      <sha1>2q41lw9d7gb6rsz9m7i526v0mxbndoq</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Form:Bruger</title>
+    <ns>106</ns>
+    <id>36</id>
+    <revision>
+      <id>87</id>
+      <parentid>86</parentid>
+      <timestamp>2015-05-27T08:58:30Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategori tilføjet</comment>
+      <text xml:space="preserve" bytes="1071">&lt;noinclude&gt;
+[[Category:SeMaWi]]
+
+This is the &quot;Bruger&quot; form.
+To create a page with this form, enter the page name below;
+if a page with that name already exists, you will be sent to a form to edit that page.
+
+
+{{#forminput:form=Bruger}}
+
+&lt;/noinclude&gt;&lt;includeonly&gt;
+&lt;div id=&quot;wikiPreview&quot; style=&quot;display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;&quot;&gt;&lt;/div&gt;
+{{{for template|Bruger}}}
+{| class=&quot;formtable&quot;
+! Navn: 
+| {{{field|Navn|rows=1|placeholder=indtast venligst brugerens navn}}}
+|-
+! Stilling: 
+| {{{field|Stilling|rows=1|placeholder=indtast venligst brugerens stilling}}}
+|-
+! OrgEnhed: 
+| {{{field|OrgEnhed|values from category=Organisatoriske Enheder}}}
+|-
+! Email: 
+| {{{field|Email}}}
+|-
+! Telefon: 
+| {{{field|Telefon|hidden}}}
+|}
+{{{end template}}}
+
+'''Free text:'''
+
+{{{standard input|free text|rows=10}}}
+
+
+{{{standard input|summary}}}
+
+{{{standard input|minor edit}}} {{{standard input|watch}}}
+
+{{{standard input|save}}} {{{standard input|preview}}} {{{standard input|changes}}} {{{standard input|cancel}}}
+&lt;/includeonly&gt;</text>
+      <sha1>hf1fjdr9rqf7jnhj2za7o0dp07lbp09</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:SystemStatus</title>
+    <ns>102</ns>
+    <id>40</id>
+    <revision>
+      <id>95</id>
+      <parentid>94</parentid>
+      <timestamp>2015-05-27T10:43:21Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategori tilføjet</comment>
+      <text xml:space="preserve" bytes="237">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Text]].
+
+The allowed values for this property are:
+* [[Allows value::Under udvikling]]
+* [[Allows value::I brug]]
+* [[Allows value::End of life]]
+* [[Allows value::Pensioneret]]</text>
+      <sha1>5rqtgdyfnpjgwir34jcon3w4qza5rhp</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:SystemMålgruppe</title>
+    <ns>102</ns>
+    <id>41</id>
+    <revision>
+      <id>97</id>
+      <parentid>96</parentid>
+      <timestamp>2015-05-27T10:44:16Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategori tilføjet</comment>
+      <text xml:space="preserve" bytes="193">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Text]].
+
+The allowed values for this property are:
+* [[Allows value::Intern]]
+* [[Allows value::Borgere]]
+* [[Allows value::Øvrige]]</text>
+      <sha1>imrbyan5qgwv75f8n5oor3e0d63vd8z</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:SystemMålgruppeOE</title>
+    <ns>102</ns>
+    <id>42</id>
+    <revision>
+      <id>99</id>
+      <parentid>98</parentid>
+      <timestamp>2015-05-27T10:46:13Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategori tilføjet, skrevet kort forklaring om meningen med dette property</comment>
+      <text xml:space="preserve" bytes="254">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::OrganisatoriskEnhed]].
+
+Dette property anvendes så vi kan registrere hvilke organisatoriske enheder anvender pågældende system.</text>
+      <sha1>a6i6pridle6y4nfpk0z7td1ml4evh53</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:SystemLeverandør</title>
+    <ns>102</ns>
+    <id>43</id>
+    <revision>
+      <id>101</id>
+      <parentid>100</parentid>
+      <timestamp>2015-05-27T10:47:26Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="226">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::Leverandør]].
+
+Med dette property kan vi spore hvilke leverandør det er der har ansvar for systemet.</text>
+      <sha1>jmz2faaryrsl9ka1vb2fzx7hntqyszg</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:SystemDriftsleverandør</title>
+    <ns>102</ns>
+    <id>44</id>
+    <revision>
+      <id>103</id>
+      <parentid>102</parentid>
+      <timestamp>2015-05-27T10:48:40Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>tilføjet beskrivelse og kategori</comment>
+      <text xml:space="preserve" bytes="303">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::Leverandør]].
+
+Et system kan driftes af en anden leverandør end den der udvikler og sælger systemet. Derfor har vi dette property og det tilsvarende property SystemLeverandør.</text>
+      <sha1>bb7hn2f74hihsjlg2fl0hsyk3oirs94</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:SystemDriftsplacering</title>
+    <ns>102</ns>
+    <id>45</id>
+    <revision>
+      <id>105</id>
+      <parentid>104</parentid>
+      <timestamp>2015-05-27T10:50:20Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>tilføjet beskrivelse og kategori</comment>
+      <text xml:space="preserve" bytes="401">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Text]].
+
+The allowed values for this property are:
+* [[Allows value::Intern]]
+* [[Allows value::Ekstern]]
+
+I øjeblikket kan vi med dette property kun sige om det er et system vi drifter internt eller om det driftes i byen. Der skelnes ikke mellem ekstern cloud eller ekstern ikke-cloud da der ikke rigtig er den helt store tekniske forskel.</text>
+      <sha1>fww528kdr46ybr3v095rxtne1dkyqsg</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:SystemHarPersonFølsomInfo</title>
+    <ns>102</ns>
+    <id>46</id>
+    <revision>
+      <id>107</id>
+      <parentid>106</parentid>
+      <timestamp>2015-05-27T10:50:52Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategori tilføjet</comment>
+      <text xml:space="preserve" bytes="70">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Boolean]].</text>
+      <sha1>h0xg1664skbymkf1s7fvr7ylkd05qeh</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:SystemAnmeldtDatatilsynet</title>
+    <ns>102</ns>
+    <id>47</id>
+    <revision>
+      <id>109</id>
+      <parentid>108</parentid>
+      <timestamp>2015-05-27T10:51:19Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="70">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Boolean]].</text>
+      <sha1>h0xg1664skbymkf1s7fvr7ylkd05qeh</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:SystemPersonfølsomType</title>
+    <ns>102</ns>
+    <id>48</id>
+    <revision>
+      <id>111</id>
+      <parentid>110</parentid>
+      <timestamp>2015-05-27T10:53:08Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="234">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Text]].
+
+The allowed values for this property are:
+* [[Allows value::CPR]]
+* [[Allows value::Fødselsdato]]
+* [[Allows value::Bankinformation]]
+* [[Allows value::Kreditkort]]</text>
+      <sha1>h6o0dseyhw96pefspz87wrqdpkl3zsg</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:SystemAfhængighed</title>
+    <ns>102</ns>
+    <id>49</id>
+    <revision>
+      <id>429</id>
+      <parentid>113</parentid>
+      <timestamp>2015-05-28T13:57:47Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>test fix: automatisk valg af den korrekte form for røde links i System sider</comment>
+      <text xml:space="preserve" bytes="288">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::Afhængighed]].
+
+[[Creates pages with form::Afhængighed]]
+
+Når et system anvender for eksempel Microsoft SQL Server, så er det kategoriseret som en afhængighed.</text>
+      <sha1>2aadu513xk4yyskz74jau27liybmrv2</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Skabelon:System</title>
+    <ns>10</ns>
+    <id>50</id>
+    <revision>
+      <id>297</id>
+      <parentid>291</parentid>
+      <timestamp>2015-05-28T10:47:29Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>tilføj property SystemNavn</comment>
+      <text xml:space="preserve" bytes="1695">&lt;noinclude&gt;
+[[Category:SeMaWi]]
+
+This is the &quot;System&quot; template.
+It should be called in the following format:
+&lt;pre&gt;
+{{System
+|Navn=
+|Nummer=
+|Status=
+|Ejer=
+|Administrator=
+|Budgetansvarlig=
+|Målgruppe=
+|MålgruppeOE=
+|Leverandør=
+|Driftsleverandør=
+|Driftsplacering=
+|PersonfølsomInfo=
+|AnmeldtDatatilsynet=
+|PersonfølsomType=
+|Afhængigheder=
+|IDMVenligt=
+|Dokumentation=
+}}
+&lt;/pre&gt;
+Edit the page to see the template text.
+&lt;/noinclude&gt;&lt;includeonly&gt;{| class=&quot;wikitable&quot;
+! Navn
+| [[SystemNavn::{{{Navn|}}}]] 
+|-
+! Nummer
+| [[SystemNummer::{{{Nummer|}}}]] 
+|-
+! Status
+| [[SystemStatus::{{{Status|}}}]] 
+|-
+! Ejer
+| [[SystemEjer::{{{Ejer|}}}]] 
+|-
+! Administrator
+| [[SystemAdministrator::{{{Administrator|}}}]] 
+|-
+! Budgetansvarlig
+| [[SystemBudgetansvarlig::{{{Budgetansvarlig|}}}]] 
+|-
+! Målgruppe
+| {{#arraymap:{{{Målgruppe|}}}|,|x|[[SystemMålgruppe::x]]}}
+|-
+! Målgruppe (OE)
+| {{#arraymap:{{{MålgruppeOE|}}}|,|x|[[SystemMålgruppeOE::x]]}}
+|-
+! Leverandør
+| [[SystemLeverandør::{{{Leverandør|}}}]] 
+|-
+! Driftsleverandør
+| [[SystemDriftsleverandør::{{{Driftsleverandør|}}}]] 
+|-
+! Driftsplacering
+| [[SystemDriftsplacering::{{{Driftsplacering|}}}]] 
+|-
+! Har personfølsom info?
+| [[SystemHarPersonFølsomInfo::{{{PersonfølsomInfo|}}}]] 
+|-
+! Anmeldt til Datatilsynet?
+| [[SystemAnmeldtDatatilsynet::{{{AnmeldtDatatilsynet|}}}]] 
+|-
+! Type af personfølsom info
+| [[SystemPersonfølsomType::{{{PersonfølsomType|}}}]] 
+|-
+! Afhængigheder
+| {{#arraymap:{{{Afhængigheder|}}}|,|x|[[SystemAfhængighed::x]]}}
+|-
+! IDM venligt?
+| [[SystemIDMVenligt::{{{IDMVenligt|}}}]]
+|-
+! Dokumentation
+| [[SystemDokumentation::{{{Dokumentation|}}}]]
+|}
+
+[[Kategori:Systemer]]
+&lt;/includeonly&gt;</text>
+      <sha1>e4fayda20uxzpopdstlm46xx2ldyfm7</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Form:System</title>
+    <ns>106</ns>
+    <id>51</id>
+    <revision>
+      <id>308</id>
+      <parentid>299</parentid>
+      <timestamp>2015-05-28T11:57:59Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>skift dropdown fra namespace User til category Brugere</comment>
+      <text xml:space="preserve" bytes="1968">&lt;noinclude&gt;
+[[Category:SeMaWi]]
+
+This is the &quot;System&quot; form.
+To create a page with this form, enter the page name below;
+if a page with that name already exists, you will be sent to a form to edit that page.
+
+
+{{#forminput:form=System}}
+
+&lt;/noinclude&gt;&lt;includeonly&gt;
+&lt;div id=&quot;wikiPreview&quot; style=&quot;display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;&quot;&gt;&lt;/div&gt;
+{{{for template|System}}}
+{| class=&quot;formtable&quot;
+! Navn: 
+| {{{field|Navn|rows=1|placeholder=Indtast et unikt systemnavn}}}
+|-
+! Nummer: 
+| {{{field|Nummer}}}
+|-
+! Status: 
+| {{{field|Status}}}
+|-
+! Ejer: 
+| {{{field|Ejer|input type=combobox|values from category=Brugere}}}
+|-
+! Administrator: 
+| {{{field|Administrator|input type=combobox|values from category=Brugere}}}
+|-
+! Budgetansvarlig: 
+| {{{field|Budgetansvarlig|input type=combobox|values from category=Brugere}}}
+|-
+! Målgruppe: 
+| {{{field|Målgruppe}}}
+|-
+! Målgruppe (OE): 
+| {{{field|MålgruppeOE|input type=combobox|values from category=Organisatoriske Enheder}}}
+|-
+! Leverandør: 
+| {{{field|Leverandør|input type=combobox|values from category=Leverandører}}}
+|-
+! Driftsleverandør: 
+| {{{field|Driftsleverandør|input type=combobox|values from category=Leverandører}}}
+|-
+! Driftsplacering: 
+| {{{field|Driftsplacering}}}
+|-
+! Har personfølsom data? 
+| {{{field|PersonfølsomInfo}}}
+|-
+! Er anmeldt til Datatilsynet? 
+| {{{field|AnmeldtDatatilsynet}}}
+|-
+! Type personfølsom data: 
+| {{{field|PersonfølsomType}}}
+|-
+! Afhængigheder: 
+| {{{field|Afhængigheder|values from category=Afhængigheder}}}
+|-
+! IDM venligt?: 
+| {{{field|IDMVenligt}}}
+|-
+! URL til Dokumentation: 
+| {{{field|Dokumentation}}}
+|}
+{{{end template}}}
+
+'''Free text:'''
+
+{{{standard input|free text|rows=10}}}
+
+
+{{{standard input|summary}}}
+
+{{{standard input|minor edit}}} {{{standard input|watch}}}
+
+{{{standard input|save}}} {{{standard input|preview}}} {{{standard input|changes}}} {{{standard input|cancel}}}
+&lt;/includeonly&gt;</text>
+      <sha1>2ei821w6v5it3fegt1h2rscmv362pjc</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:SystemEjer</title>
+    <ns>102</ns>
+    <id>52</id>
+    <revision>
+      <id>121</id>
+      <parentid>120</parentid>
+      <timestamp>2015-05-27T11:27:51Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategori tilføjet</comment>
+      <text xml:space="preserve" bytes="133">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::Bruger]].</text>
+      <sha1>d24zgq4mdb7dfnaoum2utawkrnvci6v</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:SystemAdministrator</title>
+    <ns>102</ns>
+    <id>53</id>
+    <revision>
+      <id>123</id>
+      <parentid>122</parentid>
+      <timestamp>2015-05-27T11:28:29Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategori tilføjet</comment>
+      <text xml:space="preserve" bytes="133">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::Bruger]].</text>
+      <sha1>d24zgq4mdb7dfnaoum2utawkrnvci6v</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:SystemBudgetansvarlig</title>
+    <ns>102</ns>
+    <id>54</id>
+    <revision>
+      <id>125</id>
+      <parentid>124</parentid>
+      <timestamp>2015-05-27T11:28:57Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="133">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::Bruger]].</text>
+      <sha1>d24zgq4mdb7dfnaoum2utawkrnvci6v</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:SystemIDMVenligt</title>
+    <ns>102</ns>
+    <id>194</id>
+    <revision>
+      <id>282</id>
+      <parentid>281</parentid>
+      <timestamp>2015-05-28T09:27:24Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>tilføjet beskrivelse og kategori</comment>
+      <text xml:space="preserve" bytes="243">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Boolean]].
+
+Dette property er midlertidigt indtil implementering af funktionelle klasser. Property'et signallerer om systemet spiller sammen med organisationens standard IDM løsning.</text>
+      <sha1>rhrjsuidxfbpzah281sfso6t8f2gmbz</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:SystemDokumentation</title>
+    <ns>102</ns>
+    <id>195</id>
+    <revision>
+      <id>287</id>
+      <parentid>286</parentid>
+      <timestamp>2015-05-28T09:51:40Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategorisering</comment>
+      <text xml:space="preserve" bytes="66">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::URL]].</text>
+      <sha1>ahsr0kvsdbenwwgib1ljuvtwb8fe2jo</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:SystemNummer</title>
+    <ns>102</ns>
+    <id>196</id>
+    <revision>
+      <id>289</id>
+      <parentid>288</parentid>
+      <timestamp>2015-05-28T09:52:17Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategorisering</comment>
+      <text xml:space="preserve" bytes="69">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Number]].</text>
+      <sha1>64x5t5twqlar1k1xjibfmfabkx7z3xb</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:SystemNavn</title>
+    <ns>102</ns>
+    <id>197</id>
+    <revision>
+      <id>296</id>
+      <parentid>295</parentid>
+      <timestamp>2015-05-28T10:44:07Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategorisering</comment>
+      <text xml:space="preserve" bytes="67">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Text]].</text>
+      <sha1>fpidybtc3odu8xvvcqimfccn86d87qg</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>MediaWiki:Sidebar</title>
+    <ns>8</ns>
+    <id>246</id>
+    <revision>
+      <id>489</id>
+      <parentid>463</parentid>
+      <timestamp>2015-05-29T09:12:30Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>links til rapporter</comment>
+      <text xml:space="preserve" bytes="368">
+* navigation
+** mainpage|mainpage-description
+** recentchanges-url|recentchanges
+** helppage|help
+* Porteføljen
+** Category:Systemer|Systemerne
+** Category:Leverandører|Leverandørerne
+** Category:Brugere|Brugerne
+** Speciel:FormStart|Ny
+* Rapporter
+** Rapporter/PersonfølsomInformation|Personfølsom information
+* SEARCH
+* TOOLBOX
+* LANGUAGES
+
+[[Category:SeMaWi]]</text>
+      <sha1>g8odiysswut30p4uy8mb0lx9h61xgm8</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:BrugerEjerSystemerMedPFI</title>
+    <ns>102</ns>
+    <id>266</id>
+    <revision>
+      <id>476</id>
+      <parentid>475</parentid>
+      <timestamp>2015-05-29T08:21:40Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategorisering og dokumentation</comment>
+      <text xml:space="preserve" bytes="239">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Number]].
+
+Dette property bruges på Bruger skabelonet. Det er en kalkuleret værdi der viser hvor mange systemer pågældende Bruger har der indeholder personfølsom information.</text>
+      <sha1>2iqctogxyvjz6gp0jvwgjc01xnfdvwk</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:BrugerEjerSystemerMedPFIUanmeldt</title>
+    <ns>102</ns>
+    <id>267</id>
+    <revision>
+      <id>478</id>
+      <parentid>477</parentid>
+      <timestamp>2015-05-29T08:22:59Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategorisering og dokumentation</comment>
+      <text xml:space="preserve" bytes="279">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Number]].
+
+Dette property bruges på Bruger skabelonet. Det er en kalkuleret værdi der viser hvor mange systemer pågældende Bruger har der indeholder personfølsom information og ikke er anmeldt til [[Datatilsynet]].</text>
+      <sha1>9nl2w1oyf3nmye7s0r0jum535gldvk8</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:OEHarSystemerMedPFI</title>
+    <ns>102</ns>
+    <id>268</id>
+    <revision>
+      <id>483</id>
+      <parentid>482</parentid>
+      <timestamp>2015-05-29T08:50:22Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategorisering og dokumentation</comment>
+      <text xml:space="preserve" bytes="259">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Number]].
+
+Dette er et kalkuleret property der er anvendt på skabelonen OrganisatoriskEnhed. Property'et viser antallet af systemer med personfølsom information en bestemt organisatorisk enhed har.</text>
+      <sha1>3d16rnk61qghemui8bbf03iy7g9oi2e</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:OEHarSystemerMedPFIUanmeldt</title>
+    <ns>102</ns>
+    <id>269</id>
+    <revision>
+      <id>485</id>
+      <parentid>484</parentid>
+      <timestamp>2015-05-29T08:51:30Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategorisering og dokumentation</comment>
+      <text xml:space="preserve" bytes="296">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Number]].
+
+Dette er et kalkuleret property der er anvendt på skabelonen OrganisatoriskEnhed. Property'et viser antallet af systemer med personfølsom information en bestemt organisatorisk enhed har som ikke er anmeldt [[Datatilsynet]].</text>
+      <sha1>n4czrmfpz1j9ids2yp6xk0lx6i9lut6</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+</mediawiki>
