@@ -90,17 +90,22 @@ Dette kategori indeholder alle sider der er implementeret som del af prototype i
     <ns>0</ns>
     <id>4</id>
     <revision>
-      <id>492</id>
-      <parentid>491</parentid>
-      <timestamp>2015-05-29T09:31:58Z</timestamp>
+      <id>497</id>
+      <parentid>494</parentid>
+      <timestamp>2015-05-30T10:55:02Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <comment>/* TODO */</comment>
-      <text xml:space="preserve" bytes="6633">[[Category:SeMaWi]]
+      <minor/>
+      <comment>/* Deployment Notes */</comment>
+      <text xml:space="preserve" bytes="6871">[[Category:SeMaWi]]
 
 =Deployment Notes=
+
+==30 maj 2015==
+
+* Deriverede egenskaber på [[Skabelon:Afhængighed]]
 
 ==29 maj 2015==
 
@@ -110,6 +115,7 @@ Dette kategori indeholder alle sider der er implementeret som del af prototype i
 * Links i sidebar til systemer/leverandører/brugere
 * forskellig overvågning og småredigeringer i kundens edits
 * Fix javascript fejl i extensions/SemanticResultFormats/resources/jquery/jquery.blockUI.js (søg efter JOSEF0001 i filen)
+* [https://github.com/JosefAssad/SeMaWi Github repositorie] nu oprettet.
 
 ==28 maj 2015==
 
@@ -209,23 +215,22 @@ Designbeslutning i øjeblikket er, at holde fast i almindelige brugersider med t
 
 * Certificate based ssh logins
 * Consider inbound mail options
-* Vendor class could use contact person field(s)
+* &lt;strike&gt;Vendor class could use contact person field(s)&lt;/strike&gt;
 * Dialog mmed BALK angående ydereligere interessante properties på:
 ** Leverandør
 ** Afhængighed
-* [[Property:AfhængighedKlassifikation]] kan udvides så den peger på noget mere intelligent end en banal liste, som for eksempel en ny klasse.
-* Leverandørklassen kan udbygges med kontaktpersoner osv.
-* Der skal implementeres en Funktion klasse som tilknyttes systemer så der kan bl.a. spottes funktionelt overlap i systemindkøb.
-* Kolonnen InstallKrav: sparring nødvendig
-* Kolonnen UdvikTypeNavn: sparring nødvendig
-* IDM venligt skal udfases hvis/når der implementeres funktionenne klasser
-* De 3 rolle dropdowns i [[Form:System]] skal gerne vise navn i stedet for initialer.
+* &lt;strike&gt;[[Property:AfhængighedKlassifikation]] kan udvides så den peger på noget mere intelligent end en banal liste, som for eksempel en ny klasse.&lt;/strike&gt;
+* &lt;strike&gt;Der skal implementeres en Funktion klasse som tilknyttes systemer så der kan bl.a. spottes funktionelt overlap i systemindkøb.&lt;/strike&gt;
+* &lt;strike&gt;Kolonnen InstallKrav: sparring nødvendig&lt;/strike&gt;
+* &lt;strike&gt;Kolonnen UdvikTypeNavn: sparring nødvendig&lt;/strike&gt;
+* &lt;strike&gt;IDM venligt skal udfases hvis/når der implementeres funktionenne klasser&lt;/strike&gt;
+* &lt;strike&gt;De 3 rolle dropdowns i [[Form:System]] skal gerne vise navn i stedet for initialer.&lt;strike&gt;
 * Der er en del systemer med Budgetansvarlig sat til [[C-MT]] i stedet for en specifik person. Foreløbigt er den rolle fjernet sa prototypen er designet så en rolle varetages af en bestemt person. Det kan laves om, men det skal drøftes først hvis det skal være.
-* Vi mangler datamodel til servere og driftsfaciliteter. Backburner.
+* &lt;strike&gt;Vi mangler datamodel til servere og driftsfaciliteter. Backburner.&lt;/strike&gt;
 * Der skal køres et cronjob der refresher data. Sandsynligvis [https://gist.github.com/mtyeh411/6117098 dette script]. Måske også noget der kalder runJobs.php med jævn mellemrum.
 * Serverens timezone skal skiftes til CET.
-* Alle skabeloner skal have default værdier så der kan søges på &quot;tomme&quot; eller &quot;uudfyldte&quot; felter</text>
-      <sha1>nq0szy8s2rra8s5fpbwzb6sxzt66bs0</sha1>
+* &lt;strike&gt;Alle skabeloner skal have default værdier så der kan søges på &quot;tomme&quot; eller &quot;uudfyldte&quot; felter&lt;/strike&gt;</text>
+      <sha1>ncp84asufejgak8h3cfhesst9z9z1bc</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
@@ -343,15 +348,15 @@ Det er rart at kunne tilføje link til leverandørens hjemmeside.</text>
     <ns>10</ns>
     <id>8</id>
     <revision>
-      <id>450</id>
-      <parentid>440</parentid>
-      <timestamp>2015-05-28T14:20:14Z</timestamp>
+      <id>503</id>
+      <parentid>502</parentid>
+      <timestamp>2015-05-31T12:18:58Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <comment>tilføj afhængigheder, skift outformat til list</comment>
-      <text xml:space="preserve" bytes="818">&lt;noinclude&gt;
+      <comment>fjollet fejl i propertynavn</comment>
+      <text xml:space="preserve" bytes="936">&lt;noinclude&gt;
 [[Category:SeMaWi]]
 
 This is the &quot;Leverandør&quot; template.
@@ -387,9 +392,11 @@ Edit the page to see the template text.
 | {{#ask: [[Category:Afhængigheder]] [[AfhængighedLeverandør::{{FULLPAGENAME}}]] | format=list}}
 |}
 
+[[LeverandørHarSystemer::{{#ask: [[Category:Systemer]] [[SystemLeverandør::{{FULLPAGENAME}}]] | format=count}}| ]]
+
 [[Kategori:Leverandører]]
 &lt;/includeonly&gt;</text>
-      <sha1>7nfujw96ahuuq24keamrze2yhnqxmkx</sha1>
+      <sha1>gg8otkntoqby3s24b41j7yfia48hvlp</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
@@ -454,17 +461,31 @@ if a page with that name already exists, you will be sent to a form to edit that
     <ns>14</ns>
     <id>11</id>
     <revision>
-      <id>30</id>
-      <timestamp>2015-05-22T11:36:27Z</timestamp>
+      <id>504</id>
+      <parentid>30</parentid>
+      <timestamp>2015-05-31T12:49:04Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <comment>kategorisering, og specificering af den anvendte form</comment>
-      <text xml:space="preserve" bytes="50">[[Category:SeMaWi]]
+      <comment>bedre levandøroversigt</comment>
+      <text xml:space="preserve" bytes="297">[[Category:SeMaWi]]
+
+{{#ask:[[Category:Leverandører]]
+|?LeverandørHarSystemer=Antal systemer
+|format=datatables
+|link=all
+|limit=500
+|headers=show
+|mainlabel=Navn
+|class=sortable wikitable smwtable
+|sort=LeverandørHarSystemer
+|order=descending
+|theme=bootstrap
+}}
 
 {{#default_form:Leverandør}}</text>
-      <sha1>lxb5krbt6ht2lcich5ylvavet4rcmni</sha1>
+      <sha1>131k82vjlgkcld58l65u8stezexq2wo</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
@@ -531,15 +552,15 @@ Afhængigheder kan klassificeres forskelligt. For eksempel, php er et programmer
     <ns>10</ns>
     <id>14</id>
     <revision>
-      <id>40</id>
-      <parentid>39</parentid>
-      <timestamp>2015-05-22T12:38:06Z</timestamp>
+      <id>496</id>
+      <parentid>40</parentid>
+      <timestamp>2015-05-30T10:53:12Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <comment>kategori tilføjet</comment>
-      <text xml:space="preserve" bytes="470">&lt;noinclude&gt;
+      <comment>tilføj deriverede egenskaber: spor de systemer der bruger denne afhængighed</comment>
+      <text xml:space="preserve" bytes="631">&lt;noinclude&gt;
 [[Category:SeMaWi]]
 
 This is the &quot;Afhængighed&quot; template.
@@ -559,9 +580,15 @@ Edit the page to see the template text.
 | {{#arraymap:{{{Klassifikation|}}}|,|x|[[AfhængighedKlassifikation::x]]}}
 |}
 
+{| class=&quot;wikitable&quot;
+|+ Deriverede egenskaber
+! Anvendt i systemer:
+| {{#ask: [[Category:Systemer]] [[SystemAfhængighed::{{FULLPAGENAME}}]] | format=list}}
+|}
+
 [[Kategori:Afhængigheder]]
 &lt;/includeonly&gt;</text>
-      <sha1>0lbytfz6uacsoav1dkgua1uz6gth97t</sha1>
+      <sha1>o4i6y0u1qrnno7hb5pax3g6h1fvo5w1</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
@@ -1694,6 +1721,29 @@ This is a property of type [[Has type::Number]].
 
 Dette er et kalkuleret property der er anvendt på skabelonen OrganisatoriskEnhed. Property'et viser antallet af systemer med personfølsom information en bestemt organisatorisk enhed har som ikke er anmeldt [[Datatilsynet]].</text>
       <sha1>n4czrmfpz1j9ids2yp6xk0lx6i9lut6</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:LeverandørHarSystemer</title>
+    <ns>102</ns>
+    <id>273</id>
+    <revision>
+      <id>501</id>
+      <parentid>500</parentid>
+      <timestamp>2015-05-31T12:16:16Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategorisering og dokumentation</comment>
+      <text xml:space="preserve" bytes="169">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Number]].
+
+Dette property er kalkuleret og repræsenterer hvor mange systemer en Leverandør er ansvarlig for</text>
+      <sha1>407pnqn31sca088jmepyfi0e9dzqfa7</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
