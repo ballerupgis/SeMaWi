@@ -90,18 +90,24 @@ Dette kategori indeholder alle sider der er implementeret som del af prototype i
     <ns>0</ns>
     <id>4</id>
     <revision>
-      <id>497</id>
-      <parentid>494</parentid>
-      <timestamp>2015-05-30T10:55:02Z</timestamp>
+      <id>509</id>
+      <parentid>508</parentid>
+      <timestamp>2015-05-31T16:04:02Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <minor/>
-      <comment>/* Deployment Notes */</comment>
-      <text xml:space="preserve" bytes="6871">[[Category:SeMaWi]]
+      <comment>/* 31 maj 2015 */</comment>
+      <text xml:space="preserve" bytes="7303">[[Category:SeMaWi]]
 
 =Deployment Notes=
+
+==31 maj 2015==
+
+* To nye analytiske forbedringer:
+** Brugersider viser nu hvilke leverandører en bruger har relation til, via roller i forbindelse med systemer den leverandør er ansvarlig for
+** Leverandørsider viser nu hvilke brugere er relevante for den leverandør via de systemer der er leveret
+* der er implementeret væsentlig pænere oversigter på kategorisiderne [[:Category:Systemer]] og [[:Category:Leverandører]].
 
 ==30 maj 2015==
 
@@ -230,7 +236,7 @@ Designbeslutning i øjeblikket er, at holde fast i almindelige brugersider med t
 * Der skal køres et cronjob der refresher data. Sandsynligvis [https://gist.github.com/mtyeh411/6117098 dette script]. Måske også noget der kalder runJobs.php med jævn mellemrum.
 * Serverens timezone skal skiftes til CET.
 * &lt;strike&gt;Alle skabeloner skal have default værdier så der kan søges på &quot;tomme&quot; eller &quot;uudfyldte&quot; felter&lt;/strike&gt;</text>
-      <sha1>ncp84asufejgak8h3cfhesst9z9z1bc</sha1>
+      <sha1>lsguqp09j4fo2ix236dwt9ptnr01yyf</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
@@ -895,15 +901,15 @@ This is a property of type [[Has type::Telephone number]].</text>
     <ns>10</ns>
     <id>35</id>
     <revision>
-      <id>480</id>
-      <parentid>479</parentid>
-      <timestamp>2015-05-29T08:35:57Z</timestamp>
+      <id>507</id>
+      <parentid>480</parentid>
+      <timestamp>2015-05-31T15:59:15Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <comment>stavefejl i property</comment>
-      <text xml:space="preserve" bytes="1285">&lt;noinclude&gt;
+      <comment>sporing af leverandører med relation til en bruger</comment>
+      <text xml:space="preserve" bytes="1714">&lt;noinclude&gt;
 [[Category:SeMaWi]]
 
 This is the &quot;Bruger&quot; template.
@@ -945,6 +951,9 @@ Edit the page to see the template text.
 |- 
 ! Budgetansvarlig for:
 | {{#ask: [[Category:Systemer]] [[SystemBudgetansvarlig::{{FULLPAGENAME}}]] | format=list}}
+|- 
+! Har relation til leverandører:
+| {{#ask: [[Category:Leverandører]] [[-SystemLeverandør::&lt;q&gt;[[Category:Systemer]] [[SystemEjer::{{FULLPAGENAME}}]]&lt;/q&gt;]] OR [[Category:Leverandører]] [[-SystemLeverandør::&lt;q&gt;[[Category:Systemer]] [[SystemAdministrator::{{FULLPAGENAME}}]]&lt;/q&gt;]] OR [[Category:Leverandører]] [[-SystemLeverandør::&lt;q&gt;[[Category:Systemer]] [[SystemBudgetansvarlig::{{FULLPAGENAME}}]]&lt;/q&gt;]] | format=list}}
 |}
 
 [[BrugerEjerSystemerMedPFI::{{#ask: [[Category:Systemer]] [[SystemEjer::{{FULLPAGENAME}}]] [[SystemHarPersonFølsomInfo::Yes]] | format=count}}| ]]
@@ -953,7 +962,7 @@ Edit the page to see the template text.
 
 [[Kategori:Brugere]]
 &lt;/includeonly&gt;</text>
-      <sha1>2q41lw9d7gb6rsz9m7i526v0mxbndoq</sha1>
+      <sha1>97bwlpbfo6vgwyxhn1xv25tr1nfd64g</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
