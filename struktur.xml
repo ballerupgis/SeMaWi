@@ -348,15 +348,15 @@ Det er rart at kunne tilføje link til leverandørens hjemmeside.</text>
     <ns>10</ns>
     <id>8</id>
     <revision>
-      <id>503</id>
-      <parentid>502</parentid>
-      <timestamp>2015-05-31T12:18:58Z</timestamp>
+      <id>506</id>
+      <parentid>505</parentid>
+      <timestamp>2015-05-31T15:25:07Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <comment>fjollet fejl i propertynavn</comment>
-      <text xml:space="preserve" bytes="936">&lt;noinclude&gt;
+      <comment>fix til glemt hardcoded leverandørnavn</comment>
+      <text xml:space="preserve" bytes="1553">&lt;noinclude&gt;
 [[Category:SeMaWi]]
 
 This is the &quot;Leverandør&quot; template.
@@ -390,13 +390,17 @@ Edit the page to see the template text.
 |- 
 ! Ansvarlig for afhængigheder
 | {{#ask: [[Category:Afhængigheder]] [[AfhængighedLeverandør::{{FULLPAGENAME}}]] | format=list}}
+|- 
+! Har relation til brugere
+| {{#ask: [[Category:Brugere]] [[-SystemEjer::&lt;q&gt;[[Category:Systemer]] [[SystemLeverandør::{{FULLPAGENAME}}]] OR [[Category:Systemer]] [[SystemDriftsleverandør::{{FULLPAGENAME}}]]&lt;/q&gt;]] OR [[Category:Brugere]] [[-SystemAdministrator::&lt;q&gt;[[Category:Systemer]] [[SystemLeverandør::{{FULLPAGENAME}}]] OR [[Category:Systemer]] [[SystemDriftsleverandør::{{FULLPAGENAME}}]]&lt;/q&gt;]]OR [[Category:Brugere]] [[-SystemBudgetansvarlig::&lt;q&gt;[[Category:Systemer]] [[SystemLeverandør::{{FULLPAGENAME}}]] OR [[Category:Systemer]] [[SystemDriftsleverandør::{{FULLPAGENAME}}]]&lt;/q&gt;]]
+ | format=list}}
 |}
 
 [[LeverandørHarSystemer::{{#ask: [[Category:Systemer]] [[SystemLeverandør::{{FULLPAGENAME}}]] | format=count}}| ]]
 
 [[Kategori:Leverandører]]
 &lt;/includeonly&gt;</text>
-      <sha1>gg8otkntoqby3s24b41j7yfia48hvlp</sha1>
+      <sha1>k428y9552l4byqdo7u6pjfo9hjdbojp</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
