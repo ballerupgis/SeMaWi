@@ -22,6 +22,8 @@ SeMaWi er udviklet i samarbejde med [Josef Assad](mailto:josef@josefassad.com).
 8. Skift sidelogo efter behov; instruktioner [her](https://www.mediawiki.org/wiki/Manual:$wgLogo).
 9. I filen `SemanticMediaWiki.settings.php` skift værdien af variablen `smwgQMaxSize` til 100.
 10. I filen `SemanticMediaWiki.settings.php` skift værdien af variablen `smwgQMaxDepth` til 10.
+11. Installer [MasonryMainPage](https://github.com/enterprisemediawiki/MasonryMainPage).
+12. I filen `LocalSettings.php` tilføj `$wgIncludejQueryMigrate = true;`.
 
 # Noter
 
