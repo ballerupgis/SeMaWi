@@ -90,17 +90,24 @@ Dette kategori indeholder alle sider der er implementeret som del af prototype i
     <ns>0</ns>
     <id>4</id>
     <revision>
-      <id>509</id>
-      <parentid>508</parentid>
-      <timestamp>2015-05-31T16:04:02Z</timestamp>
+      <id>581</id>
+      <parentid>553</parentid>
+      <timestamp>2015-06-02T16:21:04Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <comment>/* 31 maj 2015 */</comment>
-      <text xml:space="preserve" bytes="7303">[[Category:SeMaWi]]
+      <comment>/* 2 juni 2015 */</comment>
+      <text xml:space="preserve" bytes="8432">[[Category:SeMaWi]]
 
 =Deployment Notes=
+
+==2 juni 2015==
+
+* Masonry bug er nu fixed og der er sendt patch til udvikleren.
+* Forsiden nu med pænere blocks.
+* Side til aggregering af udelukkende maskinlæsbar info oprettet: [[StatistikBackend]]
+* SemanticResultFormats fungerer nu og er dmo'et på forsiden.
 
 ==31 maj 2015==
 
@@ -108,6 +115,7 @@ Dette kategori indeholder alle sider der er implementeret som del af prototype i
 ** Brugersider viser nu hvilke leverandører en bruger har relation til, via roller i forbindelse med systemer den leverandør er ansvarlig for
 ** Leverandørsider viser nu hvilke brugere er relevante for den leverandør via de systemer der er leveret
 * der er implementeret væsentlig pænere oversigter på kategorisiderne [[:Category:Systemer]] og [[:Category:Leverandører]].
+* [https://github.com/enterprisemediawiki/MasonryMainPage MasonryFrontPage] er installeret men der er en [https://github.com/enterprisemediawiki/MasonryMainPage/issues/4 bug]. Afventer afklaring med udvikleren.
 
 ==30 maj 2015==
 
@@ -209,6 +217,10 @@ Dette kategori indeholder alle sider der er implementeret som del af prototype i
 
 =Design notes=
 
+=Generelt=
+
+Vi forsøger at komme så langt som muligt med de færreste installerede udvidelser. Det er ikke for at begrænse scope. Vi forsøger at holde antallet af udvidelserne nede af hensyn til systemets tekniske bæredygtighed. Jo flere parter vi er afhængige af jo mere arbejde det vil kræve at holde SeMaWi kørende. Det har vi allerede set i et tilfælde, hvor vi [https://github.com/enterprisemediawiki/MasonryMainPage/issues/4 fandt] og [https://github.com/JosefAssad/MasonryMainPage/commit/6e99942d7f8958a6aa6f04c626d8e620e7b44ce9 rettede] en bug i [https://www.mediawiki.org/wiki/Extension:MasonryMainPage MasonryMainPage] udvidelsen.
+
 ==Brugere/Roller==
 
 Der skal integreres til BALK's AD på sigt, men det vil ikke ske i denne prototypefase. Det påvirker alligevel prototypens design i denne tidlige fase, da vi skal designe hvordan de forskellige stakeholders og ansvarshavende skal modelleres i [[SeMaWi]].
@@ -236,43 +248,7 @@ Designbeslutning i øjeblikket er, at holde fast i almindelige brugersider med t
 * Der skal køres et cronjob der refresher data. Sandsynligvis [https://gist.github.com/mtyeh411/6117098 dette script]. Måske også noget der kalder runJobs.php med jævn mellemrum.
 * Serverens timezone skal skiftes til CET.
 * &lt;strike&gt;Alle skabeloner skal have default værdier så der kan søges på &quot;tomme&quot; eller &quot;uudfyldte&quot; felter&lt;/strike&gt;</text>
-      <sha1>lsguqp09j4fo2ix236dwt9ptnr01yyf</sha1>
-      <model>wikitext</model>
-      <format>text/x-wiki</format>
-    </revision>
-  </page>
-  <page>
-    <title>Forside</title>
-    <ns>0</ns>
-    <id>1</id>
-    <revision>
-      <id>425</id>
-      <parentid>89</parentid>
-      <timestamp>2015-05-28T12:38:26Z</timestamp>
-      <contributor>
-        <username>Josef</username>
-        <id>1</id>
-      </contributor>
-      <comment>nye brugernavne</comment>
-      <text xml:space="preserve" bytes="727">[[Category:SeMaWi]]
-
-Velkommen til SeMaWi, Ballerup Kommunes prototype Semantic MediaWiki.
-
-Der skal nok komme mere interessant indhold på forsiden, men fokus i første omgang er på rå funktionalitet.
-
-Kontaktpersoner på implementering af prototypen er:
-
-* [[User:Ldg|Lars Dalgaard]], Ballerup Kommune - Projektansvarlig
-* [[User:Andb|Anders Kragh Barfod]], Ballerup Kommune - Teknisk kontaktperson
-* [[User:Josef|Josef Assad]] - Not a Number - Design og implementering
-
-Der er oprettet en [[Sandkasse]] så man kan afprøve denne wikis syntax.
-
-=Relevante sider=
-
-* [[DeploymentNotes|Noter om deployering af denne prototype]]
-* [[:Category:SeMaWi]] viser en oversigt over samtlige sider der er designet til denne prototype</text>
-      <sha1>b71cxbidg7g511w6smh77ztokg67ofc</sha1>
+      <sha1>4aqpcgfzp3b3mel2iumqwi1j49xz9j5</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
@@ -1757,6 +1733,223 @@ This is a property of type [[Has type::Number]].
 
 Dette property er kalkuleret og repræsenterer hvor mange systemer en Leverandør er ansvarlig for</text>
       <sha1>407pnqn31sca088jmepyfi0e9dzqfa7</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:ForsideStatusDiagram00 label</title>
+    <ns>102</ns>
+    <id>286</id>
+    <revision>
+      <id>564</id>
+      <parentid>563</parentid>
+      <timestamp>2015-06-02T14:45:21Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>kategorisering</comment>
+      <text xml:space="preserve" bytes="67">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Text]].</text>
+      <sha1>fpidybtc3odu8xvvcqimfccn86d87qg</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:ForsideStatusDiagram00 value</title>
+    <ns>102</ns>
+    <id>287</id>
+    <revision>
+      <id>566</id>
+      <parentid>565</parentid>
+      <timestamp>2015-06-02T14:46:03Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>kategorisering</comment>
+      <text xml:space="preserve" bytes="69">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Number]].</text>
+      <sha1>64x5t5twqlar1k1xjibfmfabkx7z3xb</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>StatistikBackend</title>
+    <ns>0</ns>
+    <id>288</id>
+    <revision>
+      <id>567</id>
+      <timestamp>2015-06-02T14:47:53Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>ny backend side til analyse, 2 første interne subobjekter</comment>
+      <text xml:space="preserve" bytes="535">[[Category:SeMaWi]]
+
+Denne side indeholder subobjekter der skal anvendes til analyse forskellige steder. Denne side er udelukkende til maskinlæsbar data.
+
+{{#subobject:|StatUser=ForsideStatusDiagram00|ForsideStatusDiagram00_label=I brug|ForsideStatusDiagram00_value={{#ask: [[Category:Systemer]] [[SystemStatus::I brug]] | format=count}}}}
+{{#subobject:|StatUser=ForsideStatusDiagram00|ForsideStatusDiagram00_label=Pensioneret|ForsideStatusDiagram00_value={{#ask: [[Category:Systemer]] [[SystemStatus::Pensioneret]] | format=count}}}}</text>
+      <sha1>j326icwshjx3vbkovxj5fg94nqpmw1x</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Skabelon:ForsideOm</title>
+    <ns>10</ns>
+    <id>274</id>
+    <revision>
+      <id>577</id>
+      <parentid>574</parentid>
+      <timestamp>2015-06-02T16:14:35Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>kategorisering</comment>
+      <text xml:space="preserve" bytes="712">&lt;noinclude&gt;
+[[Category:SeMaWi]]
+
+Edit the page to see the template text.
+&lt;/noinclude&gt;&lt;includeonly&gt;{{#masonry-block: title=Om SeMaWi
+ | color=blue
+ | width=1
+ | body =
+Velkommen til SeMaWi, Ballerup Kommunes prototype Semantic MediaWiki.
+
+Der skal nok komme mere interessant indhold på forsiden, men fokus i første omgang er på rå funktionalitet.
+
+Kontaktpersoner på implementering af prototypen er:
+
+* [[User:Ldg|Lars Dalgaard]], Ballerup Kommune - Projektansvarlig
+* [[User:Andb|Anders Kragh Barfod]], Ballerup Kommune - Teknisk kontaktperson
+* [[User:Josef|Josef Assad]] - Not a Number - Design og implementering
+
+Der er oprettet en [[Sandkasse]] så man kan afprøve denne wikis syntax.
+}}
+&lt;/includeonly&gt;</text>
+      <sha1>hvm20uploega309h77pl7uuqm93c5gn</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Skabelon:ForsideStatusDiagram</title>
+    <ns>10</ns>
+    <id>285</id>
+    <revision>
+      <id>578</id>
+      <parentid>575</parentid>
+      <timestamp>2015-06-02T16:15:32Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>kategorisering</comment>
+      <text xml:space="preserve" bytes="527">&lt;noinclude&gt;
+[[Category:SeMaWi]]
+
+Edit the page to see the template text.
+&lt;/noinclude&gt;&lt;includeonly&gt;{{#masonry-block: title=Porteføljens statusstastistik
+ | width=2
+ | body =
+{{#ask:[[StatUser::ForsideStatusDiagram00]]
+|?ForsideStatusDiagram00_label
+|?ForsideStatusDiagram00_value
+|format=jqplotchart
+|charttype=pie
+|width=30%
+|direction=vertical
+|mainlabel=-
+|limit=20
+|link=all
+|headers=show
+|highlighter=yes
+|datalabels=value
+|valueformat=%d
+|theme=vector
+|chartcolor=lightblue,lightgreen
+|chartlegend=ne
+}}
+}}
+&lt;/includeonly&gt;</text>
+      <sha1>7qaksm4kjwi76uk4ra86w2hcv6t0s0t</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Skabelon:ForsideRelevanteSider</title>
+    <ns>10</ns>
+    <id>276</id>
+    <revision>
+      <id>579</id>
+      <parentid>540</parentid>
+      <timestamp>2015-06-02T16:16:11Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>kategorisering</comment>
+      <text xml:space="preserve" bytes="349">&lt;noinclude&gt;
+[[Category:SeMaWi]]
+
+Edit the page to see the template text.
+&lt;/noinclude&gt;&lt;includeonly&gt;{{#masonry-block: title=Relevante sider
+ | color=blue
+ | width=1
+ | body =
+* [[DeploymentNotes|Noter om deployering af denne prototype]]
+* [[:Category:SeMaWi]] viser en oversigt over samtlige sider der er designet til denne prototype
+}}
+&lt;/includeonly&gt;</text>
+      <sha1>ebcar6i34x77vtb8n1m5q5in12iufs3</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Skabelon:ForsideStatistik</title>
+    <ns>10</ns>
+    <id>284</id>
+    <revision>
+      <id>580</id>
+      <parentid>549</parentid>
+      <timestamp>2015-06-02T16:17:43Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategorisering</comment>
+      <text xml:space="preserve" bytes="432">&lt;noinclude&gt;
+[[Category:SeMaWi]]
+
+Edit the page to see the template text.
+&lt;/noinclude&gt;&lt;includeonly&gt;{{#masonry-block: title=Statistik
+ | color=blue
+ | width=1
+ | body =
+Systemer: [[:Category:Systemer|{{#ask: [[Category:Systemer]]|format=count}}]]
+
+Leverandører: [[:Category:Leverandører|{{#ask: [[Category:Leverandører]]|format=count}}]]
+
+Brugere: [[:Category:Brugere|{{#ask: [[Category:Brugere]]|format=count}}]]
+}}
+&lt;/includeonly&gt;</text>
+      <sha1>niuuwlmsshtdagaww66vdveezz1bbnz</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
