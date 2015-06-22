@@ -25,6 +25,17 @@ SeMaWi er udviklet i samarbejde med [Josef Assad](mailto:josef@josefassad.com).
 11. Installer [MasonryMainPage](https://github.com/enterprisemediawiki/MasonryMainPage).
 12. I filen `LocalSettings.php` tilføj `$wgIncludejQueryMigrate = true;`.
 
+## KLE Emneplan 2.0
+
+Hvis det ønskes kan elementerne fra KLE Emneplan 2.0 indlæses så de kan anvendes til tagging og dermed klassificering, søgning, filtrering, og analyse på tværs af resten af datamodellen.
+
+Det sker ved import af de to XML filer (i denne rækkefølge):
+
+1. KLE-struktur.xml
+2. KLE-data.xml
+
+Da dette er optionelt skal der manuelt tilføjes felter der peger på KLE-struktur elementer i de øvrige klasser.
+
 # Noter
 
 MediaWiki som er fundamentet for SeMaWi er designet til store sites. Mange deployments kan være relativ små ift. MediaWiki's primære use case som er WikiPedia. Som følge kan det blive nødvendigt med nogle små workarounds som fx. kørsel af `runJobs.php` og/eller `SMW_refreshData.php` i cronjobs.
