@@ -29,10 +29,7 @@ SeMaWi er udviklet i samarbejde med [Josef Assad](mailto:josef@josefassad.com).
 
 Hvis det ønskes kan elementerne fra KLE Emneplan 2.0 indlæses så de kan anvendes til tagging og dermed klassificering, søgning, filtrering, og analyse på tværs af resten af datamodellen.
 
-Det sker ved import af de to XML filer (i denne rækkefølge):
-
-1. KLE-struktur.xml
-2. KLE-data.xml
+Der er 4 trin i processen. Først importeres XML filen `KLE-struktur.xml`. Derefter importeres de 4 CSV filer som ligger i mappen KLE-data. Efter import af struktur og data anbefales det at refreshe SMW ved at køre de to backend scripts `SMW_refreshData.php` og derefter `runJobs.php`.
 
 Da dette er optionelt skal der manuelt tilføjes felter der peger på KLE-struktur elementer i de øvrige klasser.
 
