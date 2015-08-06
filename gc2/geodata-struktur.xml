@@ -1,0 +1,445 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.9/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.9/ http://www.mediawiki.org/xml/export-0.9.xsd" version="0.9" xml:lang="en">
+  <siteinfo>
+    <sitename>Josef's Development Wiki</sitename>
+    <dbname>wiki</dbname>
+    <base>http://dev/wiki/index.php/Main_Page</base>
+    <generator>MediaWiki 1.24.1</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Josef's Development Wiki</namespace>
+      <namespace key="5" case="first-letter">Josef's Development Wiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="102" case="first-letter">Property</namespace>
+      <namespace key="103" case="first-letter">Property talk</namespace>
+      <namespace key="104" case="first-letter">Type</namespace>
+      <namespace key="105" case="first-letter">Type talk</namespace>
+      <namespace key="106" case="first-letter">Form</namespace>
+      <namespace key="107" case="first-letter">Form talk</namespace>
+      <namespace key="108" case="first-letter">Concept</namespace>
+      <namespace key="109" case="first-letter">Concept talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Property:Geodata extra</title>
+    <ns>102</ns>
+    <id>6782</id>
+    <revision>
+      <id>9778</id>
+      <parentid>9777</parentid>
+      <timestamp>2015-08-04T13:38:21Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
+      <text xml:space="preserve" bytes="159">[[Category:SeMaWi]] [[Category:SeMaWi_Geodata]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::Emne]].</text>
+      <sha1>1law3g0ehuzvg91ruhr8hyxbdkvjmeg</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Geodata layergroup</title>
+    <ns>102</ns>
+    <id>6783</id>
+    <revision>
+      <id>9780</id>
+      <parentid>9779</parentid>
+      <timestamp>2015-08-04T13:38:21Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
+      <text xml:space="preserve" bytes="95">[[Category:SeMaWi]] [[Category:SeMaWi_Geodata]]
+
+This is a property of type [[Has type::Text]].</text>
+      <sha1>mqeylj0t5cxizeimd9sq6397tqd8jwf</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Geodata f table abstract</title>
+    <ns>102</ns>
+    <id>6788</id>
+    <revision>
+      <id>9790</id>
+      <parentid>9789</parentid>
+      <timestamp>2015-08-04T13:38:22Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
+      <text xml:space="preserve" bytes="95">[[Category:SeMaWi]] [[Category:SeMaWi_Geodata]]
+
+This is a property of type [[Has type::Text]].</text>
+      <sha1>mqeylj0t5cxizeimd9sq6397tqd8jwf</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Geodata type</title>
+    <ns>102</ns>
+    <id>6791</id>
+    <revision>
+      <id>9796</id>
+      <parentid>9795</parentid>
+      <timestamp>2015-08-04T13:38:22Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
+      <text xml:space="preserve" bytes="320">[[Category:SeMaWi]] [[Category:SeMaWi_Geodata]]
+
+This is a property of type [[Has type::Text]].
+
+The allowed values for this property are:
+* [[Allows value::GEOMETRY]]
+* [[Allows value::MULTILINESTRING]]
+* [[Allows value::MULTIPOINT]]
+* [[Allows value::MULTIPOLYGON]]
+* [[Allows value::POINT]]
+* [[Allows value::RASTER]]</text>
+      <sha1>edkx4594ucutmtkiluq28hqcj96d4rr</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Geodata f table schema</title>
+    <ns>102</ns>
+    <id>6794</id>
+    <revision>
+      <id>9802</id>
+      <parentid>9801</parentid>
+      <timestamp>2015-08-04T13:38:22Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
+      <text xml:space="preserve" bytes="95">[[Category:SeMaWi]] [[Category:SeMaWi_Geodata]]
+
+This is a property of type [[Has type::Text]].</text>
+      <sha1>mqeylj0t5cxizeimd9sq6397tqd8jwf</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Geodata srid</title>
+    <ns>102</ns>
+    <id>6795</id>
+    <revision>
+      <id>9804</id>
+      <parentid>9803</parentid>
+      <timestamp>2015-08-04T13:38:22Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
+      <text xml:space="preserve" bytes="95">[[Category:SeMaWi]] [[Category:SeMaWi_Geodata]]
+
+This is a property of type [[Has type::Text]].</text>
+      <sha1>mqeylj0t5cxizeimd9sq6397tqd8jwf</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Geodata ejer</title>
+    <ns>102</ns>
+    <id>6801</id>
+    <revision>
+      <id>9816</id>
+      <parentid>9815</parentid>
+      <timestamp>2015-08-04T13:38:22Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
+      <text xml:space="preserve" bytes="141">[[Category:SeMaWi Geodata]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::Bruger]].</text>
+      <sha1>iuzjkcjyg36nc7i4duuzy7vnbu6yy16</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Category:SeMaWi Geodata</title>
+    <ns>14</ns>
+    <id>6802</id>
+    <revision>
+      <id>9818</id>
+      <parentid>9817</parentid>
+      <timestamp>2015-08-04T13:38:22Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 revision imported</comment>
+      <text xml:space="preserve" bytes="153">[[Category:SeMaWi Geodata]]
+
+Denne side indeholder Semantic MEdiaWiki elementerne der sammen danner datamodel for geodata tabeller i Geocloud 2 systemet.</text>
+      <sha1>ro3iv04ohgut3sul042l7m6ktxpeg8l</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Geodata f table title</title>
+    <ns>102</ns>
+    <id>6797</id>
+    <revision>
+      <id>9820</id>
+      <parentid>9819</parentid>
+      <timestamp>2015-08-04T13:56:39Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="75">[[Category:SeMaWi Geodata]]
+
+This is a property of type [[Has type::Text]].</text>
+      <sha1>t6t2p2l38ow6mt3apsiz5rub8g2owyp</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Geodata f table name</title>
+    <ns>102</ns>
+    <id>6803</id>
+    <revision>
+      <id>9822</id>
+      <parentid>9821</parentid>
+      <timestamp>2015-08-04T14:06:10Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="75">[[Category:SeMaWi Geodata]]
+
+This is a property of type [[Has type::Text]].</text>
+      <sha1>t6t2p2l38ow6mt3apsiz5rub8g2owyp</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Geodata URL</title>
+    <ns>102</ns>
+    <id>6804</id>
+    <revision>
+      <id>9824</id>
+      <parentid>9823</parentid>
+      <timestamp>2015-08-04T14:07:02Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="74">[[Category:SeMaWi Geodata]]
+
+This is a property of type [[Has type::URL]].</text>
+      <sha1>38wy96je1011rodb5eastlykcj1wj8z</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Geodata</title>
+    <ns>10</ns>
+    <id>6805</id>
+    <revision>
+      <id>9827</id>
+      <parentid>9826</parentid>
+      <timestamp>2015-08-04T14:16:45Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="941">&lt;noinclude&gt;
+[[Category:SeMaWi Geodata]]
+
+This is the &quot;Geodata&quot; template.
+It should be called in the following format:
+&lt;pre&gt;
+{{Geodata
+|Titel=
+|Beskrivelse=
+|Skema=
+|Tabelnavn=
+|Laggruppe=
+|SRID=
+|Geometritype=
+|KLE-numre=
+|Dataansvar=
+|URL=
+}}
+&lt;/pre&gt;
+Edit the page to see the template text.
+&lt;/noinclude&gt;&lt;includeonly&gt;{| class=&quot;wikitable&quot;
+! Titel
+| [[Geodata f table title::{{{Titel|}}}]] 
+|-
+! Beskrivelse
+| [[Geodata f table abstract::{{{Beskrivelse|}}}]] 
+|-
+! Skema
+| [[Geodata f table schema::{{{Skema|}}}]] 
+|-
+! Tabelnavn
+| [[Geodata f table name::{{{Tabelnavn|}}}]] 
+|-
+! Laggruppe
+| [[Geodata layergroup::{{{Laggruppe|}}}]] 
+|-
+! SRID
+| [[Geodata srid::{{{SRID|}}}]] 
+|-
+! Geometritype
+| [[Geodata type::{{{Geometritype|}}}]] 
+|-
+! KLE-numre
+| {{#arraymap:{{{KLE-numre|}}}|,|y|[[Geodata extra::y]]}}
+|-
+! Dataansvar
+| [[Geodata ejer::{{{Dataansvar|}}}]] 
+|-
+! URL
+| [[Geodata URL::{{{URL|}}}]] 
+|}
+
+[[Category:Geodata]]
+&lt;/includeonly&gt;</text>
+      <sha1>es21i5u2c6yt3t5i18qx6nz3shyhknc</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Form:Geodata</title>
+    <ns>106</ns>
+    <id>6806</id>
+    <revision>
+      <id>9829</id>
+      <parentid>9828</parentid>
+      <timestamp>2015-08-04T14:20:04Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="1231">&lt;noinclude&gt;
+[[Category:SeMaWi Geodata]]
+
+This is the &quot;Geodata&quot; form.
+To create a page with this form, enter the page name below;
+if a page with that name already exists, you will be sent to a form to edit that page.
+
+
+{{#forminput:form=Geodata}}
+
+&lt;/noinclude&gt;&lt;includeonly&gt;
+&lt;div id=&quot;wikiPreview&quot; style=&quot;display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;&quot;&gt;&lt;/div&gt;
+{{{for template|Geodata}}}
+{| class=&quot;formtable&quot;
+! Titel: 
+| {{{field|Titel|rows=1}}}
+|-
+! Beskrivelse: 
+| {{{field|Beskrivelse|rows=1}}}
+|-
+! Skema: 
+| {{{field|Skema|rows=1}}}
+|-
+! Tabelnavn: 
+| {{{field|Tabelnavn|rows=1}}}
+|-
+! Laggruppe: 
+| {{{field|Laggruppe|rows=1}}}
+|-
+! SRID: 
+| {{{field|SRID|rows=1}}}
+|-
+! Geometritype: 
+| {{{field|Geometritype}}}
+|-
+! KLE-numre: 
+| {{{field|KLE-numre|values from category=KLE Emner}}}
+|-
+! Dataansvar: 
+| {{{field|Dataansvar|values from category=Brugere}}}
+|-
+! URL: 
+| {{{field|URL}}}
+|}
+{{{end template}}}
+
+'''Free text:'''
+
+{{{standard input|free text|rows=10}}}
+
+
+{{{standard input|summary}}}
+
+{{{standard input|minor edit}}} {{{standard input|watch}}}
+
+{{{standard input|save}}} {{{standard input|preview}}} {{{standard input|changes}}} {{{standard input|cancel}}}
+&lt;/includeonly&gt;</text>
+      <sha1>fbdnvt8oxsdvckot28433dl3kepjzkd</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Geodata</title>
+    <ns>14</ns>
+    <id>7521</id>
+    <revision>
+      <id>10544</id>
+      <timestamp>2015-08-04T15:17:40Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>Created page with &quot;Uses the form [[Has default form::Geodata]] [[Category:SeMaWi Geodata]]&quot;</comment>
+      <text xml:space="preserve" bytes="71">Uses the form [[Has default form::Geodata]]
+[[Category:SeMaWi Geodata]]</text>
+      <sha1>qb7r8hn4q5ic4xgc1kixxmht9hahcrc</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+</mediawiki>

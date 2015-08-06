@@ -1,0 +1,5 @@
+BeautifulSoup==3.2.1
+argparse==1.2.1
+ipython==3.2.1
+lxml==3.4.4
+wsgiref==0.1.2
