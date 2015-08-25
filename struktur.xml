@@ -892,15 +892,15 @@ This is a property of type [[Has type::Telephone number]].</text>
     <ns>10</ns>
     <id>35</id>
     <revision>
-      <id>507</id>
-      <parentid>480</parentid>
-      <timestamp>2015-05-31T15:59:15Z</timestamp>
+      <id>7591</id>
+      <parentid>507</parentid>
+      <timestamp>2015-08-25T09:49:59Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <comment>sporing af leverandører med relation til en bruger</comment>
-      <text xml:space="preserve" bytes="1714">&lt;noinclude&gt;
+      <comment>tilføj tabel med geodata ejerskab</comment>
+      <text xml:space="preserve" bytes="1827">&lt;noinclude&gt;
 [[Category:SeMaWi]]
 
 This is the &quot;Bruger&quot; template.
@@ -947,13 +947,19 @@ Edit the page to see the template text.
 | {{#ask: [[Category:Leverandører]] [[-SystemLeverandør::&lt;q&gt;[[Category:Systemer]] [[SystemEjer::{{FULLPAGENAME}}]]&lt;/q&gt;]] OR [[Category:Leverandører]] [[-SystemLeverandør::&lt;q&gt;[[Category:Systemer]] [[SystemAdministrator::{{FULLPAGENAME}}]]&lt;/q&gt;]] OR [[Category:Leverandører]] [[-SystemLeverandør::&lt;q&gt;[[Category:Systemer]] [[SystemBudgetansvarlig::{{FULLPAGENAME}}]]&lt;/q&gt;]] | format=list}}
 |}
 
+----
+
+= Geodataejerskab =
+
+{{#ask: [[Category:Geodata]] [[Geodata ejer::{{FULLPAGENAME}}]] | format=datatable}}
+
 [[BrugerEjerSystemerMedPFI::{{#ask: [[Category:Systemer]] [[SystemEjer::{{FULLPAGENAME}}]] [[SystemHarPersonFølsomInfo::Yes]] | format=count}}| ]]
 
 [[BrugerEjerSystemerMedPFIUanmeldt::{{#ask: [[Category:Systemer]] [[SystemEjer::{{FULLPAGENAME}}]] [[SystemHarPersonFølsomInfo::Yes]] [[SystemAnmeldtDatatilsynet::No]] | format=count}}| ]]
 
 [[Kategori:Brugere]]
 &lt;/includeonly&gt;</text>
-      <sha1>97bwlpbfo6vgwyxhn1xv25tr1nfd64g</sha1>
+      <sha1>5fyaujy7wz6m4hh222a4g0idtgbbucg</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
