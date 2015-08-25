@@ -397,16 +397,15 @@ Edit the page to see the template text.
     <ns>106</ns>
     <id>9</id>
     <revision>
-      <id>28</id>
-      <parentid>27</parentid>
-      <timestamp>2015-05-22T10:52:36Z</timestamp>
+      <id>7593</id>
+      <parentid>28</parentid>
+      <timestamp>2015-08-25T10:22:04Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <minor/>
-      <comment>begrænse navnefelt til 1 række</comment>
-      <text xml:space="preserve" bytes="912">&lt;noinclude&gt;
+      <comment>tilføj tooltips</comment>
+      <text xml:space="preserve" bytes="1221">&lt;noinclude&gt;
 [[Category:SeMaWi]]
 
 This is the &quot;Leverandør&quot; form.
@@ -420,13 +419,13 @@ if a page with that name already exists, you will be sent to a form to edit that
 &lt;div id=&quot;wikiPreview&quot; style=&quot;display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;&quot;&gt;&lt;/div&gt;
 {{{for template|Leverandør}}}
 {| class=&quot;formtable&quot;
-! Navn: 
+! Navn: {{#info: Angiv venligst leverandørens formelle navn. for eksempel vil Oracles formelle navn være Oracle Danmark ApS.}}
 | {{{field|Navn|rows=1|mandatory|placeholder=Indtast et unikt leverandørnavn}}}
 |-
-! Type: 
+! Type: {{#info: Angiv venligst om leverandøren er privat (for eksempel Microsoft) eller offentlig (for eksempel SBSYS).}}
 | {{{field|Type|mandatory}}}
 |-
-! URL: 
+! URL: {{#info: Hvis leverandøren har en hjemmeside må den gerne angives her.}}
 | {{{field|URL}}}
 |}
 {{{end template}}}
@@ -442,7 +441,7 @@ if a page with that name already exists, you will be sent to a form to edit that
 
 {{{standard input|save}}} {{{standard input|preview}}} {{{standard input|changes}}} {{{standard input|cancel}}}
 &lt;/includeonly&gt;</text>
-      <sha1>ciwlga20nrd0aj0damykr814yegj7if</sha1>
+      <sha1>lranx584xn27wrvnbxwzqyvpkows1ej</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
@@ -969,15 +968,15 @@ Edit the page to see the template text.
     <ns>106</ns>
     <id>36</id>
     <revision>
-      <id>87</id>
-      <parentid>86</parentid>
-      <timestamp>2015-05-27T08:58:30Z</timestamp>
+      <id>7594</id>
+      <parentid>87</parentid>
+      <timestamp>2015-08-25T10:25:27Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <comment>kategori tilføjet</comment>
-      <text xml:space="preserve" bytes="1071">&lt;noinclude&gt;
+      <comment>tilføj tooltips</comment>
+      <text xml:space="preserve" bytes="1481">&lt;noinclude&gt;
 [[Category:SeMaWi]]
 
 This is the &quot;Bruger&quot; form.
@@ -991,19 +990,19 @@ if a page with that name already exists, you will be sent to a form to edit that
 &lt;div id=&quot;wikiPreview&quot; style=&quot;display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;&quot;&gt;&lt;/div&gt;
 {{{for template|Bruger}}}
 {| class=&quot;formtable&quot;
-! Navn: 
+! Navn: {{#info: Angiv venligst brugerens fulde navn.}}
 | {{{field|Navn|rows=1|placeholder=indtast venligst brugerens navn}}}
 |-
-! Stilling: 
+! Stilling: {{#info: Angiv venligst brugerens stilling. For eksempel &quot;Konsulent&quot; eller &quot;Områdechef&quot;.}}
 | {{{field|Stilling|rows=1|placeholder=indtast venligst brugerens stilling}}}
 |-
-! OrgEnhed: 
+! Organisatorisk enhed: {{#info: Angiv venligst hvilken organisatorisk enhed brugeren hører til. For eksempel &quot;Center for Miljø og Teknik&quot; eller &quot;Direktion&quot; eller &quot;Digitalisering&quot;.}}
 | {{{field|OrgEnhed|values from category=Organisatoriske Enheder}}}
 |-
-! Email: 
+! Email: {{#info: Angiv venligst brugerens email adresse.}}
 | {{{field|Email}}}
 |-
-! Telefon: 
+! Telefon: {{#info: Angiv venligst brugerens telefonnummer.}}
 | {{{field|Telefon|hidden}}}
 |}
 {{{end template}}}
@@ -1019,7 +1018,7 @@ if a page with that name already exists, you will be sent to a form to edit that
 
 {{{standard input|save}}} {{{standard input|preview}}} {{{standard input|changes}}} {{{standard input|cancel}}}
 &lt;/includeonly&gt;</text>
-      <sha1>hf1fjdr9rqf7jnhj2za7o0dp07lbp09</sha1>
+      <sha1>k3x7byk8zpui6ggii52gv3izdctfwpy</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
@@ -1378,16 +1377,15 @@ Edit the page to see the template text.
     <ns>106</ns>
     <id>51</id>
     <revision>
-      <id>7585</id>
-      <parentid>6827</parentid>
-      <timestamp>2015-08-25T08:52:06Z</timestamp>
+      <id>7592</id>
+      <parentid>7585</parentid>
+      <timestamp>2015-08-25T10:14:45Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <minor/>
-      <comment>tilføj feltet SystemURL</comment>
-      <text xml:space="preserve" bytes="2080">&lt;noinclude&gt;
+      <comment>tilføj tooltips</comment>
+      <text xml:space="preserve" bytes="4143">&lt;noinclude&gt;
 [[Category:SeMaWi]]
 
 This is the &quot;System&quot; form.
@@ -1401,61 +1399,61 @@ if a page with that name already exists, you will be sent to a form to edit that
 &lt;div id=&quot;wikiPreview&quot; style=&quot;display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;&quot;&gt;&lt;/div&gt;
 {{{for template|System}}}
 {| class=&quot;formtable&quot;
-! Navn: 
+! Navn: {{#info: Angiv venligst systemets formelle navn. For eksempel &quot;Microsoft Windows 10&quot; eller &quot;PostGIS 2.1.8&quot;}}
 | {{{field|Navn|rows=1|placeholder=Indtast et unikt systemnavn}}}
 |-
-! Nummer: 
+! Nummer: {{#info: Angiv venligst systemets interne nummer}}
 | {{{field|Nummer}}}
 |-
-! Status: 
+! Status: {{#info: Angiv venligst systemets status, for eksempel om det er i brug eller pensioneret.}}
 | {{{field|Status}}}
 |-
-! Ejer: 
+! Ejer: {{#info: Angiv venligst brugeren der er systemejer.}}
 | {{{field|Ejer|input type=combobox|values from category=Brugere}}}
 |-
-! Administrator: 
+! Administrator: {{#info: angiv venligst brugeren der har administratoransvar for dette system.}}
 | {{{field|Administrator|input type=combobox|values from category=Brugere}}}
 |-
-! Budgetansvarlig: 
+! Budgetansvarlig: {{#info: Angiv venligst brugeren der har budgetansvar for dette system.}}
 | {{{field|Budgetansvarlig|input type=combobox|values from category=Brugere}}}
 |-
-! Målgruppe: 
+! Målgruppe: {{#info: Angiv venligst hvilken målgruppe systemet er beregnet til. Der kan vælges flere målgrupper.}}
 | {{{field|Målgruppe}}}
 |-
-! Målgruppe (OE): 
+! Målgruppe (OE): {{#info: Angiv venligst hvilke interne organisatoriske enheder systemet servicerer.}}
 | {{{field|MålgruppeOE|input type=combobox|values from category=Organisatoriske Enheder}}}
 |-
-! Leverandør: 
+! Leverandør: {{#info: Vælg venligst systemets leverandør. Det kan være den leverandør som opkræver licensgebyr for eksempel og/eller er direkte ansvarlig for systemets udvikling.}}
 | {{{field|Leverandør|input type=combobox|values from category=Leverandører}}}
 |-
-! Driftsleverandør: 
+! Driftsleverandør: {{#info: Angiv hvilken leverandør det er der drifter systemet.}}
 | {{{field|Driftsleverandør|input type=combobox|values from category=Leverandører}}}
 |-
-! Driftsplacering: 
+! Driftsplacering: {{#info: Vælg venligst om systemet er placeret internt for eksempel i eget datacenter eller eksternt for eksempel i en cloud løsning.}}
 | {{{field|Driftsplacering}}}
 |-
-! Har personfølsom data? 
+! Har personfølsom data? {{#info: Angiv venligst om systemet har personfølsom information.}}
 | {{{field|PersonfølsomInfo}}}
 |-
-! Er anmeldt til Datatilsynet? 
+! Er anmeldt til Datatilsynet? {{#info: Angiv venligst om systemet er anmeldt til Datatilsynet. Dette felt kan springes over for systemer der ikke indeholder personfølsom information.}}
 | {{{field|AnmeldtDatatilsynet}}}
 |-
-! Type personfølsom data: 
+! Type personfølsom data: {{#info: Angiv venligst hvilken type personfølsom information systemet har.. Dette felt kan springes over for systemer der ikke indeholder personfølsom information.}}
 | {{{field|PersonfølsomType}}}
 |-
-! Afhængigheder: 
+! Afhængigheder: {{#info: Vælg eller angiv de systemer eller komponenter der konstituerer afhængigheder for dette system. For eksempel vil php være en afhængighed for et Drupal baseret system.}}
 | {{{field|Afhængigheder|values from category=Afhængigheder}}}
 |-
-! IDM venligt?: 
+! IDM venligt?: {{#info: Angiv venligst om systemet spiller godt sammen med organisationens Identity Management løsning.}}
 | {{{field|IDMVenligt}}}
 |-
-! URL til Dokumentation: 
+! URL til Dokumentation: {{#info: Hvis dette system har dokumentation der er tilgængelig på nettet må URL'en til dette dokumentation angives her.}}
 | {{{field|Dokumentation}}}
 |-
-! KLE emner: 
+! KLE emner: {{#info: Her kan der vælges hvilke KLE emner der er relevante for dette system. Der kan vælges mere end et emne.}}
 | {{{field|KLE|values from category=KLE Emner}}}
 |-
-! Systemets hjemmeside: 
+! Systemets hjemmeside: {{#info: Hvis dette system har en hjemmeside (for eksempel http://www.postgis.net for PostGIS) må det gerne angives her.}}
 | {{{field|URL}}}
 |}
 {{{end template}}}
@@ -1471,7 +1469,7 @@ if a page with that name already exists, you will be sent to a form to edit that
 
 {{{standard input|save}}} {{{standard input|preview}}} {{{standard input|changes}}} {{{standard input|cancel}}}
 &lt;/includeonly&gt;</text>
-      <sha1>ks7as7y384ozaf4f7niq41weo31n0j5</sha1>
+      <sha1>fkgs1khmh2wfj1rlcnwrcisctddaf1o</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
