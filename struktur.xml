@@ -39,14 +39,14 @@
     <ns>2</ns>
     <id>2</id>
     <revision>
-      <id>474</id>
-      <parentid>4</parentid>
-      <timestamp>2015-05-29T07:07:59Z</timestamp>
+      <id>610</id>
+      <parentid>474</parentid>
+      <timestamp>2015-06-26T09:54:42Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <text xml:space="preserve" bytes="326">[[Category:SeMaWi]]
+      <text xml:space="preserve" bytes="350">[[Category:SeMaWi]]
 
 Jeg hedder Josef Assad. Jeg er freelance konsulent og arkitekt på implementering af denne prototype.
 
@@ -58,8 +58,11 @@ Kontaktinfo er som følgende:
 
 =Testsider=
 
-[[Bruger:Josef/PII_report Rapport om personfølsom data]]</text>
-      <sha1>njfa6u4k0l2x3ezsdpiu515xwj0y0q5</sha1>
+[[Bruger:Josef/PII_report Rapport om personfølsom data]]
+
+
+[[Bruger:Josef/MWKB]]</text>
+      <sha1>87n3tvu5vrp3lidf89jwrv2fv94jc32</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
@@ -90,15 +93,16 @@ Dette kategori indeholder alle sider der er implementeret som del af prototype i
     <ns>0</ns>
     <id>4</id>
     <revision>
-      <id>581</id>
-      <parentid>553</parentid>
-      <timestamp>2015-06-02T16:21:04Z</timestamp>
+      <id>604</id>
+      <parentid>581</parentid>
+      <timestamp>2015-06-15T08:59:43Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <comment>/* 2 juni 2015 */</comment>
-      <text xml:space="preserve" bytes="8432">[[Category:SeMaWi]]
+      <minor/>
+      <comment>/* TODO */</comment>
+      <text xml:space="preserve" bytes="8584">[[Category:SeMaWi]]
 
 =Deployment Notes=
 
@@ -246,9 +250,10 @@ Designbeslutning i øjeblikket er, at holde fast i almindelige brugersider med t
 * Der er en del systemer med Budgetansvarlig sat til [[C-MT]] i stedet for en specifik person. Foreløbigt er den rolle fjernet sa prototypen er designet så en rolle varetages af en bestemt person. Det kan laves om, men det skal drøftes først hvis det skal være.
 * &lt;strike&gt;Vi mangler datamodel til servere og driftsfaciliteter. Backburner.&lt;/strike&gt;
 * Der skal køres et cronjob der refresher data. Sandsynligvis [https://gist.github.com/mtyeh411/6117098 dette script]. Måske også noget der kalder runJobs.php med jævn mellemrum.
-* Serverens timezone skal skiftes til CET.
-* &lt;strike&gt;Alle skabeloner skal have default værdier så der kan søges på &quot;tomme&quot; eller &quot;uudfyldte&quot; felter&lt;/strike&gt;</text>
-      <sha1>4aqpcgfzp3b3mel2iumqwi1j49xz9j5</sha1>
+* &lt;strike&gt;Serverens timezone skal skiftes til CET.&lt;/strike&gt;
+* &lt;strike&gt;Alle skabeloner skal have default værdier så der kan søges på &quot;tomme&quot; eller &quot;uudfyldte&quot; felter&lt;/strike&gt;
+* Vi skal lige drøfte hvad der sker wikimæssigt når en leverandør fx. skifter navn (se siderne [[Geodatacentret]] og  [[Orbicon]])</text>
+      <sha1>20ursgg6ns1likotcetplpa3zlzacly</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
@@ -538,15 +543,16 @@ Afhængigheder kan klassificeres forskelligt. For eksempel, php er et programmer
     <ns>10</ns>
     <id>14</id>
     <revision>
-      <id>496</id>
-      <parentid>40</parentid>
-      <timestamp>2015-05-30T10:53:12Z</timestamp>
+      <id>7588</id>
+      <parentid>496</parentid>
+      <timestamp>2015-08-25T08:55:47Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <comment>tilføj deriverede egenskaber: spor de systemer der bruger denne afhængighed</comment>
-      <text xml:space="preserve" bytes="631">&lt;noinclude&gt;
+      <minor/>
+      <comment>tilføj property AfhængighedURL</comment>
+      <text xml:space="preserve" bytes="680">&lt;noinclude&gt;
 [[Category:SeMaWi]]
 
 This is the &quot;Afhængighed&quot; template.
@@ -555,6 +561,7 @@ It should be called in the following format:
 {{Afhængighed
 |Leverandør=
 |Klassifikation=
+|URL=
 }}
 &lt;/pre&gt;
 Edit the page to see the template text.
@@ -564,6 +571,9 @@ Edit the page to see the template text.
 |-
 ! Klassifikation
 | {{#arraymap:{{{Klassifikation|}}}|,|x|[[AfhængighedKlassifikation::x]]}}
+|-
+! URL
+| [[AfhængighedURL::{{{URL|}}}]]
 |}
 
 {| class=&quot;wikitable&quot;
@@ -574,7 +584,7 @@ Edit the page to see the template text.
 
 [[Kategori:Afhængigheder]]
 &lt;/includeonly&gt;</text>
-      <sha1>o4i6y0u1qrnno7hb5pax3g6h1fvo5w1</sha1>
+      <sha1>rnpkdhtto43235171mppepuf7kof0b4</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
@@ -584,14 +594,16 @@ Edit the page to see the template text.
     <ns>106</ns>
     <id>15</id>
     <revision>
-      <id>44</id>
-      <parentid>42</parentid>
-      <timestamp>2015-05-22T12:46:47Z</timestamp>
+      <id>7589</id>
+      <parentid>44</parentid>
+      <timestamp>2015-08-25T08:56:45Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <text xml:space="preserve" bytes="903">&lt;noinclude&gt;
+      <minor/>
+      <comment>tilføj feltet AfhængighedURL</comment>
+      <text xml:space="preserve" bytes="955">&lt;noinclude&gt;
 [[Category:SeMaWi]]
 
 This is the &quot;Afhængighed&quot; form.
@@ -610,6 +622,9 @@ if a page with that name already exists, you will be sent to a form to edit that
 |-
 ! Klassifikation: 
 | {{{field|Klassifikation}}}
+|-
+! Afhængighedens hjemmeside: 
+| {{{field|URL}}}
 |}
 {{{end template}}}
 
@@ -624,7 +639,7 @@ if a page with that name already exists, you will be sent to a form to edit that
 
 {{{standard input|save}}} {{{standard input|preview}}} {{{standard input|changes}}} {{{standard input|cancel}}}
 &lt;/includeonly&gt;</text>
-      <sha1>83tz0d645hj7imc2rno33v6ftjuzv6s</sha1>
+      <sha1>3rqp68t6xdvutad5cens2bfa0wnjm5g</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
@@ -1248,15 +1263,16 @@ Når et system anvender for eksempel Microsoft SQL Server, så er det kategorise
     <ns>10</ns>
     <id>50</id>
     <revision>
-      <id>297</id>
-      <parentid>291</parentid>
-      <timestamp>2015-05-28T10:47:29Z</timestamp>
+      <id>7584</id>
+      <parentid>6825</parentid>
+      <timestamp>2015-08-25T08:51:10Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <comment>tilføj property SystemNavn</comment>
-      <text xml:space="preserve" bytes="1695">&lt;noinclude&gt;
+      <minor/>
+      <comment>tilføj property SystemURL</comment>
+      <text xml:space="preserve" bytes="1807">&lt;noinclude&gt;
 [[Category:SeMaWi]]
 
 This is the &quot;System&quot; template.
@@ -1280,6 +1296,8 @@ It should be called in the following format:
 |Afhængigheder=
 |IDMVenligt=
 |Dokumentation=
+|KLE=
+|URL=
 }}
 &lt;/pre&gt;
 Edit the page to see the template text.
@@ -1334,11 +1352,17 @@ Edit the page to see the template text.
 |-
 ! Dokumentation
 | [[SystemDokumentation::{{{Dokumentation|}}}]]
+|-
+! KLE emner
+| {{#arraymap:{{{KLE|}}}|,|x|[[SystemKLE::x]]}}
+|-
+! URL
+| [[SystemURL::{{{URL|}}}]]
 |}
 
 [[Kategori:Systemer]]
 &lt;/includeonly&gt;</text>
-      <sha1>e4fayda20uxzpopdstlm46xx2ldyfm7</sha1>
+      <sha1>j674mzc03y7qp0lzzvco5pcgamrsodv</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
@@ -1348,15 +1372,16 @@ Edit the page to see the template text.
     <ns>106</ns>
     <id>51</id>
     <revision>
-      <id>308</id>
-      <parentid>299</parentid>
-      <timestamp>2015-05-28T11:57:59Z</timestamp>
+      <id>7585</id>
+      <parentid>6827</parentid>
+      <timestamp>2015-08-25T08:52:06Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <comment>skift dropdown fra namespace User til category Brugere</comment>
-      <text xml:space="preserve" bytes="1968">&lt;noinclude&gt;
+      <minor/>
+      <comment>tilføj feltet SystemURL</comment>
+      <text xml:space="preserve" bytes="2080">&lt;noinclude&gt;
 [[Category:SeMaWi]]
 
 This is the &quot;System&quot; form.
@@ -1420,6 +1445,12 @@ if a page with that name already exists, you will be sent to a form to edit that
 |-
 ! URL til Dokumentation: 
 | {{{field|Dokumentation}}}
+|-
+! KLE emner: 
+| {{{field|KLE|values from category=KLE Emner}}}
+|-
+! Systemets hjemmeside: 
+| {{{field|URL}}}
 |}
 {{{end template}}}
 
@@ -1434,7 +1465,7 @@ if a page with that name already exists, you will be sent to a form to edit that
 
 {{{standard input|save}}} {{{standard input|preview}}} {{{standard input|changes}}} {{{standard input|cancel}}}
 &lt;/includeonly&gt;</text>
-      <sha1>2ei821w6v5it3fegt1h2rscmv362pjc</sha1>
+      <sha1>ks7as7y384ozaf4f7niq41weo31n0j5</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
@@ -1592,15 +1623,14 @@ This is a property of type [[Has type::Text]].</text>
     <ns>8</ns>
     <id>246</id>
     <revision>
-      <id>489</id>
-      <parentid>463</parentid>
-      <timestamp>2015-05-29T09:12:30Z</timestamp>
+      <id>7576</id>
+      <parentid>6829</parentid>
+      <timestamp>2015-08-05T18:58:59Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <comment>links til rapporter</comment>
-      <text xml:space="preserve" bytes="368">
+      <text xml:space="preserve" bytes="456">
 * navigation
 ** mainpage|mainpage-description
 ** recentchanges-url|recentchanges
@@ -1609,7 +1639,10 @@ This is a property of type [[Has type::Text]].</text>
 ** Category:Systemer|Systemerne
 ** Category:Leverandører|Leverandørerne
 ** Category:Brugere|Brugerne
+** Category:Geodata|Geodata
 ** Speciel:FormStart|Ny
+* Portefølje metadata
+** Category:NaN_KLE|KLE Emneplan 2.0
 * Rapporter
 ** Rapporter/PersonfølsomInformation|Personfølsom information
 * SEARCH
@@ -1617,7 +1650,7 @@ This is a property of type [[Has type::Text]].</text>
 * LANGUAGES
 
 [[Category:SeMaWi]]</text>
-      <sha1>g8odiysswut30p4uy8mb0lx9h61xgm8</sha1>
+      <sha1>p2gc8f9xuvgz3dd2icizhrsuxsbisva</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
@@ -1950,6 +1983,215 @@ Brugere: [[:Category:Brugere|{{#ask: [[Category:Brugere]]|format=count}}]]
 }}
 &lt;/includeonly&gt;</text>
       <sha1>niuuwlmsshtdagaww66vdveezz1bbnz</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:SystemKLE</title>
+    <ns>102</ns>
+    <id>6306</id>
+    <revision>
+      <id>6824</id>
+      <parentid>6823</parentid>
+      <timestamp>2015-07-27T22:52:54Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <comment>kategorisering</comment>
+      <text xml:space="preserve" bytes="131">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::Emne]].</text>
+      <sha1>r9cuz1dqqe8ypd89yok75oo6rlke8fk</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Geodata extra</title>
+    <ns>102</ns>
+    <id>6307</id>
+    <revision>
+      <id>6834</id>
+      <parentid>6833</parentid>
+      <timestamp>2015-08-05T18:49:21Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 version importeret</comment>
+      <text xml:space="preserve" bytes="159">[[Category:SeMaWi]] [[Category:SeMaWi_Geodata]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::Emne]].</text>
+      <sha1>1law3g0ehuzvg91ruhr8hyxbdkvjmeg</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Geodata layergroup</title>
+    <ns>102</ns>
+    <id>6308</id>
+    <revision>
+      <id>6836</id>
+      <parentid>6835</parentid>
+      <timestamp>2015-08-05T18:49:21Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 version importeret</comment>
+      <text xml:space="preserve" bytes="95">[[Category:SeMaWi]] [[Category:SeMaWi_Geodata]]
+
+This is a property of type [[Has type::Text]].</text>
+      <sha1>mqeylj0t5cxizeimd9sq6397tqd8jwf</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Geodata f table abstract</title>
+    <ns>102</ns>
+    <id>6309</id>
+    <revision>
+      <id>6838</id>
+      <parentid>6837</parentid>
+      <timestamp>2015-08-05T18:49:21Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 version importeret</comment>
+      <text xml:space="preserve" bytes="95">[[Category:SeMaWi]] [[Category:SeMaWi_Geodata]]
+
+This is a property of type [[Has type::Text]].</text>
+      <sha1>mqeylj0t5cxizeimd9sq6397tqd8jwf</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Geodata type</title>
+    <ns>102</ns>
+    <id>6310</id>
+    <revision>
+      <id>6840</id>
+      <parentid>6839</parentid>
+      <timestamp>2015-08-05T18:49:21Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 version importeret</comment>
+      <text xml:space="preserve" bytes="320">[[Category:SeMaWi]] [[Category:SeMaWi_Geodata]]
+
+This is a property of type [[Has type::Text]].
+
+The allowed values for this property are:
+* [[Allows value::GEOMETRY]]
+* [[Allows value::MULTILINESTRING]]
+* [[Allows value::MULTIPOINT]]
+* [[Allows value::MULTIPOLYGON]]
+* [[Allows value::POINT]]
+* [[Allows value::RASTER]]</text>
+      <sha1>edkx4594ucutmtkiluq28hqcj96d4rr</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Geodata f table schema</title>
+    <ns>102</ns>
+    <id>6311</id>
+    <revision>
+      <id>6842</id>
+      <parentid>6841</parentid>
+      <timestamp>2015-08-05T18:49:21Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 version importeret</comment>
+      <text xml:space="preserve" bytes="95">[[Category:SeMaWi]] [[Category:SeMaWi_Geodata]]
+
+This is a property of type [[Has type::Text]].</text>
+      <sha1>mqeylj0t5cxizeimd9sq6397tqd8jwf</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Geodata srid</title>
+    <ns>102</ns>
+    <id>6312</id>
+    <revision>
+      <id>6844</id>
+      <parentid>6843</parentid>
+      <timestamp>2015-08-05T18:49:21Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>1 version importeret</comment>
+      <text xml:space="preserve" bytes="95">[[Category:SeMaWi]] [[Category:SeMaWi_Geodata]]
+
+This is a property of type [[Has type::Text]].</text>
+      <sha1>mqeylj0t5cxizeimd9sq6397tqd8jwf</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:SystemURL</title>
+    <ns>102</ns>
+    <id>7035</id>
+    <revision>
+      <id>7583</id>
+      <parentid>7582</parentid>
+      <timestamp>2015-08-25T08:50:01Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>kategorisering og dokumentation</comment>
+      <text xml:space="preserve" bytes="267">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::URL]].
+
+Dette property giver mulighed for at dokumentere en URL til systemet. Det giver ofte mening ifm. for eksempel open source systemer. Se [https://github.com/JosefAssad/SeMaWi/issues/15 Github issue 15]</text>
+      <sha1>rm0yzcia0om0nb59iw5lnu8j1j88vrb</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:AfhængighedURL</title>
+    <ns>102</ns>
+    <id>7036</id>
+    <revision>
+      <id>7587</id>
+      <parentid>7586</parentid>
+      <timestamp>2015-08-25T08:54:20Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>kategorisering og dokumentation</comment>
+      <text xml:space="preserve" bytes="151">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::URL]].
+
+Afhængigheder har typisk hjemmesider, som med open source systemer og komponenter.</text>
+      <sha1>9vjc4v2b6z7u8izpwidfab5d6tp3un5</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
