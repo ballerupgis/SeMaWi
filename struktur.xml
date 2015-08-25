@@ -1268,16 +1268,15 @@ Når et system anvender for eksempel Microsoft SQL Server, så er det kategorise
     <ns>10</ns>
     <id>50</id>
     <revision>
-      <id>7584</id>
-      <parentid>6825</parentid>
-      <timestamp>2015-08-25T08:51:10Z</timestamp>
+      <id>7597</id>
+      <parentid>7584</parentid>
+      <timestamp>2015-08-25T12:15:31Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <minor/>
-      <comment>tilføj property SystemURL</comment>
-      <text xml:space="preserve" bytes="1807">&lt;noinclude&gt;
+      <comment>tilføj nyt felt SystemBrugerGeodata</comment>
+      <text xml:space="preserve" bytes="1909">&lt;noinclude&gt;
 [[Category:SeMaWi]]
 
 This is the &quot;System&quot; template.
@@ -1303,6 +1302,7 @@ It should be called in the following format:
 |Dokumentation=
 |KLE=
 |URL=
+|Geodata=
 }}
 &lt;/pre&gt;
 Edit the page to see the template text.
@@ -1363,11 +1363,14 @@ Edit the page to see the template text.
 |-
 ! URL
 | [[SystemURL::{{{URL|}}}]]
+|-
+! Anvendte geodatatabeller
+| {{#arraymap:{{{Geodata|}}}|,|x|[[SystemBrugerGeodata::x]]}}
 |}
 
 [[Kategori:Systemer]]
 &lt;/includeonly&gt;</text>
-      <sha1>j674mzc03y7qp0lzzvco5pcgamrsodv</sha1>
+      <sha1>abxtimqqrugy9dylpzxv0ganodby42c</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
@@ -1377,15 +1380,15 @@ Edit the page to see the template text.
     <ns>106</ns>
     <id>51</id>
     <revision>
-      <id>7592</id>
-      <parentid>7585</parentid>
-      <timestamp>2015-08-25T10:14:45Z</timestamp>
+      <id>7598</id>
+      <parentid>7592</parentid>
+      <timestamp>2015-08-25T12:16:56Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <comment>tilføj tooltips</comment>
-      <text xml:space="preserve" bytes="4143">&lt;noinclude&gt;
+      <comment>tilføj nyt felt SystemBrugerGeodata</comment>
+      <text xml:space="preserve" bytes="4351">&lt;noinclude&gt;
 [[Category:SeMaWi]]
 
 This is the &quot;System&quot; form.
@@ -1455,6 +1458,9 @@ if a page with that name already exists, you will be sent to a form to edit that
 |-
 ! Systemets hjemmeside: {{#info: Hvis dette system har en hjemmeside (for eksempel http://www.postgis.net for PostGIS) må det gerne angives her.}}
 | {{{field|URL}}}
+|-
+! Anvendte geodatatabeller: {{#info: Her kan der vælges hvilke geodata tabeller er anvendt af dette system. Der kan vælges mere end en geodata tabel.}}
+| {{{field|Geodata|values from category=Geodata}}}
 |}
 {{{end template}}}
 
@@ -1469,7 +1475,7 @@ if a page with that name already exists, you will be sent to a form to edit that
 
 {{{standard input|save}}} {{{standard input|preview}}} {{{standard input|changes}}} {{{standard input|cancel}}}
 &lt;/includeonly&gt;</text>
-      <sha1>fkgs1khmh2wfj1rlcnwrcisctddaf1o</sha1>
+      <sha1>a2i5305ff49j5exp7098rk9vofwmnvy</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
@@ -2196,6 +2202,30 @@ This is a property of type [[Has type::URL]].
 
 Afhængigheder har typisk hjemmesider, som med open source systemer og komponenter.</text>
       <sha1>9vjc4v2b6z7u8izpwidfab5d6tp3un5</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:SystemBrugerGeodata</title>
+    <ns>102</ns>
+    <id>7037</id>
+    <revision>
+      <id>7596</id>
+      <parentid>7595</parentid>
+      <timestamp>2015-08-25T12:14:06Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>kategorisering og dokumentation</comment>
+      <text xml:space="preserve" bytes="221">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::Geodata]].
+
+Dette property anvendes til at registrere hvilke geodata tabeller et system anvender.</text>
+      <sha1>3mpdquqii67edrfuayxxoyhq197lxcq</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
