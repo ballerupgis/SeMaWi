@@ -1380,15 +1380,16 @@ Edit the page to see the template text.
     <ns>106</ns>
     <id>51</id>
     <revision>
-      <id>7598</id>
-      <parentid>7592</parentid>
-      <timestamp>2015-08-25T12:16:56Z</timestamp>
+      <id>7600</id>
+      <parentid>7599</parentid>
+      <timestamp>2015-08-26T09:57:56Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <comment>tilføj nyt felt SystemBrugerGeodata</comment>
-      <text xml:space="preserve" bytes="4351">&lt;noinclude&gt;
+      <minor/>
+      <comment>Bedre info tip som forklarer at feltet SystemNavn ikke er obligatorisk.</comment>
+      <text xml:space="preserve" bytes="4527">&lt;noinclude&gt;
 [[Category:SeMaWi]]
 
 This is the &quot;System&quot; form.
@@ -1402,8 +1403,8 @@ if a page with that name already exists, you will be sent to a form to edit that
 &lt;div id=&quot;wikiPreview&quot; style=&quot;display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;&quot;&gt;&lt;/div&gt;
 {{{for template|System}}}
 {| class=&quot;formtable&quot;
-! Navn: {{#info: Angiv venligst systemets formelle navn. For eksempel &quot;Microsoft Windows 10&quot; eller &quot;PostGIS 2.1.8&quot;}}
-| {{{field|Navn|rows=1|placeholder=Indtast et unikt systemnavn}}}
+! Navn: {{#info: Angiv venligst systemets formelle navn. For eksempel &quot;Microsoft Windows 10&quot; eller &quot;PostGIS 2.1.8&quot;. Dette felt er ikke obligatorisk, men er beregnet til at bruges hvis sidetitlen ikke afspejler systemets formelle navn.}}
+| {{{field|Navn|rows=1|placeholder=Indtast systemnavn hvis sidetitlen ikke afspejler systemets komplette formelle navn}}}
 |-
 ! Nummer: {{#info: Angiv venligst systemets interne nummer}}
 | {{{field|Nummer}}}
@@ -1475,7 +1476,7 @@ if a page with that name already exists, you will be sent to a form to edit that
 
 {{{standard input|save}}} {{{standard input|preview}}} {{{standard input|changes}}} {{{standard input|cancel}}}
 &lt;/includeonly&gt;</text>
-      <sha1>a2i5305ff49j5exp7098rk9vofwmnvy</sha1>
+      <sha1>mhzqy39nanmot41swextqklpkayhegn</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
