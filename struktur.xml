@@ -2231,4 +2231,269 @@ Dette property anvendes til at registrere hvilke geodata tabeller et system anve
       <format>text/x-wiki</format>
     </revision>
   </page>
+  <page>
+    <title>Property:TeamNavn</title>
+    <ns>102</ns>
+    <id>7038</id>
+    <revision>
+      <id>7602</id>
+      <parentid>7601</parentid>
+      <timestamp>2015-08-26T11:06:24Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>kategorisering og dokumentation</comment>
+      <text xml:space="preserve" bytes="130">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Text]].
+
+Et Team har et navn som kan være forskelligt fra sidetitlen.</text>
+      <sha1>do1e7mx7t62zbr3s4s7ap8zdzpnldwq</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:TeamOrganisatoriskEnhed</title>
+    <ns>102</ns>
+    <id>7039</id>
+    <revision>
+      <id>7604</id>
+      <parentid>7603</parentid>
+      <timestamp>2015-08-26T11:07:31Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>kategorisering og dokumentation</comment>
+      <text xml:space="preserve" bytes="192">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::OrganisatoriskEnhed]].
+
+Et Team hører under en OrganisatoriskEnhed.</text>
+      <sha1>8jqwcp2zz544k1rutxmuulvdq83b4rc</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:TeamMedlem</title>
+    <ns>102</ns>
+    <id>7040</id>
+    <revision>
+      <id>7606</id>
+      <parentid>7605</parentid>
+      <timestamp>2015-08-26T11:09:27Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>kategorisering og dokumentation</comment>
+      <text xml:space="preserve" bytes="176">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::Bruger]].
+
+Dette property knytter brugere til teams.</text>
+      <sha1>midrzrzpv49p6sp7ddhb8dp9qi7czww</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:TeamKLE</title>
+    <ns>102</ns>
+    <id>7041</id>
+    <revision>
+      <id>7608</id>
+      <parentid>7607</parentid>
+      <timestamp>2015-08-26T11:10:26Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>kategorisering og dokumentation</comment>
+      <text xml:space="preserve" bytes="218">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::Emne]].
+
+Et Team kan have fokus på visse KLE emner. Den relation defineres af dette property.</text>
+      <sha1>ml01qvofgvz8bffaomuhx5uqq67zzr7</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:TeamSystem</title>
+    <ns>102</ns>
+    <id>7042</id>
+    <revision>
+      <id>7610</id>
+      <parentid>7609</parentid>
+      <timestamp>2015-08-26T11:11:22Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>kategorisering og dokumentation</comment>
+      <text xml:space="preserve" bytes="215">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::System]].
+
+Dette property kan anvendes til at dokumentere forhold mellem teams og systemer.</text>
+      <sha1>9e8p6dyqf6dtmsbgfcskcqiox2d3ruk</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:TeamGeodata</title>
+    <ns>102</ns>
+    <id>7043</id>
+    <revision>
+      <id>7612</id>
+      <parentid>7611</parentid>
+      <timestamp>2015-08-26T11:12:31Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>kategorisering og dokumentation</comment>
+      <text xml:space="preserve" bytes="263">[[Category:SeMaWi]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::Geodata]].
+
+Et team kan have interesse i eller ansvar for visse geodata tabeller. Dette property anvendes til at dokumentere dette forhold.</text>
+      <sha1>pk4by8notv71l1c5mf6kpb04lb29lcp</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Skabelon:Team</title>
+    <ns>10</ns>
+    <id>7044</id>
+    <revision>
+      <id>7614</id>
+      <parentid>7613</parentid>
+      <timestamp>2015-08-26T11:32:53Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>kategorisering</comment>
+      <text xml:space="preserve" bytes="704">&lt;noinclude&gt;
+[[Category:SeMaWi]]
+
+This is the &quot;Team&quot; template.
+It should be called in the following format:
+&lt;pre&gt;
+{{Team
+|Navn=
+|OE=
+|Medlemmer=
+|KLE=
+|Systemer=
+|Geodata=
+}}
+&lt;/pre&gt;
+Edit the page to see the template text.
+&lt;/noinclude&gt;&lt;includeonly&gt;{| class=&quot;wikitable&quot;
+! Team navn
+| [[TeamNavn::{{{Navn|}}}]] 
+|-
+! Hører til organisatorisk enhed
+| [[TeamOrganisatoriskEnhed::{{{OE|}}}]] 
+|-
+! Medlemmer
+| {{#arraymap:{{{Medlemmer|}}}|,|x|[[TeamMedlem::x]]}}
+|-
+! KLE emner
+| {{#arraymap:{{{KLE|}}}|,|x|[[TeamKLE::x]]}}
+|-
+! Team systemer
+| {{#arraymap:{{{Systemer|}}}|,|x|[[TeamSystem::x]]}}
+|-
+! Geodata tabeller
+| {{#arraymap:{{{Geodata|}}}|,|x|[[TeamGeodata::x]]}}
+|}
+
+[[Kategori:Teams]]
+&lt;/includeonly&gt;</text>
+      <sha1>7sthiqvitmal405pvhyc85fls3cm0q9</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Form:Team</title>
+    <ns>106</ns>
+    <id>7045</id>
+    <revision>
+      <id>7616</id>
+      <parentid>7615</parentid>
+      <timestamp>2015-08-26T11:39:18Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>kategorisering</comment>
+      <text xml:space="preserve" bytes="1436">&lt;noinclude&gt;
+[[Category:SeMaWi]]
+
+This is the &quot;Team&quot; form.
+To create a page with this form, enter the page name below;
+if a page with that name already exists, you will be sent to a form to edit that page.
+
+
+{{#forminput:form=Team}}
+
+&lt;/noinclude&gt;&lt;includeonly&gt;
+&lt;div id=&quot;wikiPreview&quot; style=&quot;display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;&quot;&gt;&lt;/div&gt;
+{{{for template|Team}}}
+{| class=&quot;formtable&quot;
+! Navn: 
+| {{{field|Navn|rows=1|placeholder=Indtast venligst teamet's fulde navn. Feltet er optionelt.}}}
+|-
+! Under organisatorisk enhed: 
+| {{{field|OE|placeholder=Vælg venligst teamets enhed|values from category=Organisatoriske Enheder‏‎}}}
+|-
+! Medlemmer: 
+| {{{field|Medlemmer|placeholder=Vælg teamets medlemmer|values from category=Brugere}}}
+|-
+! KLE: 
+| {{{field|KLE|values=Vælg relevante KLE emner|values from category=KLE Emner|remote autocompletion}}}
+|-
+! Systemer: 
+| {{{field|Systemer|placeholder=Vælg relevante eller tilknyttede systemer|values from category=Systemer}}}
+|-
+! Geodata: 
+| {{{field|Geodata|placeholder=Vælg relevante geodata tabeller|values from category=Geodata}}}
+|}
+{{{end template}}}
+
+'''Free text:'''
+
+{{{standard input|free text|rows=10}}}
+
+
+{{{standard input|summary}}}
+
+{{{standard input|minor edit}}} {{{standard input|watch}}}
+
+{{{standard input|save}}} {{{standard input|preview}}} {{{standard input|changes}}} {{{standard input|cancel}}}
+&lt;/includeonly&gt;</text>
+      <sha1>qiy61pp4qfta7bpq9up2vikvou7slul</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
 </mediawiki>
