@@ -1,5 +1,14 @@
-BeautifulSoup==3.2.1
 argparse==1.2.1
-ipython==3.2.1
+decorator==4.0.2
+ipython==4.0.0
+ipython-genutils==0.1.0
 lxml==3.4.4
+mwclient==0.7.2
+path.py==7.7.1
+pexpect==3.3
+pickleshare==0.5
+requests==2.7.0
+simplegeneric==0.8.1
+six==1.9.0
+traitlets==4.0.0
 wsgiref==0.1.2

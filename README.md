@@ -35,7 +35,21 @@ Da dette er optionelt skal der manuelt tilføjes felter der peger på KLE-strukt
 
 ## Mapcentia GC2 Tabeller
 
-Hvis det ønskes kan tabellerne fra Mapcentia GC2 indlæses.
+SeMaWi understøtter integration til Mapcentia GeoCloud2. Geodata tabeller kan vises som sider i Geodata kategoriet i SeMaWi, hvilket gør det muligt at lave analyser på de tabeller og at se dem i sammenhæng med øvrige entiteter som KLE emner eller systemer eller brugere.
+
+### Batchimport
+
+Der er udviklet et python script som skal køre i cronjob på SeMaWi serveren for at opdatere SeMaWi med de geodata tabeller GC2 indeholder. Installation foregår således:
+
+1. I `LocalSettings.php` skal der tilføjes `$wgRawHtml = true;`. Det er så kortene kan vises.
+2. I SeMaWi skal der oprettes en ny bruger med brugernavn Sitebot. Denne bruger skal være medlem af følgende brugergrupper: robot, administrator, bureaukrat
+3. Scriptet `gc2/gc2smwdaemon.py` skal kaldes fra et cronjob så det kører på et passende tidspunkt med de korrekte SeMaWi Sitebot login og GC2 API oplysninger. Oplysningerne om Sitebot og GC2 API endpoint skrives i de relevante variabler i `gc2/gc2smwdaemon.py` filen. Bemærk, `gc2/gc2smwdaemon.py` skal køre fra et `virtualenv` som har alle afhængigheder fra `gc2/requirements.txt` installeret korrekt. Det er ude for scope i denne vejledning at dokumentere hvordan man anvender `virtualenv` eller opretter et cronjob i Linux.
+
+Optionelt kan det anbefales at køre de to maintenance scripts `SMW_refreshData.php` og derefter `runJobs.php` efter.
+
+### Engangsimport
+
+Hvis det ønskes kan tabellerne fra Mapcentia GC2 indlæses en gang og derefter holdes ajour manuelt på begge sider, SeMaWi og GC2. Det er langt de færreste tilfælde hvor dette er ønskværdigt.
 
 1. I `LocalSettings.php` skal der tilføjes `$wgRawHtml = true;`. Det er så kortene kan vises.
 2. Download json filen fra GC2
