@@ -2496,4 +2496,39 @@ if a page with that name already exists, you will be sent to a form to edit that
       <format>text/x-wiki</format>
     </revision>
   </page>
+  <page>
+    <title>Kategori:Systemer</title>
+    <ns>14</ns>
+    <id>201</id>
+    <revision>
+      <id>9894</id>
+      <parentid>9893</parentid>
+      <timestamp>2015-09-01T13:25:12Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>siden manglede kategorisering</comment>
+      <text xml:space="preserve" bytes="287">[[Category:SeMaWi]]
+
+{{#ask:[[Category:Systemer]]
+|?SystemLeverandør=Leverandør
+|?SystemStatus=Status
+|format=datatables
+|limit=500
+|link=all
+|headers=show
+|mainlabel=Navn
+|searchlabel=... further results
+|class=sortable wikitable smwtable
+|theme=bootstrap
+}}
+
+{{#default_form:System}}</text>
+      <sha1>3f0yftw525vuwxdv4qm8jb9a7rrxuxx</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
 </mediawiki>
