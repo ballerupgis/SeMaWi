@@ -1,0 +1,698 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.9/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.9/ http://www.mediawiki.org/xml/export-0.9.xsd" version="0.9" xml:lang="da">
+  <siteinfo>
+    <sitename>SeMaWi Development</sitename>
+    <dbname>wiki</dbname>
+    <base>http://dev.notanumber.dk/index.php/Forside</base>
+    <generator>MediaWiki 1.24.2</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Speciel</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Diskussion</namespace>
+      <namespace key="2" case="first-letter">Bruger</namespace>
+      <namespace key="3" case="first-letter">Brugerdiskussion</namespace>
+      <namespace key="4" case="first-letter">SeMaWi Development</namespace>
+      <namespace key="5" case="first-letter">SeMaWi Development diskussion</namespace>
+      <namespace key="6" case="first-letter">Fil</namespace>
+      <namespace key="7" case="first-letter">Fildiskussion</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki diskussion</namespace>
+      <namespace key="10" case="first-letter">Skabelon</namespace>
+      <namespace key="11" case="first-letter">Skabelondiskussion</namespace>
+      <namespace key="12" case="first-letter">Hjælp</namespace>
+      <namespace key="13" case="first-letter">Hjælp diskussion</namespace>
+      <namespace key="14" case="first-letter">Kategori</namespace>
+      <namespace key="15" case="first-letter">Kategoridiskussion</namespace>
+      <namespace key="102" case="first-letter">Property</namespace>
+      <namespace key="103" case="first-letter">Property talk</namespace>
+      <namespace key="104" case="first-letter">Type</namespace>
+      <namespace key="105" case="first-letter">Type talk</namespace>
+      <namespace key="106" case="first-letter">Form</namespace>
+      <namespace key="107" case="first-letter">Form talk</namespace>
+      <namespace key="108" case="first-letter">Concept</namespace>
+      <namespace key="109" case="first-letter">Concept talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Property:IndsatsFremdrift</title>
+    <ns>102</ns>
+    <id>10311</id>
+    <revision>
+      <id>11247</id>
+      <parentid>11246</parentid>
+      <timestamp>2015-09-15T12:18:42Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>Josef flyttede siden [[Property:HandlingFremdrift]] til [[Property:IndsatsFremdrift]] uden at efterlade en omdirigering</comment>
+      <text xml:space="preserve" bytes="99">[[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
+
+This is a property of type [[Has type::Number]].</text>
+      <sha1>ll75fkj3ej2ggg5b4i6l1jgkhclp2ei</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Kategori:SeMaWi-Indsatser</title>
+    <ns>14</ns>
+    <id>10343</id>
+    <revision>
+      <id>11281</id>
+      <parentid>11248</parentid>
+      <timestamp>2015-09-15T12:39:36Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <text xml:space="preserve" bytes="64">[[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
+
+__HIDDENCAT__</text>
+      <sha1>ggco6zyk5b4rtwjon4u5gouhgumatpo</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:IndsatsHvad</title>
+    <ns>102</ns>
+    <id>10307</id>
+    <revision>
+      <id>11250</id>
+      <parentid>11249</parentid>
+      <timestamp>2015-09-15T12:20:09Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="97">[[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
+
+This is a property of type [[Has type::Text]].</text>
+      <sha1>f5rsinnrkases6jyaq8f55nq2znf2jt</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:IndsatsHvemBruger</title>
+    <ns>102</ns>
+    <id>10308</id>
+    <revision>
+      <id>11341</id>
+      <parentid>11251</parentid>
+      <timestamp>2015-09-16T10:55:40Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>Josef flyttede siden [[Property:HandlingHvemBruger]] til [[Property:IndsatsHvemBruger]] uden at efterlade en omdirigering</comment>
+      <text xml:space="preserve" bytes="163">[[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::Bruger]].</text>
+      <sha1>pva8t2nitrwe6mrgx4oqij5fhd4p6u2</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:IndsatsHvemTeam</title>
+    <ns>102</ns>
+    <id>10309</id>
+    <revision>
+      <id>11253</id>
+      <parentid>11252</parentid>
+      <timestamp>2015-09-15T12:26:04Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="161">[[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::Team]].</text>
+      <sha1>t8lvulfe9g642jeajswh7f6kpw5qkgr</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:IndsatsHvorfor</title>
+    <ns>102</ns>
+    <id>10305</id>
+    <revision>
+      <id>11255</id>
+      <parentid>11254</parentid>
+      <timestamp>2015-09-15T12:26:34Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="97">[[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
+
+This is a property of type [[Has type::Text]].</text>
+      <sha1>f5rsinnrkases6jyaq8f55nq2znf2jt</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:IndsatsHvornår</title>
+    <ns>102</ns>
+    <id>10310</id>
+    <revision>
+      <id>11257</id>
+      <parentid>11256</parentid>
+      <timestamp>2015-09-15T12:27:03Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="97">[[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
+
+This is a property of type [[Has type::Date]].</text>
+      <sha1>67u1wwjdty4ojf3d5e7zdc7qibqmrkx</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:IndsatsLinkGeodata</title>
+    <ns>102</ns>
+    <id>10314</id>
+    <revision>
+      <id>11259</id>
+      <parentid>11258</parentid>
+      <timestamp>2015-09-15T12:27:30Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="164">[[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::Geodata]].</text>
+      <sha1>22sd67b0t62ld0b3ge9hnvkib1zax39</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:IndsatsLinkKLE</title>
+    <ns>102</ns>
+    <id>10313</id>
+    <revision>
+      <id>11261</id>
+      <parentid>11260</parentid>
+      <timestamp>2015-09-15T12:27:59Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="161">[[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::Emne]].</text>
+      <sha1>3kjb29xh4bdbg5kbylv14s2cm30pcv0</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:IndsatsLinkLeverandør</title>
+    <ns>102</ns>
+    <id>10315</id>
+    <revision>
+      <id>11263</id>
+      <parentid>11262</parentid>
+      <timestamp>2015-09-15T12:28:26Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="168">[[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::Leverandør]].</text>
+      <sha1>mmwe4n3pvqypa9oqy6s1sord82xmlnz</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:IndsatsLinkSystem</title>
+    <ns>102</ns>
+    <id>10312</id>
+    <revision>
+      <id>11265</id>
+      <parentid>11264</parentid>
+      <timestamp>2015-09-15T12:28:52Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="163">[[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::System]].</text>
+      <sha1>c1osx4e3t9nmd3labclv8skjehqg149</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:IndsatsOphæng</title>
+    <ns>102</ns>
+    <id>10306</id>
+    <revision>
+      <id>11267</id>
+      <parentid>11266</parentid>
+      <timestamp>2015-09-15T12:29:24Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="164">[[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::Ophæng]].</text>
+      <sha1>p50wh0ghkpinb0dxkrgegpg8t7y8dxv</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Skabelon:Indsats</title>
+    <ns>10</ns>
+    <id>10316</id>
+    <revision>
+      <id>11352</id>
+      <parentid>11348</parentid>
+      <timestamp>2015-09-16T11:13:05Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="1385">&lt;noinclude&gt;
+[[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
+
+This is the &quot;Indsats&quot; template.
+It should be called in the following format:
+&lt;pre&gt;
+{{Indsats
+|Hvorfor=
+|Ophæng=
+|Hvad=
+|Ansvarlig=
+|HvemBruger=
+|HvemTeam=
+|Hvornår=
+|Fremdrift=
+|Dokumentation=
+|LinkSystem=
+|LinkKLE=
+|LinkGeodata=
+|LinkLeverandør=
+}}
+&lt;/pre&gt;
+Edit the page to see the template text.
+&lt;/noinclude&gt;&lt;includeonly&gt;{| class=&quot;wikitable&quot;
+! Strategiske ophæng
+| {{#arraymap:{{{Ophæng|}}}|,|x|[[IndsatsOphæng::x]]}}
+|-
+! Hvorfor
+| [[IndsatsHvorfor::{{{Hvorfor|}}}]] 
+|-
+! Hvad
+| [[ IndsatsHvad::{{{Hvad|}}}]] 
+|-
+! Ansvarlig for indsatsen
+| [[ IndsatsHvemAnsvarlig::{{{Ansvarlig|}}}]]
+|-
+! Deltagende brugere
+| {{#arraymap:{{{HvemBruger|}}}|,|x|[[IndsatsHvemBruger::x]]}}
+|-
+! Deltagende teams
+| {{#arraymap:{{{HvemTeam|}}}|,|x|[[IndsatsHvemTeam::x]]}}
+|-
+! Hvornår
+| [[IndsatsHvornår::{{{Hvornår|}}}]] 
+|-
+! Fremdrift
+| [[IndsatsFremdrift::{{{Fremdrift|}}}]] 
+|-
+! Indsatsens dokumentation
+| [[ IndsatsDokumentation::{{{Dokumentation|}}}]]
+&lt;!--
+|-
+! Systemer
+| {{#arraymap:{{{LinkSystem|}}}|,|x|[[IndsatsLinkSystem::x]]}}
+|-
+! KLE emner
+| {{#arraymap:{{{LinkKLE|}}}|,|x|[[IndsatsLinkKLE::x]]}}
+|-
+! Geodata
+| {{#arraymap:{{{LinkGeodata|}}}|,|x|[[IndsatsLinkGeodata::x]]}}
+|-
+! Leverandører
+| {{#arraymap:{{{LinkLeverandør|}}}|,|x|[[IndsatsLinkLeverandør::x]]}}
+--&gt;
+|}
+
+[[Kategori:Indsatser]]
+&lt;/includeonly&gt;</text>
+      <sha1>cghshfaeyuyycxlsprhon83ftps2yow</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Form:Indsats</title>
+    <ns>106</ns>
+    <id>10317</id>
+    <revision>
+      <id>11354</id>
+      <parentid>11353</parentid>
+      <timestamp>2015-09-16T11:17:13Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="1782">&lt;noinclude&gt;
+[[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
+
+This is the &quot;Indsats&quot; form.
+To create a page with this form, enter the page name below;
+if a page with that name already exists, you will be sent to a form to edit that page.
+
+
+{{#forminput:form=Indsats}}
+
+&lt;/noinclude&gt;&lt;includeonly&gt;
+&lt;div id=&quot;wikiPreview&quot; style=&quot;display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;&quot;&gt;&lt;/div&gt;
+{{{for template|Indsats}}}
+=Indsatsen=
+{| class=&quot;formtable&quot;
+! Strategiske ophæng: 
+| {{{field|Ophæng|values from category=Strategiske Ophæng}}}
+|-
+! Hvorfor: 
+| {{{field|Hvorfor}}}
+|-
+! Hvad: 
+| {{{field|Hvad}}}
+|-
+! Ansvarlig for indsatsen: 
+| {{{field|Ansvarlig|values from category=Brugere}}}
+|-
+! Deltagende brugere: 
+| {{{field|HvemBruger|values from category=Brugere}}}
+|-
+! Deltagende teams: 
+| {{{field|HvemTeam|values from category=Teams}}}
+|-
+! Hvornår: 
+| {{{field|Hvornår|input type=datepicker}}}
+|-
+! Fremdrift: 
+| {{{field|Fremdrift}}}
+|-
+! Indsatsens dokumentation: 
+| {{{field|Dokumentation|placeholder=Beskriv venligst indsatsens status mht. dokumentation. Hvor, hvem, osv.}}}
+|-
+|}
+=Relaterede links=
+{| class=&quot;formtable&quot;
+! LinkSystem: 
+| {{{field|LinkSystem|values from category=Systemer}}}
+|-
+! LinkKLE: 
+| {{{field|LinkKLE|values from category=KLE Emner}}}
+|-
+! LinkGeodata: 
+| {{{field|LinkGeodata|values from category=Geodata}}}
+|-
+! LinkLeverandør: 
+| {{{field|LinkLeverandør|values from category=Leverandører}}}
+|}
+{{{end template}}}
+
+&lt;headertabs/&gt;
+
+'''Free text:'''
+
+{{{standard input|free text|rows=10}}}
+
+
+{{{standard input|summary}}}
+
+{{{standard input|minor edit}}} {{{standard input|watch}}}
+
+{{{standard input|save}}} {{{standard input|preview}}} {{{standard input|changes}}} {{{standard input|cancel}}}
+&lt;/includeonly&gt;</text>
+      <sha1>45f87opklm8zg9ee7zzv95lxdca4gky</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:OphængBeskrivelse</title>
+    <ns>102</ns>
+    <id>10300</id>
+    <revision>
+      <id>11273</id>
+      <parentid>11106</parentid>
+      <timestamp>2015-09-15T12:34:52Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="97">[[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
+
+This is a property of type [[Has type::Text]].</text>
+      <sha1>f5rsinnrkases6jyaq8f55nq2znf2jt</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:OphængType</title>
+    <ns>102</ns>
+    <id>10298</id>
+    <revision>
+      <id>11274</id>
+      <parentid>11103</parentid>
+      <timestamp>2015-09-15T12:35:36Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="257">[[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
+
+This is a property of type [[Has type::Text]].
+
+The allowed values for this property are:
+* [[Allows value::Strategi]]
+* [[Allows value::Politik]]
+* [[Allows value::Projekt]]
+* [[Allows value::Kerneopgave]]</text>
+      <sha1>sytt93opftcgeu42oyebu1kb7i4urcw</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Skabelon:Ophæng</title>
+    <ns>10</ns>
+    <id>10301</id>
+    <revision>
+      <id>11360</id>
+      <parentid>11359</parentid>
+      <timestamp>2015-09-16T11:29:07Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="725">&lt;noinclude&gt;
+[[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
+
+This is the &quot;Ophæng&quot; template.
+It should be called in the following format:
+&lt;pre&gt;
+{{Ophæng
+|Type=
+|Beskrivelse=
+}}
+&lt;/pre&gt;
+Edit the page to see the template text.
+&lt;/noinclude&gt;&lt;includeonly&gt;{| class=&quot;wikitable&quot;
+! Type
+| {{#arraymap:{{{Type|}}}|,|x|[[OphængType::x]]}}
+|-
+! Beskrivelse
+| [[OphængBeskrivelse::{{{Beskrivelse|}}}]] 
+|}
+
+=Indsatser=
+
+{{#ifeq: {{#ask: [[IndsatsOphæng::{{FULLPAGENAME}}]] | format=count}} | 0
+| Ingen tilknyttede indsatser
+|
+{{#ask: [[IndsatsOphæng::{{FULLPAGENAME}}]]
+| ?IndsatsHvemAnsvarlig=Ansvarlig
+| ?IndsatsFremdrift=Fremdrift
+| mainlabel=Indsats
+| format=datatable
+}}
+}}
+----
+
+[[Kategori:Strategiske Ophæng]]
+&lt;/includeonly&gt;</text>
+      <sha1>egkxr57b21wkz1f4q3h4d2a86tpzio3</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Form:Ophæng</title>
+    <ns>106</ns>
+    <id>10302</id>
+    <revision>
+      <id>11276</id>
+      <parentid>11110</parentid>
+      <timestamp>2015-09-15T12:36:23Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="843">&lt;noinclude&gt;
+[[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
+
+This is the &quot;Ophæng&quot; form.
+To create a page with this form, enter the page name below;
+if a page with that name already exists, you will be sent to a form to edit that page.
+
+
+{{#forminput:form=Ophæng}}
+
+&lt;/noinclude&gt;&lt;includeonly&gt;
+&lt;div id=&quot;wikiPreview&quot; style=&quot;display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;&quot;&gt;&lt;/div&gt;
+{{{for template|Ophæng}}}
+{| class=&quot;formtable&quot;
+! Type: 
+| {{{field|Type}}}
+|-
+! Beskrivelse: 
+| {{{field|Beskrivelse}}}
+|}
+{{{end template}}}
+
+'''Free text:'''
+
+{{{standard input|free text|rows=10}}}
+
+
+{{{standard input|summary}}}
+
+{{{standard input|minor edit}}} {{{standard input|watch}}}
+
+{{{standard input|save}}} {{{standard input|preview}}} {{{standard input|changes}}} {{{standard input|cancel}}}
+&lt;/includeonly&gt;</text>
+      <sha1>ap06xzavena2cf4ee50kfgbtkupow8u</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Kategori:Strategiske Ophæng</title>
+    <ns>14</ns>
+    <id>10304</id>
+    <revision>
+      <id>11293</id>
+      <parentid>11277</parentid>
+      <timestamp>2015-09-15T13:22:27Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>Josef flyttede siden [[Kategori:Ophæng]] til [[Kategori:Strategiske Ophæng]] uden at efterlade en omdirigering</comment>
+      <text xml:space="preserve" bytes="76">[[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
+
+{{#default_form:Ophæng}}</text>
+      <sha1>9ckod98nrte4guulff5clghr3w308la</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Kategori:Indsatser</title>
+    <ns>14</ns>
+    <id>10347</id>
+    <revision>
+      <id>11326</id>
+      <parentid>11324</parentid>
+      <timestamp>2015-09-16T09:00:27Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="250">[[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
+
+{{#ask: [[Category:Indsatser]]
+| ?IndsatsHvorfor=Hvorfor
+| ?IndsatsHvad=Hvad
+| ?IndsatsHvemTeam=Hvem
+| ?IndsatsFremdrift=Fremdrift
+| mainlabel=Indsats
+| format=datatable
+}}
+
+{{#default_form:Indsats}}</text>
+      <sha1>foxk3wguwgyzrkybnacxxukd2yphxy8</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:IndsatsHvemAnsvarlig</title>
+    <ns>102</ns>
+    <id>10361</id>
+    <revision>
+      <id>11343</id>
+      <parentid>11342</parentid>
+      <timestamp>2015-09-16T10:57:08Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <text xml:space="preserve" bytes="163">[[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
+
+This is a property of type [[Has type::Page]]. It links to pages that use the form [[Has default form::Bruger]].</text>
+      <sha1>pva8t2nitrwe6mrgx4oqij5fhd4p6u2</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:IndsatsDokumentation</title>
+    <ns>102</ns>
+    <id>10362</id>
+    <revision>
+      <id>11351</id>
+      <parentid>11350</parentid>
+      <timestamp>2015-09-16T11:11:25Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <comment>tilføj kategorier</comment>
+      <text xml:space="preserve" bytes="97">[[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
+
+This is a property of type [[Has type::Text]].</text>
+      <sha1>f5rsinnrkases6jyaq8f55nq2znf2jt</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+</mediawiki>

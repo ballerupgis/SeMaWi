@@ -58,6 +58,14 @@ Hvis det ønskes kan tabellerne fra Mapcentia GC2 indlæses en gang og derefter 
 5. Indlæs den genererede CSV fil
 6. Kør de to backend scripts `SMW_refreshData.php` og derefter `runJobs.php`.
 
+## Datamodel for Indsatser og strategiske ophæng
+
+En enkel datamodel kan tilvælges som skaber rammer for indsatsregistrering, overblik, og opfølgning. Generelle trin for installation:
+
+1. Installer  [Header Tabs](https://www.mediawiki.org/wiki/Extension:Header_Tabs) udvidelsen til MediaWiki
+2. Installer  [Semantic Forms Inputs](https://www.mediawiki.org/wiki/Extension:Semantic_Forms_Inputs) udvidelsen til MediaWiki
+3. Importer XML filen `indsatser/indsats-struktur.xml`.
+
 # Noter
 
 MediaWiki som er fundamentet for SeMaWi er designet til store sites. Mange deployments kan være relativ små ift. MediaWiki's primære use case som er WikiPedia. Som følge kan det blive nødvendigt med nogle små workarounds som fx. kørsel af `runJobs.php` og/eller `SMW_refreshData.php` i cronjobs.
