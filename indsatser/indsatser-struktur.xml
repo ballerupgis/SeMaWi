@@ -284,14 +284,14 @@ This is a property of type [[Has type::Page]]. It links to pages that use the fo
     <ns>10</ns>
     <id>10316</id>
     <revision>
-      <id>11352</id>
-      <parentid>11348</parentid>
-      <timestamp>2015-09-16T11:13:05Z</timestamp>
+      <id>11420</id>
+      <parentid>11414</parentid>
+      <timestamp>2015-09-21T14:15:09Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <text xml:space="preserve" bytes="1385">&lt;noinclude&gt;
+      <text xml:space="preserve" bytes="1937">&lt;noinclude&gt;
 [[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
 
 This is the &quot;Indsats&quot; template.
@@ -306,6 +306,7 @@ It should be called in the following format:
 |HvemTeam=
 |Hvornår=
 |Fremdrift=
+|Status=
 |Dokumentation=
 |LinkSystem=
 |LinkKLE=
@@ -339,6 +340,9 @@ Edit the page to see the template text.
 ! Fremdrift
 | [[IndsatsFremdrift::{{{Fremdrift|}}}]] 
 |-
+! Status
+| [[IndsatsStatus::{{{Status|Rød}}}|{{#ifeq: {{{Status}}} | Grøn | &lt;div style=&quot;width:20px;height:20px;border-radius:50px;font-size:20px;color:#fff;line-height:100px;text-align:center;background:#0f0&quot;&gt;&lt;/div&gt; | {{#ifeq: {{{Status}}} | Gul | &lt;div style=&quot;width:20px;height:20px;border-radius:50px;font-size:20px;color:#fff;line-height:100px;text-align:center;background:#ff0&quot;&gt;&lt;/div&gt; | &lt;div style=&quot;width:20px;height:20px;border-radius:50px;font-size:20px;color:#fff;line-height:100px;text-align:center;background:#f00&quot;&gt;&lt;/div&gt; }} }}]]
+|-
 ! Indsatsens dokumentation
 | [[ IndsatsDokumentation::{{{Dokumentation|}}}]]
 &lt;!--
@@ -359,7 +363,7 @@ Edit the page to see the template text.
 
 [[Kategori:Indsatser]]
 &lt;/includeonly&gt;</text>
-      <sha1>cghshfaeyuyycxlsprhon83ftps2yow</sha1>
+      <sha1>a5eqec4f3uu8r0zf7wth5rnp7z0wdp2</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
@@ -369,14 +373,15 @@ Edit the page to see the template text.
     <ns>106</ns>
     <id>10317</id>
     <revision>
-      <id>11354</id>
-      <parentid>11353</parentid>
-      <timestamp>2015-09-16T11:17:13Z</timestamp>
+      <id>11372</id>
+      <parentid>11354</parentid>
+      <timestamp>2015-09-21T13:22:15Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <text xml:space="preserve" bytes="1782">&lt;noinclude&gt;
+      <minor/>
+      <text xml:space="preserve" bytes="1817">&lt;noinclude&gt;
 [[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
 
 This is the &quot;Indsats&quot; form.
@@ -415,6 +420,9 @@ if a page with that name already exists, you will be sent to a form to edit that
 ! Fremdrift: 
 | {{{field|Fremdrift}}}
 |-
+! Status: 
+| {{{field|Status}}}
+|-
 ! Indsatsens dokumentation: 
 | {{{field|Dokumentation|placeholder=Beskriv venligst indsatsens status mht. dokumentation. Hvor, hvem, osv.}}}
 |-
@@ -448,7 +456,7 @@ if a page with that name already exists, you will be sent to a form to edit that
 
 {{{standard input|save}}} {{{standard input|preview}}} {{{standard input|changes}}} {{{standard input|cancel}}}
 &lt;/includeonly&gt;</text>
-      <sha1>45f87opklm8zg9ee7zzv95lxdca4gky</sha1>
+      <sha1>idobebwhbego2v639h3pm0j8ul6r1yu</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
@@ -691,6 +699,32 @@ This is a property of type [[Has type::Page]]. It links to pages that use the fo
 
 This is a property of type [[Has type::Text]].</text>
       <sha1>f5rsinnrkases6jyaq8f55nq2znf2jt</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Property:IndsatsStatus</title>
+    <ns>102</ns>
+    <id>10363</id>
+    <revision>
+      <id>11370</id>
+      <parentid>11369</parentid>
+      <timestamp>2015-09-21T13:20:45Z</timestamp>
+      <contributor>
+        <username>Josef</username>
+        <id>1</id>
+      </contributor>
+      <minor/>
+      <text xml:space="preserve" bytes="215">[[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
+
+This is a property of type [[Has type::Text]].
+
+The allowed values for this property are:
+* [[Allows value::Grøn]]
+* [[Allows value::Gul]]
+* [[Allows value::Rød]]</text>
+      <sha1>h8470ydq7u0yluchuheozx2gmx9rg74</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
