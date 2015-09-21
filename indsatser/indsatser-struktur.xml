@@ -284,14 +284,14 @@ This is a property of type [[Has type::Page]]. It links to pages that use the fo
     <ns>10</ns>
     <id>10316</id>
     <revision>
-      <id>11420</id>
-      <parentid>11414</parentid>
-      <timestamp>2015-09-21T14:15:09Z</timestamp>
+      <id>11425</id>
+      <parentid>11424</parentid>
+      <timestamp>2015-09-21T15:06:24Z</timestamp>
       <contributor>
         <username>Josef</username>
         <id>1</id>
       </contributor>
-      <text xml:space="preserve" bytes="1937">&lt;noinclude&gt;
+      <text xml:space="preserve" bytes="1956">&lt;noinclude&gt;
 [[Category:SeMaWi]] [[Category:SeMaWi-Indsatser]]
 
 This is the &quot;Indsats&quot; template.
@@ -326,7 +326,7 @@ Edit the page to see the template text.
 | [[ IndsatsHvad::{{{Hvad|}}}]] 
 |-
 ! Ansvarlig for indsatsen
-| [[ IndsatsHvemAnsvarlig::{{{Ansvarlig|}}}]]
+| {{#arraymap:{{{Ansvarlig|}}}|,|x|[[IndsatsHvemAnsvarlig::x]]}}
 |-
 ! Deltagende brugere
 | {{#arraymap:{{{HvemBruger|}}}|,|x|[[IndsatsHvemBruger::x]]}}
@@ -363,7 +363,7 @@ Edit the page to see the template text.
 
 [[Kategori:Indsatser]]
 &lt;/includeonly&gt;</text>
-      <sha1>a5eqec4f3uu8r0zf7wth5rnp7z0wdp2</sha1>
+      <sha1>cdk8rungac5hr6z4mh3g5t6m0ngph75</sha1>
       <model>wikitext</model>
       <format>text/x-wiki</format>
     </revision>
