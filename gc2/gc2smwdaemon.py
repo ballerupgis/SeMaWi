@@ -137,7 +137,9 @@ def generate(tables):
         gc2url = 'http://ballerup.mapcentia.com/apps/viewer/ballerup/%s/#stamenToner/12/12.3342/55.7363/%s.%s' % (f_table_schema, f_table_schema, f_table_name)
         t['title'] = 'Geodata_%s' % key
         t['contents'] = template % (f_table_title, f_table_abstract, f_table_schema, f_table_name, layergroup, srid, ttype, extra, 'Bruger:Ldg', gc2url)
-        geodata_tables.append(t)
+        # Time to sort out the _00_ grundkort
+        if f_table_schema[:4] != '_00_':
+            geodata_tables.append(t)
     return geodata_tables
 
 if __name__ == '__main__':
