@@ -25,6 +25,8 @@ SeMaWi er udviklet i samarbejde med [Josef Assad](mailto:josef@josefassad.com).
 11. Installer [MasonryMainPage](https://github.com/enterprisemediawiki/MasonryMainPage).
 12. I filen `LocalSettings.php` tilføj `$wgIncludejQueryMigrate = true;`.
 
+Til brugeroprettelse kan det anbefales at installere udvidelsen [ImportUsers](https://www.mediawiki.org/wiki/Extension:ImportUsers). Dog er det smart at afinstallere eller som minimum deaktivere udvidelsen igen umiddelbart efter; import af brugere burde ikke være en øvelse der skal gentages for ofte, og målet på sigt er at anvende enten en AD/LDAP eller [OS2MO](http://www.os2web.dk/projekter/os2mo) som ekstern autoritativ brugerkilde.
+
 ## KLE Emneplan 2.0
 
 Hvis det ønskes kan elementerne fra KLE Emneplan 2.0 indlæses så de kan anvendes til tagging og dermed klassificering, søgning, filtrering, og analyse på tværs af resten af datamodellen.
