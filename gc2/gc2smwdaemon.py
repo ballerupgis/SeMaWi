@@ -61,7 +61,9 @@ def generate(tables):
         if table['_key_'] != None:
             key = table['_key_']
         else:
-            key = str(count) # this should never happen, the key field in GC2 JSON is assumed to be unique identifier
+            # this should never happen, the key field in GC2 JSON is assumed to
+            # be unique identifier
+            key = str(count)
         if table['tilecache'] != None:
             tilecache = table['tilecache']
         else:
