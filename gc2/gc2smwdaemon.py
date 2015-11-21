@@ -142,7 +142,16 @@ def generate(tables):
         else:
             coord_dimension = ''
         gc2url = 'http://ballerup.mapcentia.com/apps/viewer/ballerup/%s/#stamenToner/12/12.3342/55.7363/%s.%s' % (f_table_schema, f_table_schema, f_table_name)
-        t['title'] = 'Geodata_%s' % key
+
+        if f_table_title != '':
+            pagename = f_table_title
+        else:
+            if f_table_name != '':
+                pagename = f_table_name
+            else:
+                pagename = "ERROR" # cross fingers it's unique in GC2?
+        t['title'] = 'Geodata_%s' % pagename
+
         t['contents'] = template % (f_table_title, f_table_abstract, f_table_schema, f_table_name, layergroup, srid, ttype, extra, 'Bruger:Ldg', gc2url)
         # Time to sort out the _00_ grundkort and others without _XX_
         if included:
