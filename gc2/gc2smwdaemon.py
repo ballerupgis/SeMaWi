@@ -111,8 +111,15 @@ def generate(tables):
             ssort = ''
         if table['f_table_schema'] != None:
             f_table_schema = table['f_table_schema']
+            # we will include only those tables for which the schema:
+            # 1. starts with _XX_ both X'es being digits, and
+            # 2. NOT _00_
+            included = False # we are whitelisting tables
+            if re.search('^_[0-9]{2}_.*', f_table_schema):
+                if f_table_schema[:4] != '_00_':
+                    included = True
         else:
-            f_table_schema = ''
+            f_table_schema = '' # probably not possible? Just being safe
         if table['srid'] != None:
             srid = table['srid']
         else:
@@ -137,8 +144,8 @@ def generate(tables):
         gc2url = 'http://ballerup.mapcentia.com/apps/viewer/ballerup/%s/#stamenToner/12/12.3342/55.7363/%s.%s' % (f_table_schema, f_table_schema, f_table_name)
         t['title'] = 'Geodata_%s' % key
         t['contents'] = template % (f_table_title, f_table_abstract, f_table_schema, f_table_name, layergroup, srid, ttype, extra, 'Bruger:Ldg', gc2url)
-        # Time to sort out the _00_ grundkort
-        if f_table_schema[:4] != '_00_':
+        # Time to sort out the _00_ grundkort and others without _XX_
+        if included:
             geodata_tables.append(t)
     return geodata_tables
 
