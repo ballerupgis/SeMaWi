@@ -24,6 +24,14 @@ SeMaWi er udviklet i samarbejde med [Josef Assad](mailto:josef@josefassad.com).
 10. I filen `SemanticMediaWiki.settings.php` skift værdien af variablen `smwgQMaxDepth` til 10.
 11. Installer [MasonryMainPage](https://github.com/enterprisemediawiki/MasonryMainPage).
 12. I filen `LocalSettings.php` tilføj `$wgIncludejQueryMigrate = true;`.
+13. I filen `LocalSettings.php` tilføj:
+
+```php
+$wgFileExtensions = array( 'png', 'gif', 'jpg', 'jpeg', 'doc',
+    'xls', 'mpp', 'pdf', 'ppt', 'tiff', 'bmp', 'docx', 'xlsx',
+    'pptx', 'ps', 'odt', 'ods', 'odp', 'odg'
+);
+```
 
 Til brugeroprettelse kan det anbefales at installere udvidelsen [ImportUsers](https://www.mediawiki.org/wiki/Extension:ImportUsers). Dog er det smart at afinstallere eller som minimum deaktivere udvidelsen igen umiddelbart efter; import af brugere burde ikke være en øvelse der skal gentages for ofte, og målet på sigt er at anvende enten en AD/LDAP eller [OS2MO](http://www.os2web.dk/projekter/os2mo) som ekstern autoritativ brugerkilde.
 
