@@ -32,6 +32,7 @@ $wgFileExtensions = array( 'png', 'gif', 'jpg', 'jpeg', 'doc',
     'pptx', 'ps', 'odt', 'ods', 'odp', 'odg'
 );
 ```
+14. I filen LocalSettings.php tilføj: `$wgEnableParserCache = false;` og `$wgCachePages = false;`.
 
 Til brugeroprettelse kan det anbefales at installere udvidelsen [ImportUsers](https://www.mediawiki.org/wiki/Extension:ImportUsers). Dog er det smart at afinstallere eller som minimum deaktivere udvidelsen igen umiddelbart efter; import af brugere burde ikke være en øvelse der skal gentages for ofte, og målet på sigt er at anvende enten en AD/LDAP eller [OS2MO](http://www.os2web.dk/projekter/os2mo) som ekstern autoritativ brugerkilde.
 
