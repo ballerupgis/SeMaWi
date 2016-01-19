@@ -8,13 +8,21 @@ from lxml import html
 import mwclient
 import urllib
 
+# BEGIN CONFIG
+# You will need to set the following 4 configs or this sync script won't work.
+# A bot account on the target SMW instance
 username = 'Sitebot'
 password = ''
-
+# mwclient.Site takes two parameters. The first is the URL to your SMW instance.
+# It will look something like "http://mywiki.example.org"
+# the path parameter is the path to api.php
 site = mwclient.Site('URL.of.your.semawi', path='/')
-site.login(username, password)
-
+# gc2_url is the URL to the GC2 v1 API. It will look usually something like:
+# http://CLIENTNAME.mapcentia.com/api/v1/metadata/CLIENTNAME/
 gc2_url = 'URL.to.your.GC2.JSON.API.endpoint'
+# END CONFIG
+
+site.login(username, password)
 
 geodata_tables = []
 
