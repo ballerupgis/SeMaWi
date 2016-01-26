@@ -37,6 +37,7 @@ template = """{{Geodata
 |KLE-numre=%s
 |Dataansvar=%s
 |URL=%s
+|GUID=%s
 }}"""
 
 def delete_cat(category):
@@ -50,6 +51,12 @@ def generate(tables):
     for table in tables:
         t = {}
         count += 1
+
+        if table['uuid'] != None:
+            guid = table['uuid']
+        else:
+            guid = '' # should NEVER happen, maybe implement somme syslogging
+
         if table['extra'] != None:
             extra = 'Emne_' + table['extra']
         else:
@@ -160,7 +167,7 @@ def generate(tables):
                 pagename = "ERROR" # cross fingers it's unique in GC2?
         t['title'] = 'Geodata_%s' % pagename
 
-        t['contents'] = template % (f_table_title, f_table_abstract, f_table_schema, f_table_name, layergroup, srid, ttype, extra, 'Bruger:Ldg', gc2url)
+        t['contents'] = template % (f_table_title, f_table_abstract, f_table_schema, f_table_name, layergroup, srid, ttype, extra, 'Bruger:Ldg', gc2url, uuid)
         # Time to sort out the _00_ grundkort and others without _XX_
         if included:
             geodata_tables.append(t)
