@@ -183,7 +183,6 @@ if __name__ == '__main__':
     delete_cat('Geodata')
     # Step 3: Create new pages for all the SMW pages generated in step 1
     for table in tables:
-	pass
         page = site.Pages[table['title']]
         page.save(table['contents'], summary = 'GC2 geodata batch import')
 
