@@ -7,6 +7,7 @@ import re
 from lxml import html
 import mwclient
 import urllib
+import requests
 
 # BEGIN CONFIG
 # You will need to set the following 4 configs or this sync script won't work.
@@ -38,17 +39,58 @@ template = """{{Geodata
 |Dataansvar=%s
 |URL=%s
 |GUID=%s
-}}"""
+}}
+
+%s
+
+"""
 
 def delete_cat(category):
     """ Deletes all pages in category """
     for page in site.Categories[category]:
         page.delete()
 
+def get_freetext_from_guid(guid):
+    # We'll need a session cookie from login first
+    # This is a two step process; see https://www.mediawiki.org/wiki/API:Login
+    # Step 1 is to obtain a token
+    token_url = 'http://%s/api.php?action=login&format=json' % (site.host)
+    token_request = requests.post(token_url, data = {'lgname': username, 'lgpassword': password})
+    login_token = json.loads(token_request.text)['login']['token']
+    login_sessionid = json.loads(token_request.text)['login']['sessionid']
+    # Having this token, we now POST credentials with the token
+    login_url = 'http://%s/api.php?action=login&lgname=%s&lgpassword=%s&lgtoken=%s&format=json' % (site.host, username, password, login_token)
+    login_request = requests.post(login_url, cookies = token_request.cookies)
+
+    q_str = "http://%s/api.php?action=ask&query=[[Geodata GUID::%s]]&format=json" % (site.host, guid)
+    q_request = requests.get(q_str, cookies=login_request.cookies)
+    q_resp = json.loads(q_request.text)
+
+    if len(q_resp['query']['results']) == 1: # should not be more than 1 page with a given GUID
+        # TODO following line will break. I guarantee it.
+        # must find a better way
+        try:
+            page_url   = q_resp['query']['results'].values()[0]['fullurl']
+            page_title = q_resp['query']['results'].keys()[0]
+        except KeyError:
+            print "KeyError"
+            embed()
+        page_txt_q_str = u"http://%s/index.php/%s?action=raw" % (site.host, page_title)
+        response = requests.get(page_txt_q_str.encode('UTF-8'), cookies=login_request.cookies)
+        page_txt = response.text.split('\n')
+        # discard the template call at the top
+        # It's hardcoded in the script anyhow, so might as well go full retard
+        # and cut it out by line count
+        page_txt = page_txt[12:]
+        return '\n'.join(page_txt)
+    else:
+        return None # probably new?
+
 def generate(tables):
 
     count = 0
     for table in tables:
+
         t = {}
         count += 1
 
@@ -135,6 +177,14 @@ def generate(tables):
                     included = True
         else:
             f_table_schema = '' # probably not possible? Just being safe
+
+        if included:
+            # these calls are expensive so we only perform them when we're
+            # actually planning to include a table
+            free_text = get_freetext_from_guid(guid)
+        else:
+            free_text = ""
+
         if table['srid'] != None:
             srid = table['srid']
         else:
@@ -167,7 +217,7 @@ def generate(tables):
                 pagename = "ERROR" # cross fingers it's unique in GC2?
         t['title'] = 'Geodata_%s' % pagename
 
-        t['contents'] = template % (f_table_title, f_table_abstract, f_table_schema, f_table_name, layergroup, srid, ttype, extra, 'Bruger:Ldg', gc2url, uuid)
+        t['contents'] = template % (f_table_title, f_table_abstract, f_table_schema, f_table_name, layergroup, srid, ttype, extra, 'Bruger:Ldg', gc2url, guid, free_text)
         # Time to sort out the _00_ grundkort and others without _XX_
         if included:
             geodata_tables.append(t)
