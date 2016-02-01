@@ -11,6 +11,14 @@ import requests
 from config import Config
 
 cfg = Config(file('gc2smw.cfg'))
+# Dette script skal installeres i et cronjob. Cronjobbet kan se således ud:
+# */1 * * * echo 'source /home/josef/.virtualenvs/gc2smw/bin/activate; python /home/josef/.virtualenvs/gc2smw/gc2cronjob/gc2smwdaemon.py' | /bin/bash
+# Bemærk, det betyder at værdien semawi.cfg nedenfor skal angived med
+# ABSOLUTE URL ikke relative URL. Det er meget vigtigt, ellers vil scriptet ikke
+# fungere. For eksempel kan linjen ligne:
+# cfg = Config(file('/home/mickeymouse/foo/bar/baz/dev.cfg'))
+# Men IKKE noget a la
+# cfg = Config(file('../baz/dev.cfg'))
 
 username = cfg.username
 password = cfg.password
