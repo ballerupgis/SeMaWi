@@ -4,8 +4,8 @@ Building the SeMaWi image
 =========================
 
 1. Download the docker source files.
-2. Stand in the directory containing the Dockerfile
-3. Issue the following command: docker build -t semawi .
+2. Stand in the parent directory of the directory containing the Dockerfile
+3. Issue the following command: docker build -t semawi -f docker/Dockerfile .
 4. Wait.
 
 =Running a SeMaWi container=
