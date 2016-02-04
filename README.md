@@ -40,6 +40,7 @@ $wgFileExtensions = array( 'png', 'gif', 'jpg', 'jpeg', 'doc',
 );
 ```
 14. I filen LocalSettings.php tilføj: `$wgEnableParserCache = false;` og `$wgCachePages = false;`.
+15. (optionelt) Installer [Chameleon tema'et](https://www.mediawiki.org/wiki/Skin:Chameleon). Det aktiveres ved at finde linjen i `LocalSettings.php` som siger `$wgDefaultSkin = "vector";` of udskifte `vector` med `chameleon`.
 
 Til brugeroprettelse kan det anbefales at installere udvidelsen [ImportUsers](https://www.mediawiki.org/wiki/Extension:ImportUsers). Dog er det smart at afinstallere eller som minimum deaktivere udvidelsen igen umiddelbart efter; import af brugere burde ikke være en øvelse der skal gentages for ofte, og målet på sigt er at anvende enten en AD/LDAP eller [OS2MO](http://www.os2web.dk/projekter/os2mo) som ekstern autoritativ brugerkilde.
 

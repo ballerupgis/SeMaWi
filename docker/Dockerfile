@@ -27,6 +27,7 @@ RUN cd /var/www/wiki/extensions/ && git clone https://git.wikimedia.org/git/medi
 RUN cd /var/www/wiki/extensions/ && git clone https://git.wikimedia.org/git/mediawiki/extensions/SemanticFormsInputs.git
 RUN cd /var/www/wiki/ && php composer.phar require mediawiki/semantic-result-formats "2.3.*" --update-no-dev
 RUN cd /var/www/wiki/extensions/ && git clone https://github.com/enterprisemediawiki/MasonryMainPage.git
+RUN cd /var/www/wiki/ && php composer.phar require mediawiki/chameleon-skin "1.*" --update-no-dev
 ADD docker/scripts/updatemw.sh /tmp/updatemw.sh
 RUN /tmp/updatemw.sh && rm /tmp/updatemw.sh
 

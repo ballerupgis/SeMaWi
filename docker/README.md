@@ -37,4 +37,12 @@ You will likely want to change your logo. Follow the guidelines [here](https://w
 
 I recommend you examine the list of Forms to identify which parts of the SeMaWi functionality is required in your case. You can link to the Categories created by these Forms in MediaWiki:Sidebar. A default sidebar will be provided in a future release.
 
+This dockerized version of SeMaWi ships with the [Chameleon skin](https://www.mediawiki.org/wiki/Skin:Chameleon). To activate it, find the line in `LocalSettings.php` which says:
+
+`$wgDefaultSkin = "vector";`
+
+and change it to
+
+`$wgDefaultSkin = "chameleon";`
+
 You are encouraged to examine LocalSettings.php and adapt it to your needs.
