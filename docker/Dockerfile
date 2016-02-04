@@ -1,0 +1,60 @@
+FROM debian:jessie
+MAINTAINER Josef Assad <josef@josefassad.com>
+LABEL version="2016-01"
+
+ENV DEBIAN_FRONTEND noninteractive
+
+# Get stack up
+RUN echo 'mysql-server mysql-server/root_password password wiki' | debconf-set-selections && echo 'mysql-server mysql-server/root_password_again password wiki' | debconf-set-selections && apt-get update && apt-get -y install mysql-server mysql-client apache2 curl php5 supervisor git php5-mysql libapache2-mod-php5
+
+# Install MediaWiki
+RUN cd /var/www/ && curl https://releases.wikimedia.org/mediawiki/1.26/mediawiki-1.26.2.tar.gz | tar xvzf - && mv mediawiki-1.26.2 wiki && chown -R root:root wiki
+COPY LocalSettings.php /var/www/wiki/LocalSettings.php 
+
+# seed MediaWiki
+ADD scripts/initdb.sh /tmp/initdb.sh
+RUN /tmp/initdb.sh && rm /tmp/initdb.sh
+
+# Install extensions
+RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php
+RUN cd /var/www/wiki/extensions/ && git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/ImportUsers.git && cd ImportUsers && git checkout -q REL1_26
+RUN cd /var/www/wiki/extensions/ && git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/DataTransfer.git && cd DataTransfer && git checkout -q REL1_26
+RUN cd /var/www/wiki/extensions/ && git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/HeaderTabs.git && cd HeaderTabs && git checkout -q REL1_26
+RUN cd /var/www/wiki/ && php composer.phar require mediawiki/semantic-media-wiki "~2.1" --update-no-dev
+RUN rm -f /var/www/wiki/extensions/SemanticMediaWiki/SemanticMediaWiki.settings.php
+COPY SemanticMediaWiki.settings.php /var/www/wiki/extensions/SemanticMediaWiki/SemanticMediaWiki.settings.php
+RUN cd /var/www/wiki/extensions/ && git clone https://git.wikimedia.org/git/mediawiki/extensions/SemanticForms.git && cd SemanticForms && git checkout -q REL1_26
+RUN cd /var/www/wiki/extensions/ && git clone https://git.wikimedia.org/git/mediawiki/extensions/SemanticFormsInputs.git
+RUN cd /var/www/wiki/ && php composer.phar require mediawiki/semantic-result-formats "2.3.*" --update-no-dev
+RUN cd /var/www/wiki/extensions/ && git clone https://github.com/enterprisemediawiki/MasonryMainPage.git
+ADD scripts/updatemw.sh /tmp/updatemw.sh
+RUN /tmp/updatemw.sh && rm /tmp/updatemw.sh
+
+# NaN logo. Just because.
+COPY nanlogo.png /var/www/wiki/resources/assets/nanlogo.png
+
+# We'll need a susop/bureaucrat account
+ADD scripts/makeadmin.sh /tmp/makeadmin.sh
+RUN /tmp/makeadmin.sh && rm /tmp/makeadmin.sh
+
+# Apache needs a virtualhost
+ADD 001-semawi.conf /etc/apache2/sites-available/001-semawi.conf
+RUN a2dissite 000-default && a2ensite 001-semawi
+
+# Expose the few files we want to be mutable in a volume
+VOLUME /var/www/wiki/
+
+# Not always SOP, but for apache might need write permissions if debug is turned on for a file in the www dir for example
+RUN chown -R www-data:www-data /var/www/wiki/
+
+# Import SeMaWi XML and KLE XML
+ADD scripts/importxml.sh /tmp/importxml.sh
+RUN /tmp/importxml.sh && rm /tmp/importxml.sh
+
+# Slim down the image
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# Start up services
+ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+EXPOSE 80
+CMD ["/usr/bin/supervisord"]

@@ -12,6 +12,13 @@ SeMaWi er udviklet i samarbejde med [Josef Assad](mailto:josef@josefassad.com).
 4. Semantic Mediawiki (hereafter SMW) 2.2 [installationsvejledning](https://semantic-mediawiki.org/wiki/Help:Installation/Using_Composer_with_MediaWiki_1.22%2B)
 
 # Installation
+
+## Docker installation (anbefalet)
+
+Docker er den anbefalede installations- og driftsmetode for SeMaWi. Følg vejledningen i folderen `docker/README.md`.
+
+## Manuel installation (legacy)
+
 1. Installer [Semantic Mediawiki](https://semantic-mediawiki.org/wiki/Help:Installation/Using_Composer_with_MediaWiki_1.22%2B)
 2. Installer  [DataTransfer](https://www.mediawiki.org/wiki/Extension:Data_Transfer) udvidelsen til MW; installationsvejledning på samme side
 3. Installer [SemanticForms](https://www.mediawiki.org/wiki/Extension:Semantic_Forms/Download_and_installation)
