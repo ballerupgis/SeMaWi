@@ -42,7 +42,6 @@ template = """{{Geodata
 |URL=%s
 |GUID=%s
 }}
-%s
 """
 
 def delete_cat(category):
