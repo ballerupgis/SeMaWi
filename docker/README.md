@@ -33,9 +33,15 @@ You will still need to import the KLE data. The data files can be obtained here:
 
 ## Optional
 
+### Logo
+
 You will likely want to change your logo. Follow the guidelines [here](https://www.mediawiki.org/wiki/Manual:$wgLogo) to incorporate your logo.
 
+### Data Model
+
 I recommend you examine the list of Forms to identify which parts of the SeMaWi functionality is required in your case. You can link to the Categories created by these Forms in MediaWiki:Sidebar. A default sidebar will be provided in a future release.
+
+### MediaWiki Skin
 
 This dockerized version of SeMaWi ships with the [Chameleon skin](https://www.mediawiki.org/wiki/Skin:Chameleon). To activate it, find the line in `LocalSettings.php` which says:
 
@@ -44,5 +50,13 @@ This dockerized version of SeMaWi ships with the [Chameleon skin](https://www.me
 and change it to
 
 `$wgDefaultSkin = "chameleon";`
+
+### GeoCloud2 Import Cronjob
+
+There are two settings you need to modify to activate the [Mapcentia GeoCloud2](https://github.com/mapcentia/geocloud2) geodata table import into SeMaWi. First, you must enter the site settings for your SeMaWi in `/opt/gc2/gc2smw.cfg`. Second, a commented out cronjob for running the import has been added to the root user's crontab. As root, inspect it and uncomment it when you are ready to activate this integration.
+
+It is strongly recommended you coordinate the time at which the import runs with Mapcentia.
+
+### Other
 
 You are encouraged to examine LocalSettings.php and adapt it to your needs.

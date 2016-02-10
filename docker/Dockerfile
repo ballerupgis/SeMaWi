@@ -1,11 +1,19 @@
+# BUILD-USING:        docker build -t semawi -f docker/Dockerfile .
+# RUN-USING:          docker run  -d --name semawi-container -h semawi-container -p 12345:80 semawi
+# INSPECT-USING:      docker run -t -i semawi-container /bin/bash
+
 FROM debian:jessie
 MAINTAINER Josef Assad <josef@josefassad.com>
 LABEL version="2016-01"
 
 ENV DEBIAN_FRONTEND noninteractive
 
+# We'll need the deb-src repositories since we're apt-get build-dep'ing python-lxml
+# as part of getting gc2smwdaemon's virtualenv prepped
+COPY docker/sources.list.d/jessie-deb-src.list /etc/apt/sources.list.d/jessie-deb-src.list
+
 # Get stack up
-RUN echo 'mysql-server mysql-server/root_password password wiki' | debconf-set-selections && echo 'mysql-server mysql-server/root_password_again password wiki' | debconf-set-selections && apt-get update && apt-get -y install mysql-server mysql-client apache2 curl php5 supervisor git php5-mysql libapache2-mod-php5
+RUN echo 'mysql-server mysql-server/root_password password wiki' | debconf-set-selections && echo 'mysql-server mysql-server/root_password_again password wiki' | debconf-set-selections && apt-get update && apt-get -y install mysql-server mysql-client apache2 curl php5 supervisor git php5-mysql libapache2-mod-php5 virtualenv cron && apt-get -y build-dep python-lxml
 
 # Install MediaWiki
 RUN cd /var/www/ && curl https://releases.wikimedia.org/mediawiki/1.26/mediawiki-1.26.2.tar.gz | tar xvzf - && mv mediawiki-1.26.2 wiki && chown -R root:root wiki
@@ -53,6 +61,11 @@ COPY struktur.xml /tmp/struktur.xml
 COPY KLE/KLE-struktur.xml /tmp/KLE-struktur.xml
 COPY docker/scripts/importxml.sh /tmp/importxml.sh
 RUN /tmp/importxml.sh && rm /tmp/struktur.xml /tmp/KLE-struktur.xml /tmp/importxml.sh
+
+# Installing the GC2 daemon
+COPY docker/scripts/installgc2daemon.sh /tmp/
+COPY gc2 /opt/gc2
+RUN /tmp/installgc2daemon.sh && rm /tmp/installgc2daemon.sh
 
 # Slim down the image
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
