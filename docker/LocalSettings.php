@@ -161,6 +161,12 @@ include_once "$IP/extensions/SemanticForms/SemanticForms.php";
 # must come after SemanticForms
 require_once("$IP/extensions/SemanticFormsInputs/SemanticFormsInputs.php");
 
+# Semantic MediaWiki settings
+$smwgCacheType = CACHE_NONE;
+$smwgQMaxDepth = 10;
+$smwgQMaxSize = 100;
+$smwgQMaxDepth = 20;
+
 #error_reporting( -1 );
 #ini_set( 'display_errors', 1 );
 #$wgDebugLogFile = "/var/www/wiki/debug-semawi.log";
