@@ -33,6 +33,10 @@ You will still need to import the KLE data. The data files can be obtained here:
 
 ## Optional
 
+### MediaWiki secrets
+
+Your SeMaWi Docker image has been pre-seeded with random values for `$wgSecretKey` and `$wgUpgradeKey` configuration parameters in `LocalSettings.php`. These are regenerated each time you build the image. For each container that you run off an image you built for yourself, you are strongly urged to change these two values in the container. `$wgSecretKey` takes a 64 character alphanumeric string, and `$wgUpgradeKey` takes a 16 character alphanumeric string.
+
 ### Logo
 
 You will likely want to change your logo. Follow the guidelines [here](https://www.mediawiki.org/wiki/Manual:$wgLogo) to incorporate your logo.

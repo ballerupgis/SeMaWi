@@ -19,6 +19,10 @@ RUN echo 'mysql-server mysql-server/root_password password wiki' | debconf-set-s
 RUN cd /var/www/ && curl https://releases.wikimedia.org/mediawiki/1.26/mediawiki-1.26.2.tar.gz | tar xvzf - && mv mediawiki-1.26.2 wiki && chown -R root:root wiki
 COPY docker/LocalSettings.php /var/www/wiki/LocalSettings.php
 
+# Change $wgSecretKey and $wgUpgradeKey in LocalSettings.php
+COPY docker/scripts/gensecrets.sh /tmp/gensecrets.sh
+RUN /tmp/gensecrets.sh && rm /tmp/gensecrets.sh
+
 # seed MediaWiki
 ADD docker/scripts/initdb.sh /tmp/initdb.sh
 RUN /tmp/initdb.sh && rm /tmp/initdb.sh
