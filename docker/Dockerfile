@@ -24,16 +24,16 @@ ADD docker/scripts/initdb.sh /tmp/initdb.sh
 RUN /tmp/initdb.sh && rm /tmp/initdb.sh
 
 # Install extensions
-RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php
-RUN cd /var/www/wiki/extensions/ && git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/ImportUsers.git && cd ImportUsers && git checkout -q REL1_26
-RUN cd /var/www/wiki/extensions/ && git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/DataTransfer.git && cd DataTransfer && git checkout -q REL1_26
-RUN cd /var/www/wiki/extensions/ && git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/HeaderTabs.git && cd HeaderTabs && git checkout -q REL1_26
-RUN cd /var/www/wiki/ && php composer.phar require mediawiki/semantic-media-wiki "~2.1" --update-no-dev
-RUN cd /var/www/wiki/extensions/ && git clone https://git.wikimedia.org/git/mediawiki/extensions/SemanticForms.git && cd SemanticForms && git checkout -q REL1_26
-RUN cd /var/www/wiki/extensions/ && git clone https://git.wikimedia.org/git/mediawiki/extensions/SemanticFormsInputs.git
-RUN cd /var/www/wiki/ && php composer.phar require mediawiki/semantic-result-formats "2.3.*" --update-no-dev
-RUN cd /var/www/wiki/extensions/ && git clone https://github.com/enterprisemediawiki/MasonryMainPage.git
-RUN cd /var/www/wiki/ && php composer.phar require mediawiki/chameleon-skin "1.*" --update-no-dev
+RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
+    cd /var/www/wiki/extensions/ && git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/ImportUsers.git && cd ImportUsers && git checkout -q REL1_26 && \
+    cd /var/www/wiki/extensions/ && git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/DataTransfer.git && cd DataTransfer && git checkout -q REL1_26 && \
+    cd /var/www/wiki/extensions/ && git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/HeaderTabs.git && cd HeaderTabs && git checkout -q REL1_26 && \
+    cd /var/www/wiki/ && php composer.phar require mediawiki/semantic-media-wiki "~2.1" --update-no-dev && \
+    cd /var/www/wiki/extensions/ && git clone https://git.wikimedia.org/git/mediawiki/extensions/SemanticForms.git && cd SemanticForms && git checkout -q REL1_26 && \
+    cd /var/www/wiki/extensions/ && git clone https://git.wikimedia.org/git/mediawiki/extensions/SemanticFormsInputs.git && \
+    cd /var/www/wiki/ && php composer.phar require mediawiki/semantic-result-formats "2.3.*" --update-no-dev && \
+    cd /var/www/wiki/extensions/ && git clone https://github.com/enterprisemediawiki/MasonryMainPage.git && \
+    cd /var/www/wiki/ && php composer.phar require mediawiki/chameleon-skin "1.*" --update-no-dev
 ADD docker/scripts/updatemw.sh /tmp/updatemw.sh
 RUN /tmp/updatemw.sh && rm /tmp/updatemw.sh
 
