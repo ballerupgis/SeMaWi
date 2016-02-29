@@ -33,6 +33,26 @@ You will still need to import the KLE data. The data files can be obtained here:
 
 ## Optional
 
+### Migration of content
+
+This section describes the process for migrating content from a SeMaWi to a newly established docker container.
+
+#### Approach A: lots of pages which are not in recognised categories, lots of local user accounts
+
+When migrating content to a newly deployed docker build, we are essentially moving the wiki. Therefore, we follow the instructions for backing up and updating the wiki, then we re-deploy the SeMaWi XML dump.
+
+1. Back up the old wiki; instructions [here](https://www.mediawiki.org/wiki/Manual:Backing_up_a_wiki).
+2. Deploy the SeMaWi docker according to the instructions on this page.
+3. Execute an upgrade; instructions [here](https://www.mediawiki.org/wiki/Manual:Upgrading).
+4. Re-read the structure.xml manually from SeMaWi's github in Speciel:Importere (Special:Import)
+5. Execute `maintenance/rebuildall.php` and `maintenance/runJobs.php`
+
+#### Approach B: accounts are external, no uncategorised pages to move
+
+1. From the old wiki, use Special:Export to obtain XML dumps of all the pages in the categories we want transferred
+2. Deploy the SeMaWi docker according to the instructions on this page.
+3. Import the XML dumps in the newly deployed SeMaWi container using Speciel:Importere (Special:Import)
+
 ### MediaWiki secrets
 
 Your SeMaWi Docker image has been pre-seeded with random values for `$wgSecretKey` and `$wgUpgradeKey` configuration parameters in `LocalSettings.php`. These are regenerated each time you build the image. For each container that you run off an image you built for yourself, you are strongly urged to change these two values in the container. `$wgSecretKey` takes a 64 character alphanumeric string, and `$wgUpgradeKey` takes a 16 character alphanumeric string.

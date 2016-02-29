@@ -85,6 +85,10 @@ En enkel datamodel kan tilvælges som skaber rammer for indsatsregistrering, ove
 2. Installer  [Semantic Forms Inputs](https://www.mediawiki.org/wiki/Extension:Semantic_Forms_Inputs) udvidelsen til MediaWiki
 3. Importer XML filen `indsatser/indsats-struktur.xml`.
 
+# Opgradering
+
+Se dokumentation under docker mappen.
+
 # Noter
 
 MediaWiki som er fundamentet for SeMaWi er designet til store sites. Mange deployments kan være relativ små ift. MediaWiki's primære use case som er WikiPedia. Som følge kan det blive nødvendigt med nogle små workarounds som fx. kørsel af `runJobs.php` og/eller `SMW_refreshData.php` i cronjobs.
