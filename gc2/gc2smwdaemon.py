@@ -63,7 +63,7 @@ def generate(tables):
         else:
             guid = '' # should NEVER happen, maybe implement somme syslogging
 
-        if table['extra'] != None:
+        if table['extra'].strip() != None:
             extra = 'Emne_' + table['extra'].strip()
         else:
             extra = ''
