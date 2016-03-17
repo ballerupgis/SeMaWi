@@ -13,7 +13,7 @@ It is assumed you have intermediate understanding of docker concepts and basic u
 
 The command will resemble the following:
 
-docker run -d --name semawi-test -h semawi-test -p 12345:80 semawi
+docker run -d --name semawi -h semawi -p 12345:80 semawi
 
 In the docker host, you should be able to access the SeMaWi container now through your browser, with an address like http://127.0.0.1:12345 . A default user SeMaWi (member of groups SysOp and Bureaucrat) has been created for you with the password "SeMaWiSeMaWi"; this password is case sensitive. This password should be changed as your first action in the running system.
 
@@ -25,13 +25,28 @@ A detailed description of deploying docker containers to production is beyond th
 
 ## Obligatory
 
-After the container is run from the built image, you will need to manually tweak a few settings. The container exports /var/www/wiki/ as a volume. Find it's location using docker inspect semawi-test. Set $wgServer to the IP of the container, obtained with docker inspect $CONTAINERID like so: $wgServer="http://172.17.0.2";
+After the container is run from the built image, you will need to manually tweak a few settings. The container exports /var/www/wiki/ as a volume. Find it's location using docker inspect semawi. Set $wgServer to the IP of the container, obtained with docker inspect $CONTAINERID like so: $wgServer="http://172.17.0.2";
 
 If you're running SeMaWi in production, you will need to edit the line in `LocalSettings.php` which looks like `enableSemantics( 'localhost' );`, replacing localhost with the domain name you are using.
 
 You will still need to import the KLE data. The data files can be obtained here: https://github.com/JosefAssad/SeMaWi/tree/master/KLE-data . You will need to use the CSV import option in SpecialPages.
 
 ## Optional
+
+### Caring for your data
+
+You are strongly encouraged to use the [data container pattern](https://docs.docker.com/engine/userguide/containers/dockervolumes/). SeMaWi exposes two volumes:
+
+1. The wiki directory at `/var/www/wiki/`
+2. The database data directory at `/var/lib/mysql/`
+
+After creating your SeMaWi container and running it, create another SeMaWi container and point it at the SeMaWi container's volumes. Example:
+
+````
+docker run -ti --name semawi-data -h semawi-data --volumes-from semawi semawi /bin/bash
+````
+You can verify that it is using the container semawi's volumes by inspecting those two filesystem locations. Once satisfied, exit the container without shutting it down with Ctrl-p Ctrl-q and you may then stop it with `docker stop semawi-data`.
+
 
 ### Migration of content
 
