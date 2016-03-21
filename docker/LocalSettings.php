@@ -151,6 +151,9 @@ require_once "$IP/extensions/ImportUsers/ImportUsers.php";
 # Add more configuration options below.
 $wgIncludejQueryMigrate = true;
 
+# Uncomment the following line when taking a database dump
+#$wgReadOnly = "Vi tager kopi af databasen. Vent veligst.";
+
 include_once "$IP/extensions/DataTransfer/DataTransfer.php";
 require_once "$IP/extensions/MasonryMainPage/MasonryMainPage.php";
 require_once "$IP/extensions/HeaderTabs/HeaderTabs.php";
