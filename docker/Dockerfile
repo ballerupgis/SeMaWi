@@ -52,11 +52,11 @@ RUN /tmp/makeadmin.sh && rm /tmp/makeadmin.sh
 ADD docker/001-semawi.conf /etc/apache2/sites-available/001-semawi.conf
 RUN a2dissite 000-default && a2ensite 001-semawi
 
+# Not always SOP, but for apache might need write permissions if debug is turned on for a file in the www dir for example
+RUN chown -R www-data:www-data /var/www/wiki/images/
+
 # Expose the few files we want to be mutable in a volume
 VOLUME /var/www/wiki/
-
-# Not always SOP, but for apache might need write permissions if debug is turned on for a file in the www dir for example
-RUN chown -R www-data:www-data /var/www/wiki/
 
 # Import SeMaWi XML and KLE XML
 COPY struktur.xml /tmp/struktur.xml
