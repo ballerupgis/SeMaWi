@@ -44,14 +44,6 @@ $wgFileExtensions = array( 'png', 'gif', 'jpg', 'jpeg', 'doc',
 
 Til brugeroprettelse kan det anbefales at installere udvidelsen [ImportUsers](https://www.mediawiki.org/wiki/Extension:ImportUsers). Dog er det smart at afinstallere eller som minimum deaktivere udvidelsen igen umiddelbart efter; import af brugere burde ikke være en øvelse der skal gentages for ofte, og målet på sigt er at anvende enten en AD/LDAP eller [OS2MO](http://www.os2web.dk/projekter/os2mo) som ekstern autoritativ brugerkilde.
 
-## KLE Emneplan 2.0
-
-Hvis det ønskes kan elementerne fra KLE Emneplan 2.0 indlæses så de kan anvendes til tagging og dermed klassificering, søgning, filtrering, og analyse på tværs af resten af datamodellen.
-
-Der er 4 trin i processen. Først importeres XML filen `KLE/KLE-struktur.xml`. Derefter importeres de 4 CSV filer som ligger i mappen `KLE/KLE-data`. Efter import af struktur og data anbefales det at refreshe SMW ved at køre de to backend scripts `SMW_refreshData.php` og derefter `runJobs.php`.
-
-Da dette er optionelt skal der manuelt tilføjes felter der peger på KLE-struktur elementer i de øvrige klasser.
-
 ## Mapcentia GC2 Tabeller
 
 SeMaWi understøtter integration til Mapcentia GeoCloud2. Geodata tabeller kan vises som sider i Geodata kategoriet i SeMaWi, hvilket gør det muligt at lave analyser på de tabeller og at se dem i sammenhæng med øvrige entiteter som KLE emner eller systemer eller brugere.
@@ -76,14 +68,6 @@ Hvis det ønskes kan tabellerne fra Mapcentia GC2 indlæses en gang og derefter 
 4. Indlæs `gc2/geodata-struktur.xml`
 5. Indlæs den genererede CSV fil
 6. Kør de to backend scripts `SMW_refreshData.php` og derefter `runJobs.php`.
-
-## Datamodel for Indsatser og strategiske ophæng
-
-En enkel datamodel kan tilvælges som skaber rammer for indsatsregistrering, overblik, og opfølgning. Generelle trin for installation:
-
-1. Installer  [Header Tabs](https://www.mediawiki.org/wiki/Extension:Header_Tabs) udvidelsen til MediaWiki
-2. Installer  [Semantic Forms Inputs](https://www.mediawiki.org/wiki/Extension:Semantic_Forms_Inputs) udvidelsen til MediaWiki
-3. Importer XML filen `indsatser/indsats-struktur.xml`.
 
 # Opgradering
 
