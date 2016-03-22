@@ -8,8 +8,8 @@ SeMaWi er udviklet i samarbejde med [Josef Assad](mailto:josef@josefassad.com).
 # Infrastruktur
 1. Debian 8
 2. Apache, MySQL, og php fra standard Debian repositorier
-3. Mediawiki (herefter MW) 1.24.2; [installationsvejledning](https://www.mediawiki.org/wiki/Manual:Installing_MediaWiki)
-4. Semantic Mediawiki (hereafter SMW) 2.2 [installationsvejledning](https://semantic-mediawiki.org/wiki/Help:Installation/Using_Composer_with_MediaWiki_1.22%2B)
+3. Mediawiki (herefter MW) 1.26.2; [installationsvejledning](https://www.mediawiki.org/wiki/Manual:Installing_MediaWiki)
+4. Semantic Mediawiki (hereafter SMW) 2.3 [installationsvejledning](https://semantic-mediawiki.org/wiki/Help:Installation/Using_Composer_with_MediaWiki_1.22%2B)
 
 # Installation
 
@@ -27,19 +27,8 @@ Docker er den anbefalede installations- og driftsmetode for SeMaWi. Følg vejled
 6. I SMW Special:Import, importer filen structure.xml
 7. I Linux kommandolinjen, navigér til MW maintenance folderen og kør kommandoen `php runJobs.php`
 8. Skift sidelogo efter behov; instruktioner [her](https://www.mediawiki.org/wiki/Manual:$wgLogo).
-9. I filen `SemanticMediaWiki.settings.php` skift værdien af variablen `smwgQMaxSize` til 100.
-10. I filen `SemanticMediaWiki.settings.php` skift værdien af variablen `smwgQMaxDepth` til 10.
+9. Referer til filen `docker/LocalSettings.php` for at konfigurere SeMaWi korrekt.
 11. Installer [MasonryMainPage](https://github.com/enterprisemediawiki/MasonryMainPage).
-12. I filen `LocalSettings.php` tilføj `$wgIncludejQueryMigrate = true;`.
-13. I filen `LocalSettings.php` tilføj:
-
-```php
-$wgFileExtensions = array( 'png', 'gif', 'jpg', 'jpeg', 'doc',
-    'xls', 'mpp', 'pdf', 'ppt', 'tiff', 'bmp', 'docx', 'xlsx',
-    'pptx', 'ps', 'odt', 'ods', 'odp', 'odg'
-);
-```
-14. I filen LocalSettings.php tilføj: `$wgEnableParserCache = false;` og `$wgCachePages = false;`.
 15. (optionelt) Installer [Chameleon tema'et](https://www.mediawiki.org/wiki/Skin:Chameleon). Det aktiveres ved at finde linjen i `LocalSettings.php` som siger `$wgDefaultSkin = "vector";` of udskifte `vector` med `chameleon`.
 
 Til brugeroprettelse kan det anbefales at installere udvidelsen [ImportUsers](https://www.mediawiki.org/wiki/Extension:ImportUsers). Dog er det smart at afinstallere eller som minimum deaktivere udvidelsen igen umiddelbart efter; import af brugere burde ikke være en øvelse der skal gentages for ofte, og målet på sigt er at anvende enten en AD/LDAP eller [OS2MO](http://www.os2web.dk/projekter/os2mo) som ekstern autoritativ brugerkilde.
