@@ -54,7 +54,6 @@ RUN a2dissite 000-default && a2ensite 001-semawi
 
 # Expose the few files we want to be mutable in a volume
 VOLUME /var/www/wiki/
-VOLUME /var/lib/mysql/
 
 # Not always SOP, but for apache might need write permissions if debug is turned on for a file in the www dir for example
 RUN chown -R www-data:www-data /var/www/wiki/
@@ -74,6 +73,7 @@ RUN /tmp/installgc2daemon.sh && rm /tmp/installgc2daemon.sh
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Start up services
+ADD docker/my.cnf /etc/mysql/my.cnf
 ADD docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 EXPOSE 80
 CMD ["/usr/bin/supervisord"]
