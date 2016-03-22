@@ -6,5 +6,4 @@ sleep 10
 
 # Import SeMaWi elements
 php /var/www/wiki/maintenance/importDump.php < /tmp/struktur.xml
-php /var/www/wiki/maintenance/importDump.php < /tmp/KLE-struktur.xml
 

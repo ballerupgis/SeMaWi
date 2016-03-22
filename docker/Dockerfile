@@ -58,11 +58,10 @@ RUN chown -R www-data:www-data /var/www/wiki/images/
 # Expose the few files we want to be mutable in a volume
 VOLUME /var/www/wiki/
 
-# Import SeMaWi XML and KLE XML
+# Import SeMaWi XML
 COPY struktur.xml /tmp/struktur.xml
-COPY KLE/KLE-struktur.xml /tmp/KLE-struktur.xml
 COPY docker/scripts/importxml.sh /tmp/importxml.sh
-RUN /tmp/importxml.sh && rm /tmp/struktur.xml /tmp/KLE-struktur.xml /tmp/importxml.sh
+#RUN /tmp/importxml.sh && rm /tmp/struktur.xml /tmp/importxml.sh
 
 # Installing the GC2 daemon
 COPY docker/scripts/installgc2daemon.sh /tmp/
