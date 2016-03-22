@@ -191,6 +191,3 @@ $wgFileExtensions = array( 'png', 'gif', 'jpg', 'jpeg', 'doc',
     'xls', 'mpp', 'pdf', 'ppt', 'tiff', 'bmp', 'docx', 'xlsx',
     'pptx', 'ps', 'odt', 'ods', 'odp', 'odg'
 );
-
-# We want parserfunctions enabled
-wfLoadExtension( 'ParserFunctions' );
