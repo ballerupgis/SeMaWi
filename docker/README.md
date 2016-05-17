@@ -13,7 +13,7 @@ It is assumed you have intermediate understanding of docker concepts and basic u
 
 The command will resemble the following:
 
-docker run -d --name semawi -h semawi -p 12345:80 semawi
+docker run --restart="always" -d --name semawi -h semawi -p 12345:80 semawi
 
 In the docker host, you should be able to access the SeMaWi container now through your browser, with an address like http://127.0.0.1:12345 . A default user SeMaWi (member of groups SysOp and Bureaucrat) has been created for you with the password "SeMaWiSeMaWi"; this password is case sensitive. This password should be changed as your first action in the running system.
 
