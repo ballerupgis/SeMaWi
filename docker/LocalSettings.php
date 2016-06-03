@@ -191,3 +191,11 @@ $wgFileExtensions = array( 'png', 'gif', 'jpg', 'jpeg', 'doc',
     'xls', 'mpp', 'pdf', 'ppt', 'tiff', 'bmp', 'docx', 'xlsx',
     'pptx', 'ps', 'odt', 'ods', 'odp', 'odg'
 );
+
+# to allow file protocol
+$wgUrlProtocols = array(
+   'bitcoin:', 'ftp://', 'ftps://', 'geo:', 'git://', 'gopher://', 'http://', 'file://',
+   'https://', 'irc://', 'ircs://', 'magnet:', 'mailto:', 'mms://', 'news:',
+   'nntp://', 'redis://', 'sftp://', 'sip:', 'sips:', 'sms:', 'ssh://',
+   'svn://', 'tel:', 'telnet://', 'urn:', 'worldwind://', 'xmpp:', '//'
+)
