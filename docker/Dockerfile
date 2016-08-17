@@ -16,7 +16,7 @@ COPY docker/sources.list.d/jessie-deb-src.list /etc/apt/sources.list.d/jessie-de
 RUN echo 'mysql-server mysql-server/root_password password wiki' | debconf-set-selections && echo 'mysql-server mysql-server/root_password_again password wiki' | debconf-set-selections && apt-get update && apt-get -y install mysql-server mysql-client apache2 curl php5 supervisor git php5-mysql libapache2-mod-php5 virtualenv cron && apt-get -y build-dep python-lxml
 
 # Install MediaWiki
-RUN cd /var/www/ && curl https://releases.wikimedia.org/mediawiki/1.26/mediawiki-1.26.2.tar.gz | tar xvzf - && mv mediawiki-1.26.2 wiki && chown -R root:root wiki
+RUN cd /var/www/ && curl https://releases.wikimedia.org/mediawiki/1.27/mediawiki-1.27.0.tar.gz | tar xvzf - && mv mediawiki-1.27.0 wiki && chown -R root:root wiki
 COPY docker/LocalSettings.php /var/www/wiki/LocalSettings.php
 
 # Change $wgSecretKey and $wgUpgradeKey in LocalSettings.php
@@ -29,6 +29,7 @@ RUN /tmp/initdb.sh && rm /tmp/initdb.sh
 
 # Install extensions
 RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
+    cd /var/www/wiki/extensions/SyntaxHighlight_GeSHi/ && php /var/www/wiki/composer.phar update --no-dev &&\
     cd /var/www/wiki/extensions/ && git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/ImportUsers.git && cd ImportUsers && git checkout -q REL1_26 && \
     cd /var/www/wiki/extensions/ && git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/DataTransfer.git && cd DataTransfer && git checkout -q REL1_26 && \
     cd /var/www/wiki/extensions/ && git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/HeaderTabs.git && cd HeaderTabs && git checkout -q REL1_26 && \
@@ -61,7 +62,7 @@ VOLUME /var/www/wiki/
 # Import SeMaWi XML
 COPY struktur.xml /tmp/struktur.xml
 COPY docker/scripts/importxml.sh /tmp/importxml.sh
-#RUN /tmp/importxml.sh && rm /tmp/struktur.xml /tmp/importxml.sh
+RUN /tmp/importxml.sh && rm /tmp/struktur.xml /tmp/importxml.sh
 
 # Installing the GC2 daemon
 COPY docker/scripts/installgc2daemon.sh /tmp/
