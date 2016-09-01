@@ -1,5 +1,5 @@
-# BUILD-USING:        docker build -t semawi -f docker/Dockerfile .
-# RUN-USING:          docker run  -d --name semawi-container -h semawi-container -p 12345:80 semawi
+# BUILD-USING:        docker build --build-arg DBHOST=172.17.0.1 --build-arg DBUSER=wiki --build-arg DBPASS=wiki -t semawi -f docker/Dockerfile .
+# RUN-USING:          docker run -d --name semawi-container -h semawi-container -p 12345:80 semawi
 # INSPECT-USING:      docker run -t -i semawi-container /bin/bash
 
 FROM debian:jessie
@@ -8,24 +8,28 @@ LABEL version="2016-01"
 
 ENV DEBIAN_FRONTEND noninteractive
 
+ARG DBHOST=172.17.0.1
+ARG DBUSER=wiki
+ARG DBPASS=wiki
+
 # We'll need the deb-src repositories since we're apt-get build-dep'ing python-lxml
 # as part of getting gc2smwdaemon's virtualenv prepped
 COPY docker/sources.list.d/jessie-deb-src.list /etc/apt/sources.list.d/jessie-deb-src.list
 
 # Get stack up
-RUN echo 'mysql-server mysql-server/root_password password wiki' | debconf-set-selections && echo 'mysql-server mysql-server/root_password_again password wiki' | debconf-set-selections && apt-get update && apt-get -y install mysql-server mysql-client apache2 curl php5 supervisor git php5-mysql libapache2-mod-php5 virtualenv cron && apt-get -y build-dep python-lxml
+RUN apt-get update && apt-get -y install mysql-client apache2 curl php5 supervisor git php5-mysql libapache2-mod-php5 virtualenv cron && apt-get -y build-dep python-lxml
 
 # Install MediaWiki
 RUN cd /var/www/ && curl https://releases.wikimedia.org/mediawiki/1.27/mediawiki-1.27.0.tar.gz | tar xvzf - && mv mediawiki-1.27.0 wiki && chown -R root:root wiki
 COPY docker/LocalSettings.php /var/www/wiki/LocalSettings.php
 
 # Change $wgSecretKey and $wgUpgradeKey in LocalSettings.php
-COPY docker/scripts/gensecrets.sh /tmp/gensecrets.sh
-RUN /tmp/gensecrets.sh && rm /tmp/gensecrets.sh
+COPY docker/scripts/myLocalSettings.sh /tmp/myLocalSettings.sh
+RUN /tmp/myLocalSettings.sh $DBHOST $DBUSER $DBPASS && rm /tmp/myLocalSettings.sh
 
 # seed MediaWiki
 ADD docker/scripts/initdb.sh /tmp/initdb.sh
-RUN /tmp/initdb.sh && rm /tmp/initdb.sh
+RUN /tmp/initdb.sh $DBHOST $DBUSER $DBPASS && rm /tmp/initdb.sh
 
 # Install extensions
 RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
@@ -45,7 +49,7 @@ RUN /tmp/updatemw.sh && rm /tmp/updatemw.sh
 # NaN logo. Just because.
 COPY docker/nanlogo.png /var/www/wiki/resources/assets/nanlogo.png
 
-# We'll need a susop/bureaucrat account
+# We'll need a sysop/bureaucrat account
 ADD docker/scripts/makeadmin.sh /tmp/makeadmin.sh
 RUN /tmp/makeadmin.sh && rm /tmp/makeadmin.sh
 
@@ -72,7 +76,7 @@ RUN /tmp/installgc2daemon.sh && rm /tmp/installgc2daemon.sh
 # Slim down the image
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# Start up services
-ADD docker/my.cnf /etc/mysql/my.cnf
-ADD docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-CMD ["/usr/bin/supervisord"]
+# Start up apache
+ADD docker/scripts/runapache.sh /opt/runapache.sh
+CMD ["/opt/runapache.sh"]
+

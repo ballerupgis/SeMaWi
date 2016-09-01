@@ -1,11 +1,7 @@
 #!/bin/bash
 
-/usr/bin/mysqld_safe &
+# This script expects 3 command line parameters: DB host, user, and pass
 
-sleep 10
-
-# First we need the mediawiki tables
-mysql -u root -pwiki -e "CREATE DATABASE wiki"
-mysql -u root -pwiki -e "GRANT ALL PRIVILEGES ON wiki.* To 'wiki'@'%' IDENTIFIED BY 'wiki';"
-mysql -u root -pwiki wiki < /var/www/wiki/maintenance/tables.sql
+# The extensions will probably be expecting a functional MW installation, so...
+mysql -h $1 -u $2 -p$3 wiki < /var/www/wiki/maintenance/tables.sql
 
