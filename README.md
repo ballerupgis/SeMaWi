@@ -68,4 +68,6 @@ MediaWiki som er fundamentet for SeMaWi er designet til store sites. Mange deplo
 
 # Licens
 
+Kode og data i SeMaWi er copyright Ballerup Kommune 2016 med mindre andet er specificeret i de enkelte filer.
+
 SeMaWi er open source. Der er frit valg mellem [GPLv3](http://www.gnu.org/licenses/gpl-3.0.en.html) licensen eller [Creative Commons Attribution-ShareAlike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0/).
