@@ -1,13 +1,6 @@
 It is assumed you have intermediate understanding of docker concepts and basic usage.
 
-# Building the SeMaWi image
-
-1. Download the docker source files.
-2. Stand in the parent directory of the directory containing the Dockerfile
-3. Issue the following command: docker build --build-arg DBHOST=172.17.0.1 DBUSER=wiki DBPASS=wiki -t semawi -f docker/Dockerfile .
-4. Wait.
-
-# Running a SeMaWi container
+# Preparing your database
 
 SeMaWi is an application container. The persistent data is stored outside of the container. It is up to you to decide whether to persist data in a MySQL container or to store persistent data in a host MySQL. In either case, SeMaWi requires a MySQL database and a user with appropriate credentials. As an example to create a database on a Debian Stable Docker host:
 
@@ -29,12 +22,20 @@ bind-address = 0.0.0.0
 
 You will probably also need to add a directive `skip-name-resolve` in the `[mysqld]` section of the same file. Remember to restart the mysql service after.
 
-## For testing/development
+# Building the SeMaWi image
+
+1. Download the docker source files.
+2. Stand in the parent directory of the directory containing the Dockerfile
+3. In MySQL, create a database and database user which will contain the SeMaWi database; you should have done this in the previous section.
+3. Issue the following command: `docker build --build-arg DBHOST=172.17.0.1 --build-arg DBUSER=wiki --build-arg DBPASS=wiki -t semawi -f docker/Dockerfile .` Make sure you have the correct values for the 3 build arguments DBHOST, DBUSER, and DBPASS.
+4. Make a cup of tea, it takes a while. On my development VM, it takes about 30 minutes.
+
+## Running a container for testing/development
 
 The command will resemble the following:
 
 ```bash
-docker build --build-arg DBHOST=172.17.0.1 --build-arg DBUSER=wiki --build-arg DBPASS=wiki -t semawi -f docker/Dockerfile .
+docker run -d --name semawi-container -h semawi-container -p 12345:80 semawi
 ```
 
 In the docker host, you should be able to access the SeMaWi container now through your browser, with an address like http://127.0.0.1:12345 . A default user SeMaWi (member of groups SysOp and Bureaucrat) has been created for you with the password "SeMaWiSeMaWi"; this password is case sensitive. This password should be changed as your first action in the running system.
