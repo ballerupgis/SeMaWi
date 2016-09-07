@@ -42,6 +42,7 @@ RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
     cd /var/www/wiki/extensions/ && git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/SemanticFormsInputs.git && \
     cd /var/www/wiki/ && php composer.phar require mediawiki/semantic-result-formats "2.3.*" --update-no-dev && \
     cd /var/www/wiki/extensions/ && git clone https://github.com/enterprisemediawiki/MasonryMainPage.git && \
+    cd /var/www/wiki/extensions/ && git clone https://github.com/wikimedia/mediawiki-extensions-EditUser.git && mv mediawiki-extensions-EditUser EditUser &&\
     cd /var/www/wiki/ && php composer.phar require mediawiki/chameleon-skin "1.*" --update-no-dev
 ADD docker/scripts/updatemw.sh /tmp/updatemw.sh
 RUN /tmp/updatemw.sh && rm /tmp/updatemw.sh

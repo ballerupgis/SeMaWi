@@ -146,10 +146,14 @@ require_once "$IP/extensions/Renameuser/Renameuser.php";
 require_once "$IP/extensions/SyntaxHighlight_GeSHi/SyntaxHighlight_GeSHi.php";
 require_once "$IP/extensions/WikiEditor/WikiEditor.php";
 require_once "$IP/extensions/ImportUsers/ImportUsers.php";
+require_once "$IP/extensions/EditUser/EditUser.php";
 
 # End of automatically generated settings.
 # Add more configuration options below.
 $wgIncludejQueryMigrate = true;
+
+# Hvem skal have tilladelse til at redigere i brugerkonti?
+$wgGroupPermissions['sysop']['edituser'] = true;
 
 # Uncomment the following line when taking a database dump
 #$wgReadOnly = "Vi tager kopi af databasen. Vent veligst.";
