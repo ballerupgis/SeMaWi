@@ -34,15 +34,15 @@ RUN /tmp/initdb.sh $DBHOST $DBUSER $DBPASS && rm /tmp/initdb.sh
 # Install extensions
 RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
     cd /var/www/wiki/extensions/SyntaxHighlight_GeSHi/ && php /var/www/wiki/composer.phar update --no-dev &&\
-    cd /var/www/wiki/extensions/ && git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/ImportUsers.git && cd ImportUsers && git checkout -q REL1_26 && \
-    cd /var/www/wiki/extensions/ && git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/DataTransfer.git && cd DataTransfer && git checkout -q REL1_26 && \
-    cd /var/www/wiki/extensions/ && git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/HeaderTabs.git && cd HeaderTabs && git checkout -q REL1_26 && \
+    cd /var/www/wiki/extensions/ && git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/ImportUsers.git && cd ImportUsers && git checkout -q REL1_26 &&\
+    cd /var/www/wiki/extensions/ && git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/DataTransfer.git && cd DataTransfer && git checkout -q REL1_26 &&\
+    cd /var/www/wiki/extensions/ && git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/HeaderTabs.git && cd HeaderTabs && git checkout -q REL1_26 &&\
     cd /var/www/wiki/ && php composer.phar require mediawiki/semantic-media-wiki "~2.1" --update-no-dev && \
     cd /var/www/wiki/extensions/ && git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/SemanticForms && cd SemanticForms && git checkout -q bcd0257 &&\
-    cd /var/www/wiki/extensions/ && git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/SemanticFormsInputs.git && \
+    cd /var/www/wiki/extensions/ && git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/SemanticFormsInputs.git && cd SemanticFormsInputs && git checkout -q 01285388a99071d50a9d8490fdc9378af31dc9b1 && \
     cd /var/www/wiki/ && php composer.phar require mediawiki/semantic-result-formats "2.3.*" --update-no-dev && \
-    cd /var/www/wiki/extensions/ && git clone https://github.com/enterprisemediawiki/MasonryMainPage.git && \
-    cd /var/www/wiki/extensions/ && git clone https://github.com/wikimedia/mediawiki-extensions-EditUser.git && mv mediawiki-extensions-EditUser EditUser &&\
+    cd /var/www/wiki/extensions/ && git clone https://github.com/enterprisemediawiki/MasonryMainPage.git && cd MasonryMainPage && git checkout -q c3eaa0a9f26011dc397748bb76eb507ded4acfbb &&\
+    cd /var/www/wiki/extensions/ && git clone https://github.com/wikimedia/mediawiki-extensions-EditUser.git && mv mediawiki-extensions-EditUser EditUser && cd EditUser && git checkout -q a7691bf &&\
     cd /var/www/wiki/ && php composer.phar require mediawiki/chameleon-skin "1.*" --update-no-dev
 ADD docker/scripts/updatemw.sh /tmp/updatemw.sh
 RUN /tmp/updatemw.sh && rm /tmp/updatemw.sh
