@@ -71,6 +71,7 @@ RUN /tmp/importxml.sh && rm /tmp/struktur.xml /tmp/importxml.sh
 
 # Installing the GC2 daemon
 COPY docker/scripts/installgc2daemon.sh /tmp/
+COPY docker/scripts/syncgc2.sh /opt/
 COPY gc2 /opt/gc2
 RUN /tmp/installgc2daemon.sh && rm /tmp/installgc2daemon.sh
 

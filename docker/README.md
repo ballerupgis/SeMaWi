@@ -42,6 +42,16 @@ In the docker host, you should be able to access the SeMaWi container now throug
 
 You can then import the SeMaWi data model and pages by importing struktur.xml from the git repository.
 
+## Pulling geodata from a GeoCloud2 instance
+
+The image has a script `/opt/syncgc2.sh` which needs to be called in order to initiate a pull from GC2. You will want the docker host to have a cron job for this purpose. An example of such a command could be:
+
+```cron
+0 5 * * * docker exec your-container-name /opt/syncgc2.sh
+```
+
+Keep in mind, the cronjob will need sufficient privileges to execute docker commands.
+
 ## For production
 
 A detailed description of deploying docker containers to production is beyond the scope of this document.
