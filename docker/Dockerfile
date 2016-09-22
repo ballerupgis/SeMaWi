@@ -98,6 +98,7 @@ RUN chown -R www-data:www-data /var/www/wiki/images/
 
 # Expose the few files we want to be mutable in a volume
 VOLUME /var/www/wiki/
+VOLUME /opt/gc2/
 
 # Import SeMaWi XML
 COPY struktur.xml /tmp/struktur.xml
