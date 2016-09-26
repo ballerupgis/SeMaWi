@@ -77,21 +77,6 @@ If you're running SeMaWi in production, you will need to edit the line in `Local
 
 ## Optional
 
-### Caring for your data
-
-You are strongly encouraged to use the [data container pattern](https://docs.docker.com/engine/userguide/containers/dockervolumes/). SeMaWi exposes two volumes:
-
-1. The wiki directory at `/var/www/wiki/`
-2. The database data directory at `/var/lib/mysql/`
-
-After creating your SeMaWi container and running it, create another SeMaWi container and point it at the SeMaWi container's volumes. Example:
-
-````
-docker run -ti --name semawi-data -h semawi-data --volumes-from semawi semawi /bin/bash
-````
-You can verify that it is using the container semawi's volumes by inspecting those two filesystem locations. Once satisfied, exit the container without shutting it down with Ctrl-p Ctrl-q and you may then stop it with `docker stop semawi-data`.
-
-
 ### Migration of content
 
 This section describes the process for migrating content from a SeMaWi to a newly established docker container.
