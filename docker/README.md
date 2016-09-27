@@ -44,6 +44,8 @@ You can then import the SeMaWi data model and pages by importing struktur.xml fr
 
 ## Pulling geodata from a GeoCloud2 instance
 
+First make sure you have followed the instructions for configuring the GC2 sync in SeMaWi. That is documented in this file in the section "GeoCloud2 Import Cronjob".
+
 The image has a script `/opt/syncgc2.sh` which needs to be called in order to initiate a pull from GC2. You will want the docker host to have a cron job for this purpose. An example of such a command could be:
 
 ```cron
@@ -121,7 +123,18 @@ and change it to
 
 ### GeoCloud2 Import Cronjob
 
-There are two settings you need to modify to activate the [Mapcentia GeoCloud2](https://github.com/mapcentia/geocloud2) geodata table import into SeMaWi. First, you must enter the site settings for your SeMaWi in `/opt/gc2/gc2smw.cfg`. Second, a commented out cronjob for running the import has been added to the root user's crontab. As root, inspect it and uncomment it when you are ready to activate this integration.
+SeMawi exposes the GC2 sync config in a volume, find it with `docker inspect your-container-name`.
+
+You must enter the site settings for your SeMaWi in `/opt/gc2/gc2smw.cfg`.
+
+When you have done this, you must exec into the container to install the GC2 sync environment:
+
+```bash
+docker exec -ti name-of-your-running-container /bin/bash
+cd /opt/
+./installgc2daemon.sh
+
+```
 
 It is strongly recommended you coordinate the time at which the import runs with Mapcentia.
 

@@ -106,10 +106,9 @@ COPY docker/scripts/importxml.sh /tmp/importxml.sh
 RUN /tmp/importxml.sh && rm /tmp/struktur.xml /tmp/importxml.sh
 
 # Installing the GC2 daemon
-COPY docker/scripts/installgc2daemon.sh /tmp/
-COPY docker/scripts/syncgc2.sh /opt/
+COPY docker/scripts/installgc2daemon.sh /opt/installgc2daemon.sh
+COPY docker/scripts/syncgc2.sh /opt/syncgc2.sh
 COPY gc2 /opt/gc2
-RUN /tmp/installgc2daemon.sh && rm /tmp/installgc2daemon.sh
 
 # Slim down the image
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

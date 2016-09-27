@@ -11,7 +11,7 @@ import urllib
 import requests
 from config import Config
 
-cfg = Config(file('gc2smw.cfg'))
+cfg = Config(file('/opt/gc2/gc2smw.cfg'))
 # Dette script skal installeres i et cronjob. Cronjobbet kan se således ud:
 # */1 * * * echo 'source /home/josef/.virtualenvs/gc2smw/bin/activate; python /home/josef/.virtualenvs/gc2smw/gc2cronjob/gc2smwdaemon.py' | /bin/bash
 # Bemærk, det betyder at værdien semawi.cfg nedenfor skal angived med
@@ -63,8 +63,11 @@ def generate(tables):
         else:
             guid = '' # should NEVER happen, maybe implement somme syslogging
 
-        if table['extra'].strip() != None:
-            extra = 'Emne_' + table['extra'].strip()
+        if table['extra'] != None:
+            if table['extra'].strip() != None:
+                extra = 'Emne_' + table['extra'].strip()
+            else:
+                extra = ''
         else:
             extra = ''
 
