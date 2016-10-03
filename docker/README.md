@@ -92,6 +92,7 @@ When migrating content to a newly deployed docker build, we are essentially movi
 3. Execute an upgrade; instructions [here](https://www.mediawiki.org/wiki/Manual:Upgrading).
 4. Re-read the structure.xml manually from SeMaWi's github in Speciel:Importere (Special:Import)
 5. Execute `maintenance/rebuildall.php` and `maintenance/runJobs.php`
+6. Remember to `chown -R www-data:www-data /var/www/wiki/images/` in the docker image (with docker exec) after moving the image directory contents.
 
 #### Approach B: accounts are external, no uncategorised pages to move
 
