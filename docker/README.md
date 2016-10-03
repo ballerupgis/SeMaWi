@@ -123,9 +123,12 @@ and change it to
 
 ### GeoCloud2 Import Cronjob
 
-SeMawi exposes the GC2 sync config in a volume, find it with `docker inspect your-container-name`.
+There are four settings you need to modify to activate the [Mapcentia GeoCloud2](https://github.com/mapcentia/geocloud2) geodata table import into SeMaWi. SeMawi exposes the GC2 sync config in a volume, find it with `docker inspect your-container-name`. In this volume you will fine the cfg file, and the following settings need to be set correctly:
 
-You must enter the site settings for your SeMaWi in `/opt/gc2/gc2smw.cfg`.
+1. username: a valid SeMaWi login. The default docker build establishes a login Sitebot for this purpose
+2. password: the password for the above bot account; usually SitebotSitebot
+3. site: the URL to the SeMaWi container. Unless you know what you are doing, leave it as-is
+4. gc2_url: The URL to the GC2 API
 
 When you have done this, you must exec into the container to install the GC2 sync environment:
 
@@ -135,6 +138,8 @@ cd /opt/
 ./installgc2daemon.sh
 
 ```
+
+Having set the integration up, you must instruct the docker host to call the script from the host's cronjob. Refer to the section "Pulling geodata from a GeoCloud2 instance" in this document to see how to do this.
 
 It is strongly recommended you coordinate the time at which the import runs with Mapcentia.
 
