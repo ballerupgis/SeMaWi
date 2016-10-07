@@ -203,3 +203,7 @@ $wgUrlProtocols = array(
    'nntp://', 'redis://', 'sftp://', 'sip:', 'sips:', 'sms:', 'ssh://',
    'svn://', 'tel:', 'telnet://', 'urn:', 'worldwind://', 'xmpp:', '//'
 );
+
+# We need to export a LOT of pages often
+# See https://gerrit.wikimedia.org/r/#/c/267038/
+$wgExportPagelistLimit = 20000;
