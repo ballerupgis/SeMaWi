@@ -147,3 +147,9 @@ It is strongly recommended you coordinate the time at which the import runs with
 ### Other
 
 You are encouraged to examine LocalSettings.php and adapt it to your needs.
+
+If you need to restart a running SeMaWi container (e.g. php.ini tweaks):
+
+```bash
+docker kill --signal="SIGUSR1" your-semawi-container-name
+```
