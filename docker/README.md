@@ -64,7 +64,7 @@ A detailed description of deploying docker containers to production is beyond th
 
 After the container is run from the built image, you will need to manually tweak a few settings. The container exports /var/www/wiki/ as a volume. Find it's location using docker inspect semawi. Set $wgServer to the IP of the container, obtained with docker inspect $CONTAINERID like so: $wgServer="http://172.17.0.2";
 
-You must specify for SeMaWi how to connect to the database you have provided for it. This can be done in the `LocalSettings.php` file in the exported volume. Look for the section which looks as follows:
+You may have to specify for SeMaWi how to connect to the database you have provided for it, if you have used different settings in the image build. This can be done in the `LocalSettings.php` file in the exported volume. Look for the section which looks as follows:
 
 ```php
 ## Database settings
@@ -110,7 +110,7 @@ You will likely want to change your logo. Follow the guidelines [here](https://w
 
 ### Data Model
 
-I recommend you examine the list of Forms to identify which parts of the SeMaWi functionality is required in your case. You can link to the Categories created by these Forms in MediaWiki:Sidebar. A default sidebar will be provided in a future release.
+I recommend you examine the list of Forms to identify which parts of the SeMaWi functionality is required in your case. You can link to the Categories created by these Forms in MediaWiki:Sidebar.
 
 ### MediaWiki Skin
 
