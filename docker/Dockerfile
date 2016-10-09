@@ -36,8 +36,8 @@ COPY docker/scripts/myLocalSettings.sh /tmp/myLocalSettings.sh
 RUN /tmp/myLocalSettings.sh $DBHOST $DBUSER $DBPASS && rm /tmp/myLocalSettings.sh
 
 # seed MediaWiki
-ADD docker/scripts/initdb.sh /tmp/initdb.sh
-RUN /tmp/initdb.sh $DBHOST $DBUSER $DBPASS && rm /tmp/initdb.sh
+ADD docker/scripts/initdb.sh docker/db.sql /tmp/
+RUN /tmp/initdb.sh $DBHOST $DBUSER $DBPASS && rm /tmp/initdb.sh /tmp/db.sql
 
 # Install extensions
 RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
@@ -79,9 +79,6 @@ RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
     cd /var/www/wiki/ && \
        php composer.phar require mediawiki/chameleon-skin "1.*" --update-no-dev
 
-ADD docker/scripts/updatemw.sh /tmp/updatemw.sh
-RUN /tmp/updatemw.sh && rm /tmp/updatemw.sh
-
 # NaN logo. Just because.
 COPY docker/nanlogo.png /var/www/wiki/resources/assets/nanlogo.png
 
@@ -99,11 +96,6 @@ RUN chown -R www-data:www-data /var/www/wiki/images/
 # Expose the few files we want to be mutable in a volume
 VOLUME /var/www/wiki/
 VOLUME /opt/gc2/
-
-# Import SeMaWi XML
-COPY struktur.xml /tmp/struktur.xml
-COPY docker/scripts/importxml.sh /tmp/importxml.sh
-RUN /tmp/importxml.sh && rm /tmp/struktur.xml /tmp/importxml.sh
 
 # Installing the GC2 daemon
 COPY docker/scripts/installgc2daemon.sh /opt/installgc2daemon.sh
