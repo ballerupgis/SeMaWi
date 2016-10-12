@@ -50,6 +50,7 @@ The image has a script `/opt/syncgc2.sh` which needs to be called in order to in
 
 ```cron
 0 5 * * * docker exec your-container-name /opt/syncgc2.sh
+0 6 * * * docker exec your-container-name /usr/bin/php /var/www/wiki/maintenance/runJobs.php
 ```
 
 Keep in mind, the cronjob will need sufficient privileges to execute docker commands.
