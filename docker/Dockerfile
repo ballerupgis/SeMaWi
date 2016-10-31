@@ -19,7 +19,7 @@ COPY docker/sources.list.d/jessie-deb-src.list \
 
 # Get stack up
 RUN apt-get update && \
-    apt-get -y install mysql-client apache2 curl php5 supervisor git \
+    apt-get -y install mysql-client apache2 curl php5 git \
     php5-mysql libapache2-mod-php5 virtualenv cron && \
     apt-get -y build-dep python-lxml
 
