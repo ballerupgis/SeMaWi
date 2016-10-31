@@ -76,6 +76,8 @@ $wgDBuser = "wiki";
 $wgDBpassword = "wiki";
 ```
 
+You must edit the `$wgSMTP` in `LocalSettings.php` to reflect where the SMTP server is which SeMaWi can use.
+
 If you're running SeMaWi in production, you will need to edit the line in `LocalSettings.php` which looks like `enableSemantics( 'localhost' );`, replacing localhost with the domain name you are using.
 
 ## Optional

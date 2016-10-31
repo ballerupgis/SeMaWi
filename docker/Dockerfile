@@ -19,7 +19,7 @@ COPY docker/sources.list.d/jessie-deb-src.list \
 
 # Get stack up
 RUN apt-get update && \
-    apt-get -y install mysql-client apache2 curl php5 git \
+    apt-get -y install mysql-client apache2 curl php5 git php-pear \
     php5-mysql libapache2-mod-php5 virtualenv cron && \
     apt-get -y build-dep python-lxml
 
@@ -85,6 +85,10 @@ COPY docker/nanlogo.png /var/www/wiki/resources/assets/nanlogo.png
 # We'll need php to accept bigger file uploads
 RUN sed -i'' "s/upload_max_filesize = 2M/upload_max_filesize = 50M/" /etc/php5/apache2/php.ini &&\
     sed -i'' "s/post_max_size = 8M/post_max_size = 50M/" /etc/php5/apache2/php.ini
+
+# Vi skal bruge et par pear biblioteker
+# Se https://github.com/JosefAssad/SeMaWi/issues/173
+RUN /usr/bin/pear install Mail Net_SMTP
 
 # We'll need a sysop/bureaucrat account
 ADD docker/scripts/makeadmin.sh /tmp/makeadmin.sh

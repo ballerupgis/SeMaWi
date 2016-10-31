@@ -207,3 +207,10 @@ $wgUrlProtocols = array(
 # We need to export a LOT of pages often
 # See https://gerrit.wikimedia.org/r/#/c/267038/
 $wgExportPagelistLimit = 20000;
+
+$wgSMTP = array(
+ 'host'     => "172.17.0.1",
+ 'IDHost'   => "min SeMaWi",
+ 'port'     => 25,
+ 'auth'     => false
+);
