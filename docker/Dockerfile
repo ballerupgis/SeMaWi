@@ -1,5 +1,5 @@
 # BUILD-USING:        docker build --build-arg DBHOST=172.17.0.1 --build-arg DBUSER=wiki --build-arg DBPASS=wiki -t semawi -f docker/Dockerfile .
-# RUN-USING:          docker run -d --name semawi-container -h semawi-container -p 12345:80 semawi
+# RUN-USING:          docker run -d --name semawi-container -h semawi-container -p 12345:80 --restart always semawi
 # INSPECT-USING:      docker run -t -i semawi-container /bin/bash
 
 FROM debian:jessie
