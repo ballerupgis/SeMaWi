@@ -77,7 +77,9 @@ RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
        cd EditUser &&\
        git checkout -q a7691bf &&\
     cd /var/www/wiki/ && \
-       php composer.phar require mediawiki/chameleon-skin "1.*" --update-no-dev
+       php composer.phar require mediawiki/chameleon-skin "1.*" --update-no-dev &&\
+    cd /var/www/wiki/ && \
+       php composer.phar require mediawiki/maps "*"
 
 # NaN logo. Just because.
 COPY docker/nanlogo.png /var/www/wiki/resources/assets/nanlogo.png
