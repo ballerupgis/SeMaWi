@@ -214,3 +214,8 @@ $wgSMTP = array(
  'port'     => 25,
  'auth'     => false
 );
+
+# vi skal kunne skjule sidehistorik
+# Se https://github.com/JosefAssad/SeMaWi/issues/176
+$wgGroupPermissions['sysop']['deletelogentry'] = true;
+$wgGroupPermissions['sysop']['deleterevision'] = true;
