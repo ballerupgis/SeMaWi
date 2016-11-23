@@ -219,3 +219,12 @@ $wgSMTP = array(
 # Se https://github.com/JosefAssad/SeMaWi/issues/176
 $wgGroupPermissions['sysop']['deletelogentry'] = true;
 $wgGroupPermissions['sysop']['deleterevision'] = true;
+
+# ExternalData setup
+require_once "$IP/extensions/ExternalData/ExternalData.php";
+# Eksempel på databasedefinition
+#$edgDBServer['employee-db'] = "127.0.0.1";
+#$edgDBServerType['employee-db'] = "mysql";
+#$edgDBName['employee-db'] = "employeesDatabase";
+#$edgDBUser['employee-db'] = "guest";
+#$edgDBPass['employee-db'] = "p@ssw0rd";

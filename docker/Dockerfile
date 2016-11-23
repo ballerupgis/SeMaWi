@@ -20,7 +20,7 @@ COPY docker/sources.list.d/jessie-deb-src.list \
 # Get stack up
 RUN apt-get update && \
     apt-get -y install mysql-client apache2 curl php5 git php-pear \
-    php5-mysql libapache2-mod-php5 virtualenv cron && \
+    php5-mysql php5-pgsql libapache2-mod-php5 virtualenv cron && \
     apt-get -y build-dep python-lxml
 
 # Install MediaWiki
@@ -79,7 +79,11 @@ RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
     cd /var/www/wiki/ && \
        php composer.phar require mediawiki/chameleon-skin "1.*" --update-no-dev &&\
     cd /var/www/wiki/ && \
-       php composer.phar require mediawiki/maps "*"
+       php composer.phar require mediawiki/maps "*" &&\
+    cd /var/www/wiki/extensions/ &&\
+       git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/ExternalData &&\
+       cd ExternalData &&\
+       git checkout -q a43dcf1b1af2dc7fe86877decf89086700dc6ac7
 
 # NaN logo. Just because.
 COPY docker/nanlogo.png /var/www/wiki/resources/assets/nanlogo.png
