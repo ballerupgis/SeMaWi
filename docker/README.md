@@ -1,8 +1,21 @@
-It is assumed you have intermediate understanding of docker concepts and basic usage.
+# Installing SeMaWi with Docker
 
-# Preparing your database
+This guide assumes you have intermediate understanding of docker
+concepts and basic usage.
+
+### Preparing your database
 
 SeMaWi is an application container. The persistent data is stored outside of the container. It is up to you to decide whether to persist data in a MySQL container or to store persistent data in a host MySQL. In either case, SeMaWi requires a MySQL database and a user with appropriate credentials. As an example to create a database on a Debian Stable Docker host:
+
+```bash
+docker run --name semawi-mariadb \
+  -e MYSQL_RANDOM_ROOT_PASSWORD=yes \
+  -e MYSQL_DATABASE=wiki \
+  -e MYSQL_USER=wiki \
+  -e MYSQL_PASSWORD=wiki \
+  -p 3306:3306 -d mariadb:latest
+```
+Alternatively:
 
 ```bash
 mysql -u root -p
@@ -22,48 +35,19 @@ bind-address = 0.0.0.0
 
 You will probably also need to add a directive `skip-name-resolve` in the `[mysqld]` section of the same file. Remember to restart the mysql service after.
 
-# Building the SeMaWi image
+### Deployment configuration
 
-1. Download the docker source files.
-2. Stand in the parent directory of the directory containing the Dockerfile
-3. In MySQL, create a database and database user which will contain the SeMaWi database; you should have done this in the previous section.
-3. Issue the following command: `docker build --build-arg DBHOST=172.17.0.1 --build-arg DBUSER=wiki --build-arg DBPASS=wiki -t semawi -f docker/Dockerfile .` Make sure you have the correct values for the 3 build arguments DBHOST, DBUSER, and DBPASS.
-4. Make a cup of tea, it takes a while. On my development VM, it takes about 30 minutes.
+After the container is run from the built image, you will need to
+manually tweak a few settings. Set `$wgServer` to the IP of the
+container, obtained with docker inspect `$CONTAINERID` like so:
 
-## Running a container for testing/development
-
-The command will resemble the following:
-
-```bash
-docker run -d --name semawi-container -h semawi-container -p 12345:80 semawi
+```php
+$wgServer="http://semawi.example.com";
 ```
 
-In the docker host, you should be able to access the SeMaWi container now through your browser, with an address like http://127.0.0.1:12345 . A default user SeMaWi (member of groups SysOp and Bureaucrat) has been created for you with the password "SeMaWiSeMaWi"; this password is case sensitive. This password should be changed as your first action in the running system.
-
-You can then import the SeMaWi data model and pages by importing struktur.xml from the git repository.
-
-## Pulling geodata from a GeoCloud2 instance
-
-First make sure you have followed the instructions for configuring the GC2 sync in SeMaWi. That is documented in this file in the section "GeoCloud2 Import Cronjob".
-
-The image has a script `/opt/syncgc2.sh` which needs to be called in order to initiate a pull from GC2. You will want the docker host to have a cron job for this purpose. An example of such a command could be:
-
-```cron
-0 5 * * * docker exec your-container-name /opt/syncgc2.sh
-0 6 * * * docker exec your-container-name /usr/bin/php /var/www/wiki/maintenance/runJobs.php
-```
-
-Keep in mind, the cronjob will need sufficient privileges to execute docker commands.
-
-## For production
-
-A detailed description of deploying docker containers to production is beyond the scope of this document.
-
-# Post deploy configuration
-
-## Obligatory
-
-After the container is run from the built image, you will need to manually tweak a few settings. The container exports /var/www/wiki/ as a volume. Find it's location using docker inspect semawi. Set $wgServer to the IP of the container, obtained with docker inspect $CONTAINERID like so: $wgServer="http://172.17.0.2";
+The container exports `/var/www/wiki/` as a volume, so you can also
+change these settings later on. Find it's location using `docker
+inspect semawi`.
 
 You may have to specify for SeMaWi how to connect to the database you have provided for it, if you have used different settings in the image build. This can be done in the `LocalSettings.php` file in the exported volume. Look for the section which looks as follows:
 
@@ -80,7 +64,57 @@ You must edit the `$wgSMTP` in `LocalSettings.php` to reflect where the SMTP ser
 
 If you're running SeMaWi in production, you will need to edit the line in `LocalSettings.php` which looks like `enableSemantics( 'localhost' );`, replacing localhost with the domain name you are using.
 
-## Optional
+### Building the SeMaWi image
+
+1. Download the docker source files.
+2. Stand in the parent directory of the directory containing the Dockerfile
+3. In MySQL, create a database and database user which will contain
+   the SeMaWi database; you should have done this in the earlier section.
+4. Apply the configuration changes also listed earlier.
+3. Issue the following command:
+
+        docker build --build-arg DBHOST=172.17.0.1 \
+          --build-arg DBUSER=wiki \
+          --build-arg DBPASS=wiki \
+          -t semawi -f docker/Dockerfile .
+
+   Make sure you have the correct values for the 3 build arguments
+   `DBHOST`, `DBUSER`, and `DBPASS`.
+4. Make a cup of tea, it takes a while. On my development VM, it takes about 30 minutes.
+
+### Running the container
+
+The command will resemble the following:
+
+```bash
+docker run -d --name semawi-container -h semawi-container -p 80:80 semawi
+```
+
+In the docker host, you should be able to access the SeMaWi container
+now through your browser, with an address like
+`http://semawi.example.com`. Please note that you **must** have
+entered a correct address for `$wgServer$` in the earlier section;
+otherwise, all wiki pages appear empty. A default user _SeMaWi_
+(member of groups _SysOp_ and _Bureaucrat_) has been created for you
+with the case-sensitive password `SeMaWiSeMaWi`. You should change
+this password as your first action in the running system.
+
+You can then import the SeMaWi data model and pages by importing struktur.xml from the git repository.
+
+## Optional features
+
+### Pulling geodata from a GeoCloud2 instance
+
+First make sure you have followed the instructions for configuring the GC2 sync in SeMaWi. That is documented in this file in the section "GeoCloud2 Import Cronjob".
+
+The image has a script `/opt/syncgc2.sh` which needs to be called in order to initiate a pull from GC2. You will want the docker host to have a cron job for this purpose. An example of such a command could be:
+
+```cron
+0 5 * * * docker exec your-container-name /opt/syncgc2.sh
+0 6 * * * docker exec your-container-name /usr/bin/php /var/www/wiki/maintenance/runJobs.php
+```
+
+Keep in mind, the cronjob will need sufficient privileges to execute docker commands.
 
 ### Migration of content
 
