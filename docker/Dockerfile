@@ -25,9 +25,9 @@ RUN apt-get update && \
 
 # Install MediaWiki
 RUN cd /var/www/ && \
-    curl https://releases.wikimedia.org/mediawiki/1.27/mediawiki-1.27.0.tar.gz \
+    curl https://releases.wikimedia.org/mediawiki/1.27/mediawiki-1.27.1.tar.gz \
     | tar xvzf - && \
-    mv mediawiki-1.27.0 wiki && \
+    mv mediawiki-1.27.1 wiki && \
     chown -R root:root wiki
 COPY docker/LocalSettings.php /var/www/wiki/LocalSettings.php
 
