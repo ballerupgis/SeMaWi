@@ -83,7 +83,12 @@ RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
     cd /var/www/wiki/extensions/ &&\
        git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/ExternalData &&\
        cd ExternalData &&\
-       git checkout -q a43dcf1b1af2dc7fe86877decf89086700dc6ac7
+       git checkout -q a43dcf1b1af2dc7fe86877decf89086700dc6ac7 &&\
+    cd /var/www/wiki/extensions/ &&\
+       git clone https://github.com/wikimedia/mediawiki-extensions-RevisionSlider.git &&\
+       mv mediawiki-extensions-RevisionSlider RevisionSlider &&\
+       cd  RevisionSlider &&\
+       git checkout -q REL1_27
 
 # NaN logo. Just because.
 COPY docker/nanlogo.png /var/www/wiki/resources/assets/nanlogo.png

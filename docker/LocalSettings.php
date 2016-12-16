@@ -228,3 +228,5 @@ require_once "$IP/extensions/ExternalData/ExternalData.php";
 #$edgDBName['employee-db'] = "employeesDatabase";
 #$edgDBUser['employee-db'] = "guest";
 #$edgDBPass['employee-db'] = "p@ssw0rd";
+
+wfLoadExtension( 'RevisionSlider' );
