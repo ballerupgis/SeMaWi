@@ -1,4 +1,4 @@
-# BUILD-USING:        docker build --build-arg DBHOST=172.17.0.1 --build-arg DBUSER=wiki --build-arg DBPASS=wiki -t semawi -f docker/Dockerfile .
+# BUILD-USING:        docker build --build-arg DBHOST=172.17.0.1 --build-arg DBNAME=wiki --build-arg DBUSER=wiki --build-arg DBPASS=wiki -t semawi -f Dockerfile .
 # RUN-USING:          docker run -d --name semawi-container -h semawi-container -p 12345:80 --restart always semawi
 # INSPECT-USING:      docker run -t -i semawi-container /bin/bash
 
@@ -9,12 +9,13 @@ LABEL version="2016-01"
 ENV DEBIAN_FRONTEND noninteractive
 
 ARG DBHOST=172.17.0.1
+ARG DBNAME=wiki
 ARG DBUSER=wiki
 ARG DBPASS=wiki
 
 # We'll need the deb-src repositories since we're apt-get build-dep'ing
 # python-lxml as part of getting gc2smwdaemon's virtualenv prepped
-COPY docker/sources.list.d/jessie-deb-src.list \
+COPY sources.list.d/jessie-deb-src.list \
      /etc/apt/sources.list.d/jessie-deb-src.list
 
 # Get stack up
@@ -29,15 +30,15 @@ RUN cd /var/www/ && \
     | tar xvzf - && \
     mv mediawiki-1.27.1 wiki && \
     chown -R root:root wiki
-COPY docker/LocalSettings.php /var/www/wiki/LocalSettings.php
+COPY LocalSettings.php /var/www/wiki/LocalSettings.php
 
 # Change $wgSecretKey and $wgUpgradeKey in LocalSettings.php
-COPY docker/scripts/myLocalSettings.sh /tmp/myLocalSettings.sh
-RUN /tmp/myLocalSettings.sh $DBHOST $DBUSER $DBPASS && rm /tmp/myLocalSettings.sh
+COPY scripts/myLocalSettings.sh /tmp/myLocalSettings.sh
+RUN /tmp/myLocalSettings.sh $DBHOST $DBUSER $DBPASS $DBNAME && rm /tmp/myLocalSettings.sh
 
 # seed MediaWiki
-ADD docker/scripts/initdb.sh docker/db.sql /tmp/
-RUN /tmp/initdb.sh $DBHOST $DBUSER $DBPASS && rm /tmp/initdb.sh /tmp/db.sql
+ADD scripts/initdb.sh db.sql /tmp/
+RUN /tmp/initdb.sh $DBHOST $DBUSER $DBPASS $DBNAME && rm /tmp/initdb.sh /tmp/db.sql
 
 # Install extensions
 RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
@@ -91,7 +92,7 @@ RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
        git checkout -q REL1_27
 
 # NaN logo. Just because.
-COPY docker/nanlogo.png /var/www/wiki/resources/assets/nanlogo.png
+COPY nanlogo.png /var/www/wiki/resources/assets/nanlogo.png
 
 # We'll need php to accept bigger file uploads
 RUN sed -i'' "s/upload_max_filesize = 2M/upload_max_filesize = 50M/" /etc/php5/apache2/php.ini &&\
@@ -102,11 +103,11 @@ RUN sed -i'' "s/upload_max_filesize = 2M/upload_max_filesize = 50M/" /etc/php5/a
 RUN /usr/bin/pear install Mail Net_SMTP
 
 # We'll need a sysop/bureaucrat account
-ADD docker/scripts/makeadmin.sh /tmp/makeadmin.sh
+ADD scripts/makeadmin.sh /tmp/makeadmin.sh
 RUN /tmp/makeadmin.sh && rm /tmp/makeadmin.sh
 
 # Apache needs a virtualhost
-ADD docker/001-semawi.conf /etc/apache2/sites-available/001-semawi.conf
+ADD 001-semawi.conf /etc/apache2/sites-available/001-semawi.conf
 RUN a2dissite 000-default && a2ensite 001-semawi
 
 # Not always SOP, but for apache might need write permissions if debug is turned on for a file in the www dir for example
@@ -117,8 +118,8 @@ VOLUME /var/www/wiki/
 VOLUME /opt/gc2/
 
 # Installing the GC2 daemon
-COPY docker/scripts/installgc2daemon.sh /opt/installgc2daemon.sh
-COPY docker/scripts/syncgc2.sh /opt/syncgc2.sh
+COPY scripts/installgc2daemon.sh /opt/installgc2daemon.sh
+COPY scripts/syncgc2.sh /opt/syncgc2.sh
 COPY gc2 /opt/gc2
 
 # Slim down the image

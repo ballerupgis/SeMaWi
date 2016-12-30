@@ -1,73 +1,192 @@
-SeMaWi bygger på MediaWiki og Semantic MediaWiki med formålet at implementere en model for forvaltning af en kommunal softwareportefølje. SeMaWi indeholder:
+# Installing SeMaWi with Docker
 
-1. En levende datamodel der afspejler praktisk og anvendeligt softwareportefølje domænet i de danske kommuner, med udgangspunkt i en prototype som Ballerup Kommunes Center for Miljø og Teknik har bidraget med, og
-2. Analytiske elementer der har formålet at understøtte evidensbaseret og kvantitativ porteføljeforvaltning.
+This guide assumes you have intermediate understanding of docker
+concepts and basic usage.
 
-SeMaWi er udviklet i samarbejde med [Josef Assad](mailto:josef@josefassad.com).
+### Preparing your database
 
-# Infrastruktur
-1. Debian 8
-2. Apache, MySQL, og php fra standard Debian repositorier
-3. Mediawiki (herefter MW) 1.26.2; [installationsvejledning](https://www.mediawiki.org/wiki/Manual:Installing_MediaWiki)
-4. Semantic Mediawiki (hereafter SMW) 2.3 [installationsvejledning](https://semantic-mediawiki.org/wiki/Help:Installation/Using_Composer_with_MediaWiki_1.22%2B)
+SeMaWi is an application container. The persistent data is stored outside of the container. It is up to you to decide whether to persist data in a MySQL container or to store persistent data in a host MySQL. In either case, SeMaWi requires a MySQL database and a user with appropriate credentials. As an example to create a database on a Debian Stable Docker host:
 
-# Installation
+```bash
+docker run --name semawi-mariadb \
+  -e MYSQL_RANDOM_ROOT_PASSWORD=yes \
+  -e MYSQL_DATABASE=wiki \
+  -e MYSQL_USER=wiki \
+  -e MYSQL_PASSWORD=wiki \
+  -p 3306:3306 -d mariadb:latest
+```
+Alternatively:
 
-## Docker installation (anbefalet)
+```bash
+mysql -u root -p
+CREATE DATABASE wiki;
+GRANT ALL PRIVILEGES ON wiki.* To 'wiki'@'%' IDENTIFIED BY 'password';
+FLUSH PRIVILEGES;
+```
 
-Docker er den anbefalede installations- og driftsmetode for SeMaWi. Følg vejledningen i folderen `docker/README.md`.
+Note that for the sake of simplicity your database must be named `wiki`. You can change username and password later using the `docker build --build-arg` parameter; see the top of the Dockerfile for an example.
 
-## Manuel installation (legacy)
+You will need to instruct MySQL to listen on the interface the docker daemon uses. Unfortunately there doesn't seem to be a way to specify multiple interfaces to listen to; it's either one interface or all. You will need to set in `/etc/mysql/my.cnf`:
 
-1. Installer [Semantic Mediawiki](https://semantic-mediawiki.org/wiki/Help:Installation/Using_Composer_with_MediaWiki_1.22%2B)
-2. Installer  [DataTransfer](https://www.mediawiki.org/wiki/Extension:Data_Transfer) udvidelsen til MW; installationsvejledning på samme side
-3. Installer [SemanticForms](https://www.mediawiki.org/wiki/Extension:Semantic_Forms/Download_and_installation)
-4. Installer [Semantic Result formats](https://semantic-mediawiki.org/wiki/Semantic_Result_Formats#Installation).
-5. Deaktiver property caching i SMW; i SemanticMediawiki.settings.php skift `'smwgPropertiesCache' => true,` til `'smwgPropertiesCache' => false,`.
-6. I SMW Special:Import, importer filen structure.xml
-7. I Linux kommandolinjen, navigér til MW maintenance folderen og kør kommandoen `php runJobs.php`
-8. Skift sidelogo efter behov; instruktioner [her](https://www.mediawiki.org/wiki/Manual:$wgLogo).
-9. Referer til filen `docker/LocalSettings.php` for at konfigurere SeMaWi korrekt.
-11. Installer [MasonryMainPage](https://github.com/enterprisemediawiki/MasonryMainPage).
-15. (optionelt) Installer [Chameleon tema'et](https://www.mediawiki.org/wiki/Skin:Chameleon). Det aktiveres ved at finde linjen i `LocalSettings.php` som siger `$wgDefaultSkin = "vector";` of udskifte `vector` med `chameleon`.
+```
+bind-address = 0.0.0.0
+# or just uncomment any bind-address line you find in there
+```
 
-Til brugeroprettelse kan det anbefales at installere udvidelsen [ImportUsers](https://www.mediawiki.org/wiki/Extension:ImportUsers). Dog er det smart at afinstallere eller som minimum deaktivere udvidelsen igen umiddelbart efter; import af brugere burde ikke være en øvelse der skal gentages for ofte, og målet på sigt er at anvende enten en AD/LDAP eller [OS2MO](http://www.os2web.dk/projekter/os2mo) som ekstern autoritativ brugerkilde.
+You will probably also need to add a directive `skip-name-resolve` in the `[mysqld]` section of the same file. Remember to restart the mysql service after.
 
-## Mapcentia GC2 Tabeller
+### Deployment configuration
 
-SeMaWi understøtter integration til Mapcentia GeoCloud2. Geodata tabeller kan vises som sider i Geodata kategoriet i SeMaWi, hvilket gør det muligt at lave analyser på de tabeller og at se dem i sammenhæng med øvrige entiteter som KLE emner eller systemer eller brugere.
+After the container is run from the built image, you will need to
+manually tweak a few settings. Set `$wgServer` to the IP of the
+container, obtained with docker inspect `$CONTAINERID` like so:
 
-### Batchimport
+```php
+$wgServer="http://semawi.example.com";
+```
 
-Der er udviklet et python script som skal køre i cronjob på SeMaWi serveren for at opdatere SeMaWi med de geodata tabeller GC2 indeholder. Installation foregår således:
+The container exports `/var/www/wiki/` as a volume, so you can also
+change these settings later on. Find it's location using `docker
+inspect semawi`.
 
-1. I `LocalSettings.php` skal der tilføjes `$wgRawHtml = true;`. Det er så kortene kan vises.
-2. I SeMaWi skal der oprettes en ny bruger med brugernavn Sitebot. Denne bruger skal være medlem af følgende brugergrupper: robot, administrator, bureaukrat
-3. Scriptet `gc2/gc2smwdaemon.py` skal kaldes fra et cronjob så det kører på et passende tidspunkt med de korrekte SeMaWi Sitebot login og GC2 API oplysninger. Oplysningerne om Sitebot og GC2 API endpoint skrives i de relevante variabler i `gc2/gc2smwdaemon.py` filen. Bemærk, `gc2/gc2smwdaemon.py` skal køre fra et `virtualenv` som har alle afhængigheder fra `gc2/requirements.txt` installeret korrekt. Det er ude for scope i denne vejledning at dokumentere hvordan man anvender `virtualenv` eller opretter et cronjob i Linux.
+You may have to specify for SeMaWi how to connect to the database you have provided for it, if you have used different settings in the image build. This can be done in the `LocalSettings.php` file in the exported volume. Look for the section which looks as follows:
 
-Optionelt kan det anbefales at køre de to maintenance scripts `SMW_refreshData.php` og derefter `runJobs.php` efter.
+```php
+## Database settings
+$wgDBtype = "mysql";
+$wgDBserver = "localhost";
+$wgDBname = "wiki";
+$wgDBuser = "wiki";
+$wgDBpassword = "wiki";
+```
 
-### Engangsimport
+You must edit the `$wgSMTP` in `LocalSettings.php` to reflect where the SMTP server is which SeMaWi can use.
 
-Hvis det ønskes kan tabellerne fra Mapcentia GC2 indlæses en gang og derefter holdes ajour manuelt på begge sider, SeMaWi og GC2. Det er langt de færreste tilfælde hvor dette er ønskværdigt.
+If you're running SeMaWi in production, you will need to edit the line in `LocalSettings.php` which looks like `enableSemantics( 'localhost' );`, replacing localhost with the domain name you are using.
 
-1. I `LocalSettings.php` skal der tilføjes `$wgRawHtml = true;`. Det er så kortene kan vises.
-2. Download json filen fra GC2
-3. Anvend scriptet `gc2/gc2smw.py` som genererer en CSV fil med tabellerne. Det anbefales at bruge et python virtualenv; filen `gc2/requirements.txt` lister krævede biblioteker.
-4. Indlæs `gc2/geodata-struktur.xml`
-5. Indlæs den genererede CSV fil
-6. Kør de to backend scripts `SMW_refreshData.php` og derefter `runJobs.php`.
+### Building the SeMaWi image
 
-# Opgradering
+1. Download the docker source files.
+2. Stand in the parent directory of the directory containing the Dockerfile
+3. In MySQL, create a database and database user which will contain
+   the SeMaWi database; you should have done this in the earlier section.
+4. Apply the configuration changes also listed earlier.
+3. Issue the following command:
 
-Se dokumentation under docker mappen.
+        docker build --build-arg DBHOST=172.17.0.1 \
+          --build-arg DBUSER=wiki \
+          --build-arg DBPASS=wiki \
+          -t semawi -f docker/Dockerfile .
 
-# Noter
+   Make sure you have the correct values for the 3 build arguments
+   `DBHOST`, `DBUSER`, and `DBPASS`.
+4. Make a cup of tea, it takes a while. On my development VM, it takes about 30 minutes.
 
-MediaWiki som er fundamentet for SeMaWi er designet til store sites. Mange deployments kan være relativ små ift. MediaWiki's primære use case som er WikiPedia. Som følge kan det blive nødvendigt med nogle små workarounds som fx. kørsel af `runJobs.php` og/eller `SMW_refreshData.php` i cronjobs.
+### Running the container
 
-# Licens
+The command will resemble the following:
 
-Kode og data i SeMaWi er copyright Ballerup Kommune 2016 med mindre andet er specificeret i de enkelte filer.
+```bash
+docker run -d --name semawi-container -h semawi-container -p 80:80 semawi
+```
 
-SeMaWi er open source. Der er frit valg mellem [GPLv3](http://www.gnu.org/licenses/gpl-3.0.en.html) licensen eller [Creative Commons Attribution-ShareAlike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0/).
+In the docker host, you should be able to access the SeMaWi container
+now through your browser, with an address like
+`http://semawi.example.com`. Please note that you **must** have
+entered a correct address for `$wgServer$` in the earlier section;
+otherwise, all wiki pages appear empty. A default user _SeMaWi_
+(member of groups _SysOp_ and _Bureaucrat_) has been created for you
+with the case-sensitive password `SeMaWiSeMaWi`. You should change
+this password as your first action in the running system.
+
+You can then import the SeMaWi data model and pages by importing struktur.xml from the git repository.
+
+## Optional features
+
+### Pulling geodata from a GeoCloud2 instance
+
+First make sure you have followed the instructions for configuring the GC2 sync in SeMaWi. That is documented in this file in the section "GeoCloud2 Import Cronjob".
+
+The image has a script `/opt/syncgc2.sh` which needs to be called in order to initiate a pull from GC2. You will want the docker host to have a cron job for this purpose. An example of such a command could be:
+
+```cron
+0 5 * * * docker exec your-container-name /opt/syncgc2.sh
+0 6 * * * docker exec your-container-name /usr/bin/php /var/www/wiki/maintenance/runJobs.php
+```
+
+Keep in mind, the cronjob will need sufficient privileges to execute docker commands.
+
+### Migration of content
+
+This section describes the process for migrating content from a SeMaWi to a newly established docker container.
+
+#### Approach A: lots of pages which are not in recognised categories, lots of local user accounts
+
+When migrating content to a newly deployed docker build, we are essentially moving the wiki. Therefore, we follow the instructions for backing up and updating the wiki, then we re-deploy the SeMaWi XML dump.
+
+1. Back up the old wiki; instructions [here](https://www.mediawiki.org/wiki/Manual:Backing_up_a_wiki).
+2. Deploy the SeMaWi docker according to the instructions on this page.
+3. Execute an upgrade; instructions [here](https://www.mediawiki.org/wiki/Manual:Upgrading).
+4. Re-read the structure.xml manually from SeMaWi's github in Speciel:Importere (Special:Import)
+5. Execute `maintenance/rebuildall.php` and `maintenance/runJobs.php`
+6. Remember to `chown -R www-data:www-data /var/www/wiki/images/` in the docker image (with docker exec) after moving the image directory contents.
+
+#### Approach B: accounts are external, no uncategorised pages to move
+
+1. From the old wiki, use Special:Export to obtain XML dumps of all the pages in the categories we want transferred
+2. Deploy the SeMaWi docker according to the instructions on this page.
+3. Import the XML dumps in the newly deployed SeMaWi container using Speciel:Importere (Special:Import)
+
+### MediaWiki secrets
+
+Your SeMaWi Docker image has been pre-seeded with random values for `$wgSecretKey` and `$wgUpgradeKey` configuration parameters in `LocalSettings.php`. These are regenerated each time you build the image. For each container that you run off an image you built for yourself, you are strongly urged to change these two values in the container. `$wgSecretKey` takes a 64 character alphanumeric string, and `$wgUpgradeKey` takes a 16 character alphanumeric string.
+
+### Logo
+
+You will likely want to change your logo. Follow the guidelines [here](https://www.mediawiki.org/wiki/Manual:$wgLogo) to incorporate your logo.
+
+### Data Model
+
+I recommend you examine the list of Forms to identify which parts of the SeMaWi functionality is required in your case. You can link to the Categories created by these Forms in MediaWiki:Sidebar.
+
+### MediaWiki Skin
+
+This dockerized version of SeMaWi ships with the [Chameleon skin](https://www.mediawiki.org/wiki/Skin:Chameleon). To activate it, find the line in `LocalSettings.php` which says:
+
+`$wgDefaultSkin = "vector";`
+
+and change it to
+
+`$wgDefaultSkin = "chameleon";`
+
+### GeoCloud2 Import Cronjob
+
+There are four settings you need to modify to activate the [Mapcentia GeoCloud2](https://github.com/mapcentia/geocloud2) geodata table import into SeMaWi. SeMawi exposes the GC2 sync config in a volume, find it with `docker inspect your-container-name`. In this volume you will fine the cfg file, and the following settings need to be set correctly:
+
+1. username: a valid SeMaWi login. The default docker build establishes a login Sitebot for this purpose
+2. password: the password for the above bot account; usually SitebotSitebot
+3. site: the URL to the SeMaWi container. Unless you know what you are doing, leave it as-is
+4. gc2_url: The URL to the GC2 API
+
+When you have done this, you must exec into the container to install the GC2 sync environment:
+
+```bash
+docker exec -ti name-of-your-running-container /bin/bash
+cd /opt/
+./installgc2daemon.sh
+
+```
+
+Having set the integration up, you must instruct the docker host to call the script from the host's cronjob. Refer to the section "Pulling geodata from a GeoCloud2 instance" in this document to see how to do this.
+
+It is strongly recommended you coordinate the time at which the import runs with Mapcentia.
+
+### Other
+
+You are encouraged to examine LocalSettings.php and adapt it to your needs.
+
+If you need to restart a running SeMaWi container (e.g. php.ini tweaks):
+
+```bash
+docker kill --signal="SIGUSR1" your-semawi-container-name
+```

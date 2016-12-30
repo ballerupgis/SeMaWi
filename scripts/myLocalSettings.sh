@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # This script performs buildtime modifications to the LocalSettings.php file
-# Which ships with SeMaWi. It takes 3 command line parameters:
-# DB host, DB username, DB password
+# Which ships with SeMaWi. It takes 4 command line parameters:
+# DB host, DB username, DB password, DB name
 
 TARGET="/var/www/wiki/LocalSettings.php"
 SED="/bin/sed"
@@ -19,3 +19,4 @@ $SED -i'' "s/CHANGEWGUPGRADEKEY/$WGUPGRADEKEY/" $TARGET
 $SED -i'' "s/CHANGEDBHOST/$1/" $TARGET
 $SED -i'' "s/CHANGEDBUSER/$2/" $TARGET
 $SED -i'' "s/CHANGEDBPASS/$3/" $TARGET
+$SED -i'' "s/CHANGEDBNAME/$4/" $TARGET
