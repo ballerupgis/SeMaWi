@@ -1,9 +1,9 @@
-# Installing SeMaWi with Docker
+# Installing SeMaWi
 
 This guide assumes you have intermediate understanding of docker
 concepts and basic usage.
 
-### Preparing your database
+## Preparing your database
 
 SeMaWi is an application container. The persistent data is stored outside of the container. It is up to you to decide whether to persist data in a MySQL container or to store persistent data in a host MySQL. In either case, SeMaWi requires a MySQL database and a user with appropriate credentials. As an example to create a database on a Debian Stable Docker host:
 
@@ -24,7 +24,7 @@ GRANT ALL PRIVILEGES ON wiki.* To 'wiki'@'%' IDENTIFIED BY 'password';
 FLUSH PRIVILEGES;
 ```
 
-Note that for the sake of simplicity your database must be named `wiki`. You can change username and password later using the `docker build --build-arg` parameter; see the top of the Dockerfile for an example.
+Remember to have the correct MySQL host, db name, user, and password as `--build-arg`s in the build command.
 
 You will need to instruct MySQL to listen on the interface the docker daemon uses. Unfortunately there doesn't seem to be a way to specify multiple interfaces to listen to; it's either one interface or all. You will need to set in `/etc/mysql/my.cnf`:
 
@@ -35,21 +35,62 @@ bind-address = 0.0.0.0
 
 You will probably also need to add a directive `skip-name-resolve` in the `[mysqld]` section of the same file. Remember to restart the mysql service after.
 
-### Deployment configuration
+## Building the SeMaWi image
 
-After the container is run from the built image, you will need to
-manually tweak a few settings. Set `$wgServer` to the IP of the
-container, obtained with docker inspect `$CONTAINERID` like so:
+1. Download the docker source files.
+2. Stand in the parent directory of the directory containing the Dockerfile
+3. You should have prepared your MySQL database in the earlier section.
+4. Apply the configuration changes also listed earlier.
+5. Issue the following command:
+
+        docker build --build-arg DBHOST=172.17.0.1 \
+          --build-arg DBNAME=wiki \
+          --build-arg DBUSER=wiki \
+          --build-arg DBPASS=wiki \
+          -t semawi -f Dockerfile .
+
+   Make sure you have the correct values for the 4 build arguments
+   `DBHOST`, ``DBNAME`, `DBUSER`, and `DBPASS`.
+
+## Deployment configuration
+
+The `Dockerfile` contains a sample `docker run` command which you can adapt for your purposes.
+
+As part of the run command, you will need to mount several types of mutable data to the running container:
+
+1. `LocalSettings.php`
+2. `php.ini`
+3. `images` folder with `www-data:www-data` ownership
+4. Logo file
+
+If you are running SeMaWi for the first time and do not have these elements,
+you can run a SeMawi container without mounting these elements and then
+`docker copy` them to the host to obtain blank templates for you to adapt.
+Then you can stop and remove that container, and run another one, mounting
+these elements from the host.
+
+If you have access to the SeMaWi source, the `LocalSettings.php`, `php.ini`,
+and logo file are provided for you to copy over in the `mutables` folder.
+
+In the docker host, you should be able to access the SeMaWi container
+now through your browser, with an address like
+`http://semawi.example.com`. Please note that you **must** have
+entered a correct address for `$wgServer$` in the earlier section;
+otherwise, all wiki pages appear empty. A default user _SeMaWi_
+(member of groups _SysOp_ and _Bureaucrat_) has been created for you
+with the case-sensitive password `SeMaWiSeMaWi`. You should change
+this password as your first action in the running system.
+
+### Localsettings.php
+
+Set `$wgServer` to the external IP of the container, obtained with docker inspect `$CONTAINERID` like so:
 
 ```php
 $wgServer="http://semawi.example.com";
 ```
 
-The container exports `/var/www/wiki/` as a volume, so you can also
-change these settings later on. Find it's location using `docker
-inspect semawi`.
-
-You may have to specify for SeMaWi how to connect to the database you have provided for it, if you have used different settings in the image build. This can be done in the `LocalSettings.php` file in the exported volume. Look for the section which looks as follows:
+You may have to specify for SeMaWi how to connect to the database you have provided for it, if you have
+used different settings in the image build. Look for the section which looks as follows:
 
 ```php
 ## Database settings
@@ -62,44 +103,12 @@ $wgDBpassword = "wiki";
 
 You must edit the `$wgSMTP` in `LocalSettings.php` to reflect where the SMTP server is which SeMaWi can use.
 
-If you're running SeMaWi in production, you will need to edit the line in `LocalSettings.php` which looks like `enableSemantics( 'localhost' );`, replacing localhost with the domain name you are using.
+If you're running SeMaWi in production, you will need to edit the line in `LocalSettings.php` which looks
+like `enableSemantics( 'localhost' );`, replacing localhost with the domain name you are using.
 
-### Building the SeMaWi image
+### php.ini
 
-1. Download the docker source files.
-2. Stand in the parent directory of the directory containing the Dockerfile
-3. In MySQL, create a database and database user which will contain
-   the SeMaWi database; you should have done this in the earlier section.
-4. Apply the configuration changes also listed earlier.
-3. Issue the following command:
-
-        docker build --build-arg DBHOST=172.17.0.1 \
-          --build-arg DBUSER=wiki \
-          --build-arg DBPASS=wiki \
-          -t semawi -f docker/Dockerfile .
-
-   Make sure you have the correct values for the 3 build arguments
-   `DBHOST`, `DBUSER`, and `DBPASS`.
-4. Make a cup of tea, it takes a while. On my development VM, it takes about 30 minutes.
-
-### Running the container
-
-The command will resemble the following:
-
-```bash
-docker run -d --name semawi-container -h semawi-container -p 80:80 semawi
-```
-
-In the docker host, you should be able to access the SeMaWi container
-now through your browser, with an address like
-`http://semawi.example.com`. Please note that you **must** have
-entered a correct address for `$wgServer$` in the earlier section;
-otherwise, all wiki pages appear empty. A default user _SeMaWi_
-(member of groups _SysOp_ and _Bureaucrat_) has been created for you
-with the case-sensitive password `SeMaWiSeMaWi`. You should change
-this password as your first action in the running system.
-
-You can then import the SeMaWi data model and pages by importing struktur.xml from the git repository.
+In this file it is recommended to increase the upload and post max file sizes.
 
 ## Optional features
 

@@ -1,10 +1,10 @@
 # BUILD-USING:        docker build --build-arg DBHOST=172.17.0.1 --build-arg DBNAME=wiki --build-arg DBUSER=wiki --build-arg DBPASS=wiki -t semawi -f Dockerfile .
-# RUN-USING:          docker run -d --name semawi-container -h semawi-container -p 12345:80 --restart always semawi
+# RUN-USING:          docker run -d --volume /srv/semawi/LocalSettings.php:/var/www/wiki/LocalSettings.php --volume /srv/semawi/php.ini:/etc/php5/apache2/php.ini --volume /srv/semawi/images/:/var/www/wiki/images/ --volume /srv/semawi/nanlogo.png:/var/www/wiki/resources/assets/nanlogo.png --name semawi-container --hostname semawi-container --publish 80:80 semawi
 # INSPECT-USING:      docker run -t -i semawi-container /bin/bash
 
 FROM debian:jessie
 MAINTAINER Josef Assad <josef@josefassad.com>
-LABEL version="2016-01"
+LABEL version="2017-01"
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -30,7 +30,9 @@ RUN cd /var/www/ && \
     | tar xvzf - && \
     mv mediawiki-1.27.1 wiki && \
     chown -R root:root wiki
-COPY LocalSettings.php /var/www/wiki/LocalSettings.php
+COPY mutables/LocalSettings.php /var/www/wiki/LocalSettings.php
+
+RUN chown www-data:www-data /var/www/wiki/images/
 
 # Change $wgSecretKey and $wgUpgradeKey in LocalSettings.php
 COPY scripts/myLocalSettings.sh /tmp/myLocalSettings.sh
@@ -92,7 +94,7 @@ RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
        git checkout -q REL1_27
 
 # NaN logo. Just because.
-COPY nanlogo.png /var/www/wiki/resources/assets/nanlogo.png
+COPY mutables/nanlogo.png /var/www/wiki/resources/assets/nanlogo.png
 
 # We'll need php to accept bigger file uploads
 RUN sed -i'' "s/upload_max_filesize = 2M/upload_max_filesize = 50M/" /etc/php5/apache2/php.ini &&\
@@ -112,10 +114,6 @@ RUN a2dissite 000-default && a2ensite 001-semawi
 
 # Not always SOP, but for apache might need write permissions if debug is turned on for a file in the www dir for example
 RUN chown -R www-data:www-data /var/www/wiki/images/
-
-# Expose the few files we want to be mutable in a volume
-VOLUME /var/www/wiki/
-VOLUME /opt/gc2/
 
 # Installing the GC2 daemon
 COPY scripts/installgc2daemon.sh /opt/installgc2daemon.sh
