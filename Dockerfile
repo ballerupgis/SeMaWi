@@ -31,7 +31,7 @@ RUN cd /var/www/ && \
     mv mediawiki-1.27.1 wiki && \
     chown -R root:root wiki
 COPY mutables/LocalSettings.php /var/www/wiki/LocalSettings.php
-
+COPY composer.local.json /var/www/wiki/composer.local.json
 RUN chown www-data:www-data /var/www/wiki/images/
 
 # Change $wgSecretKey and $wgUpgradeKey in LocalSettings.php
@@ -53,18 +53,6 @@ RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
     cd /var/www/wiki/extensions/ &&\
        git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/HeaderTabs.git &&\
        cd HeaderTabs &&\
-    cd /var/www/wiki/ && \
-       php composer.phar require mediawiki/semantic-media-wiki "~2.1" --update-no-dev && \
-    cd /var/www/wiki/extensions/ &&\
-       git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/SemanticForms &&\
-       cd SemanticForms &&\
-       git checkout -q bcd0257 &&\
-    cd /var/www/wiki/extensions/ &&\
-       git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/SemanticFormsInputs.git &&\
-       cd SemanticFormsInputs &&\
-       git checkout -q 01285388a99071d50a9d8490fdc9378af31dc9b1 && \
-    cd /var/www/wiki/ && \
-       php composer.phar require mediawiki/semantic-result-formats "2.3.*" --update-no-dev && \
        git checkout -q REL1_27 &&\
     cd /var/www/wiki/extensions/ &&\
        git clone https://github.com/enterprisemediawiki/MasonryMainPage.git &&\
@@ -74,10 +62,6 @@ RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
        git clone https://github.com/wikimedia/mediawiki-extensions-EditUser.git &&\
        mv mediawiki-extensions-EditUser EditUser &&\
        cd EditUser &&\
-    cd /var/www/wiki/ && \
-       php composer.phar require mediawiki/chameleon-skin "1.*" --update-no-dev &&\
-    cd /var/www/wiki/ && \
-       php composer.phar require mediawiki/maps "*" &&\
        git checkout -q REL1_27 &&\
     cd /var/www/wiki/extensions/ &&\
        git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/ExternalData &&\
@@ -88,6 +72,8 @@ RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
        mv mediawiki-extensions-RevisionSlider RevisionSlider &&\
        cd  RevisionSlider &&\
        git checkout -q REL1_27 &&\
+    cd /var/www/wiki &&\
+       /usr/bin/php /var/www/wiki/composer.phar update
 
 # NaN logo. Just because.
 COPY mutables/nanlogo.png /var/www/wiki/resources/assets/nanlogo.png

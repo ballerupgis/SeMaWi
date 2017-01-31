@@ -162,10 +162,6 @@ require_once "$IP/extensions/MasonryMainPage/MasonryMainPage.php";
 require_once "$IP/extensions/HeaderTabs/HeaderTabs.php";
 
 enableSemantics( 'localhost' );
-include_once "$IP/extensions/SemanticForms/SemanticForms.php";
-
-# must come after SemanticForms
-require_once("$IP/extensions/SemanticFormsInputs/SemanticFormsInputs.php");
 
 # Semantic MediaWiki settings
 $smwgCacheType = CACHE_NONE;
@@ -228,4 +224,6 @@ require_once "$IP/extensions/ExternalData/ExternalData.php";
 #$edgDBUser['employee-db'] = "guest";
 #$edgDBPass['employee-db'] = "p@ssw0rd";
 
+wfLoadExtension( 'PageForms' );
 wfLoadExtension( 'RevisionSlider' );
+wfLoadExtension( 'SemanticFormsSelect' );
