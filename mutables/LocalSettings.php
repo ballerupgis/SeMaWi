@@ -145,7 +145,6 @@ require_once "$IP/extensions/PdfHandler/PdfHandler.php";
 require_once "$IP/extensions/Renameuser/Renameuser.php";
 require_once "$IP/extensions/SyntaxHighlight_GeSHi/SyntaxHighlight_GeSHi.php";
 require_once "$IP/extensions/WikiEditor/WikiEditor.php";
-require_once "$IP/extensions/ImportUsers/ImportUsers.php";
 require_once "$IP/extensions/EditUser/EditUser.php";
 
 # End of automatically generated settings.

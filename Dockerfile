@@ -47,10 +47,6 @@ RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
     cd /var/www/wiki/extensions/SyntaxHighlight_GeSHi/ &&\
        php /var/www/wiki/composer.phar update --no-dev &&\
     cd /var/www/wiki/extensions/ &&\
-       git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/ImportUsers.git &&\
-       cd ImportUsers &&\
-       git checkout -q REL1_26 &&\
-    cd /var/www/wiki/extensions/ &&\
        git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/DataTransfer.git &&\
        cd DataTransfer &&\
        git checkout -q REL1_26 &&\
