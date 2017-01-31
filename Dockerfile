@@ -49,11 +49,10 @@ RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
     cd /var/www/wiki/extensions/ &&\
        git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/DataTransfer.git &&\
        cd DataTransfer &&\
-       git checkout -q REL1_26 &&\
+       git checkout -q REL1_27 &&\
     cd /var/www/wiki/extensions/ &&\
        git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/HeaderTabs.git &&\
        cd HeaderTabs &&\
-       git checkout -q REL1_26 &&\
     cd /var/www/wiki/ && \
        php composer.phar require mediawiki/semantic-media-wiki "~2.1" --update-no-dev && \
     cd /var/www/wiki/extensions/ &&\
@@ -66,6 +65,7 @@ RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
        git checkout -q 01285388a99071d50a9d8490fdc9378af31dc9b1 && \
     cd /var/www/wiki/ && \
        php composer.phar require mediawiki/semantic-result-formats "2.3.*" --update-no-dev && \
+       git checkout -q REL1_27 &&\
     cd /var/www/wiki/extensions/ &&\
        git clone https://github.com/enterprisemediawiki/MasonryMainPage.git &&\
        cd MasonryMainPage &&\
@@ -74,20 +74,20 @@ RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
        git clone https://github.com/wikimedia/mediawiki-extensions-EditUser.git &&\
        mv mediawiki-extensions-EditUser EditUser &&\
        cd EditUser &&\
-       git checkout -q a7691bf &&\
     cd /var/www/wiki/ && \
        php composer.phar require mediawiki/chameleon-skin "1.*" --update-no-dev &&\
     cd /var/www/wiki/ && \
        php composer.phar require mediawiki/maps "*" &&\
+       git checkout -q REL1_27 &&\
     cd /var/www/wiki/extensions/ &&\
        git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/ExternalData &&\
        cd ExternalData &&\
-       git checkout -q a43dcf1b1af2dc7fe86877decf89086700dc6ac7 &&\
+       git checkout -q REL1_27 &&\
     cd /var/www/wiki/extensions/ &&\
        git clone https://github.com/wikimedia/mediawiki-extensions-RevisionSlider.git &&\
        mv mediawiki-extensions-RevisionSlider RevisionSlider &&\
        cd  RevisionSlider &&\
-       git checkout -q REL1_27
+       git checkout -q REL1_27 &&\
 
 # NaN logo. Just because.
 COPY mutables/nanlogo.png /var/www/wiki/resources/assets/nanlogo.png
