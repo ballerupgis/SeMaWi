@@ -1,5 +1,5 @@
 # BUILD-USING:        docker build --build-arg DBHOST=172.17.0.1 --build-arg DBNAME=wiki --build-arg DBUSER=wiki --build-arg DBPASS=wiki -t semawi -f Dockerfile .
-# RUN-USING:          docker run -d --volume /srv/semawi/LocalSettings.php:/var/www/wiki/LocalSettings.php --volume /srv/semawi/php.ini:/etc/php5/apache2/php.ini --volume /srv/semawi/images/:/var/www/wiki/images/ --volume /srv/semawi/nanlogo.png:/var/www/wiki/resources/assets/nanlogo.png --name semawi-container --hostname semawi-container --publish 80:80 semawi
+# RUN-USING:          docker run -d --volume /srv/semawi/LocalSettings.php:/var/www/wiki/LocalSettings.php --volume /srv/semawi/php.ini:/etc/php5/apache2/php.ini --volume /srv/semawi/images/:/var/www/wiki/images/ --volume /srv/semawi/nanlogo.png:/var/www/wiki/resources/assets/nanlogo.png --volume /srv/semawi/gc2smw.cfg:/opt/gc2/gc2smw.cfg --name semawi-container --hostname semawi-container --publish 80:80 semawi
 # INSPECT-USING:      docker run -t -i semawi-container /bin/bash
 
 FROM debian:jessie
