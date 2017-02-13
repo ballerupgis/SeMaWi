@@ -9,7 +9,7 @@ echo "Starting installation of GC2 sync script"
 /usr/bin/virtualenv /opt/gc2/
 
 # Activate it so we can install dependencies from requirements.txt
-source /opt/gc2/bin/activate
+. /opt/gc2/bin/activate
 pip install -r /opt/gc2/requirements.txt
 deactivate
 

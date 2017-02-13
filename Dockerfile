@@ -101,6 +101,7 @@ RUN chown -R www-data:www-data /var/www/wiki/images/
 COPY scripts/installgc2daemon.sh /opt/installgc2daemon.sh
 COPY scripts/syncgc2.sh /opt/syncgc2.sh
 COPY gc2 /opt/gc2
+RUN sh /opt/installgc2daemon.sh
 
 # Slim down the image
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
