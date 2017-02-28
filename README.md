@@ -54,7 +54,7 @@ You will probably also need to add a directive `skip-name-resolve` in the `[mysq
 
 ## Deployment configuration
 
-The `Dockerfile` contains a sample `docker run` command which you can adapt for your purposes.
+A script named `runcontainer.sh` is provided for you as a convenience, since there are a lot of volumes which make the run command clunky.
 
 As part of the run command, you will need to mount several types of mutable data to the running container:
 
