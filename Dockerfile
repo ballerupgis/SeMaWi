@@ -1,5 +1,5 @@
 # BUILD-USING:        docker build --build-arg DBHOST=172.17.0.1 --build-arg DBNAME=wiki --build-arg DBUSER=wiki --build-arg DBPASS=wiki -t semawi -f Dockerfile .
-# RUN-USING:          docker run -d --volume /srv/semawi/LocalSettings.php:/var/www/wiki/LocalSettings.php --volume /srv/semawi/php.ini:/etc/php5/apache2/php.ini --volume /srv/semawi/images/:/var/www/wiki/images/ --volume /srv/semawi/nanlogo.png:/var/www/wiki/resources/assets/nanlogo.png --volume /srv/semawi/gc2smw.cfg:/opt/gc2/gc2smw.cfg --name semawi-container --hostname semawi-container --publish 80:80 semawi
+# RUN-USING:          docker run -d --volume /srv/semawi/LocalSettings.php:/var/www/wiki/LocalSettings.php --volume /srv/semawi/php.ini:/etc/php5/apache2/php.ini --volume /srv/semawi/images/:/var/www/wiki/images/ --volume /srv/semawi/nanlogo.png:/var/www/wiki/resources/assets/nanlogo.png --volume /srv/semawi/gc2smw.cfg:/opt/gc2/gc2smw.cfg --volume /srv/semawi/freetds.conf:/etc/freetds/freetds.conf --volume /srv/semawi/odbcinst.ini:/etc/odbcinst.ini --volume /srv/semawi/odbc.ini:/etc/odbc.ini --name semawi-container --hostname semawi-container --publish 80:80 semawi
 # INSPECT-USING:      docker run -t -i semawi-container /bin/bash
 
 FROM debian:jessie
@@ -21,7 +21,8 @@ COPY sources.list.d/jessie-deb-src.list \
 # Get stack up
 RUN apt-get update && \
     apt-get -y install mysql-client apache2 curl php5 git php-pear \
-    php5-mysql php5-pgsql libapache2-mod-php5 virtualenv cron && \
+    php5-mysql php5-pgsql libapache2-mod-php5 virtualenv cron freetds-bin \
+    tdsodbc php5-odbc unixodbc && \
     apt-get -y build-dep python-lxml
 
 # Install MediaWiki
@@ -72,6 +73,10 @@ RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
        mv mediawiki-extensions-RevisionSlider RevisionSlider &&\
        cd  RevisionSlider &&\
        git checkout -q REL1_27 &&\
+    cd /var/www/wiki/extensions/ &&\
+       git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/OdbcDatabase.git &&\
+       cd OdbcDatabase &&\
+       git checkout -q REL1_27 &&\
     cd /var/www/wiki &&\
        /usr/bin/php /var/www/wiki/composer.phar update
 
@@ -81,6 +86,10 @@ COPY mutables/nanlogo.png /var/www/wiki/resources/assets/nanlogo.png
 # We'll need php to accept bigger file uploads
 RUN sed -i'' "s/upload_max_filesize = 2M/upload_max_filesize = 50M/" /etc/php5/apache2/php.ini &&\
     sed -i'' "s/post_max_size = 8M/post_max_size = 50M/" /etc/php5/apache2/php.ini
+
+# der er en lille fejl i ODBC udvidelsen som skal fixes
+# Se https://www.mediawiki.org/wiki/Extension:OdbcDatabase#Possible_code_changes
+RUN sed -i'' "s/public static function getSoftwareLink/public function getSoftwareLink/" /var/www/wiki/extensions/OdbcDatabase/OdbcDatabase.body.php
 
 # Vi skal bruge et par pear biblioteker
 # Se https://github.com/JosefAssad/SeMaWi/issues/173

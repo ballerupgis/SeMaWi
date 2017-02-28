@@ -62,6 +62,8 @@ As part of the run command, you will need to mount several types of mutable data
 2. `php.ini`
 3. `images` folder with `www-data:www-data` ownership
 4. Logo file
+5. gc2 sync configuration file `gc2smw.cfg`
+6. Various conf files for unixodbc so the wiki can query a SQL Server
 
 If you are running SeMaWi for the first time and do not have these elements,
 you can run a SeMawi container without mounting these elements and then
@@ -69,8 +71,8 @@ you can run a SeMawi container without mounting these elements and then
 Then you can stop and remove that container, and run another one, mounting
 these elements from the host.
 
-If you have access to the SeMaWi source, the `LocalSettings.php`, `php.ini`,
-and logo file are provided for you to copy over in the `mutables` folder.
+If you have access to the SeMaWi source, these files are provided for you
+to copy over in the `mutables` folder.
 
 In the docker host, you should be able to access the SeMaWi container
 now through your browser, with an address like
@@ -89,8 +91,7 @@ Set `$wgServer` to the external IP of the container, obtained with docker inspec
 $wgServer="http://semawi.example.com";
 ```
 
-You may have to specify for SeMaWi how to connect to the database you have provided for it, if you have
-used different settings in the image build. Look for the section which looks as follows:
+You may have to specify for SeMaWi how to connect to the database you have provided for it, if you have used different settings in the image build. Look for the section which looks as follows:
 
 ```php
 ## Database settings
@@ -103,8 +104,7 @@ $wgDBpassword = "wiki";
 
 You must edit the `$wgSMTP` in `LocalSettings.php` to reflect where the SMTP server is which SeMaWi can use.
 
-If you're running SeMaWi in production, you will need to edit the line in `LocalSettings.php` which looks
-like `enableSemantics( 'localhost' );`, replacing localhost with the domain name you are using.
+If you're running SeMaWi in production, you will need to edit the line in `LocalSettings.php` which looks like `enableSemantics( 'localhost' );`, replacing localhost with the domain name you are using.
 
 ### php.ini
 
@@ -189,13 +189,3 @@ cd /opt/
 Having set the integration up, you must instruct the docker host to call the script from the host's cronjob. Refer to the section "Pulling geodata from a GeoCloud2 instance" in this document to see how to do this.
 
 It is strongly recommended you coordinate the time at which the import runs with Mapcentia.
-
-### Other
-
-You are encouraged to examine LocalSettings.php and adapt it to your needs.
-
-If you need to restart a running SeMaWi container (e.g. php.ini tweaks):
-
-```bash
-docker kill --signal="SIGUSR1" your-semawi-container-name
-```

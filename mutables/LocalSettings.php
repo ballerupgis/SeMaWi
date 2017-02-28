@@ -217,6 +217,8 @@ $wgGroupPermissions['sysop']['deleterevision'] = true;
 
 # ExternalData setup
 require_once "$IP/extensions/ExternalData/ExternalData.php";
+require_once "$IP/extensions/OdbcDatabase/OdbcDatabase.php";
+
 # Eksempel på databasedefinition
 #$edgDBServer['employee-db'] = "127.0.0.1";
 #$edgDBServerType['employee-db'] = "mysql";
