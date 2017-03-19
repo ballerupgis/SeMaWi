@@ -77,6 +77,11 @@ RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
        git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/OdbcDatabase.git &&\
        cd OdbcDatabase &&\
        git checkout -q REL1_27 &&\
+    cd /var/www/wiki/extensions/ &&\
+       git clone https://github.com/wikimedia/mediawiki-extensions-Maintenance.git &&\
+       mv mediawiki-extensions-Maintenance Maintenance &&\
+       cd Maintenance &&\
+       git checkout -q REL1_27 &&\
     cd /var/www/wiki &&\
        /usr/bin/php /var/www/wiki/composer.phar update
 
