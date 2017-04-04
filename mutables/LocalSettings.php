@@ -229,3 +229,5 @@ require_once "$IP/extensions/OdbcDatabase/OdbcDatabase.php";
 wfLoadExtension( 'PageForms' );
 wfLoadExtension( 'RevisionSlider' );
 wfLoadExtension( 'SemanticFormsSelect' );
+require_once "$IP/extensions/GraphViz/GraphViz.php";
+wfLoadExtension( 'ImageMap' );

@@ -22,7 +22,7 @@ COPY sources.list.d/jessie-deb-src.list \
 RUN apt-get update && \
     apt-get -y install mysql-client apache2 curl php5 git php-pear \
     php5-mysql php5-pgsql libapache2-mod-php5 virtualenv cron freetds-bin \
-    tdsodbc php5-odbc unixodbc odbcinst && \
+    tdsodbc php5-odbc unixodbc odbcinst graphviz graphviz-dev imagemagick && \
     apt-get -y build-dep python-lxml
 
 # Install MediaWiki
@@ -82,6 +82,8 @@ RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
        mv mediawiki-extensions-Maintenance Maintenance &&\
        cd Maintenance &&\
        git checkout -q REL1_27 &&\
+    cd /var/www/wiki/extensions/ &&\
+       git clone https://github.com/pjkersten/PlantUML.git &&\
     cd /var/www/wiki &&\
        /usr/bin/php /var/www/wiki/composer.phar update
 
