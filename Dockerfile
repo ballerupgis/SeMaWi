@@ -122,6 +122,9 @@ RUN sh /opt/installgc2daemon.sh
 # Slim down the image
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+# Copy over the apache wrapper
+COPY scripts/apache2-foreground /usr/local/bin/
+
 # Start up apache
 env APACHE_RUN_USER    www-data
 env APACHE_RUN_GROUP   www-data
@@ -130,4 +133,4 @@ env APACHE_RUN_DIR     /var/run/apache2
 env APACHE_LOCK_DIR    /var/lock/apache2
 env APACHE_LOG_DIR     /var/log/apache2
 env LANG               C
-CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
+CMD ["/usr/local/bin/apache2-foreground"]
