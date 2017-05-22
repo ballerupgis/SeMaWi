@@ -57,10 +57,10 @@ RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
        git checkout -q REL1_27 &&\
     cd /var/www/wiki/extensions/ &&\
        git clone https://github.com/enterprisemediawiki/MasonryMainPage.git &&\
-       cd MasonryMainPage &&\
+    cd MasonryMainPage &&\
        git checkout -q c3eaa0a9f26011dc397748bb76eb507ded4acfbb &&\
     cd /var/www/wiki/extensions/ &&\
-       git clone https://github.com/enterprisemediawiki/ImagesLoaded.git &&
+       git clone https://github.com/enterprisemediawiki/ImagesLoaded.git &&\
     cd /var/www/wiki/extensions/ &&\
        git clone https://github.com/wikimedia/mediawiki-extensions-EditUser.git &&\
        mv mediawiki-extensions-EditUser EditUser &&\
