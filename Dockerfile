@@ -60,6 +60,8 @@ RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
        cd MasonryMainPage &&\
        git checkout -q c3eaa0a9f26011dc397748bb76eb507ded4acfbb &&\
     cd /var/www/wiki/extensions/ &&\
+       git clone https://github.com/enterprisemediawiki/ImagesLoaded.git &&
+    cd /var/www/wiki/extensions/ &&\
        git clone https://github.com/wikimedia/mediawiki-extensions-EditUser.git &&\
        mv mediawiki-extensions-EditUser EditUser &&\
        cd EditUser &&\
