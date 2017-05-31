@@ -58,7 +58,7 @@ RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
     cd /var/www/wiki/extensions/ &&\
        git clone https://github.com/enterprisemediawiki/MasonryMainPage.git &&\
     cd MasonryMainPage &&\
-       git checkout -q c3eaa0a9f26011dc397748bb76eb507ded4acfbb &&\
+       git checkout -q 9837244ccf70f3823e8f5366045e1637e65bd993 &&\
     cd /var/www/wiki/extensions/ &&\
        git clone https://github.com/enterprisemediawiki/ImagesLoaded.git &&\
     cd /var/www/wiki/extensions/ &&\
