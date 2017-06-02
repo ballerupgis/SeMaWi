@@ -232,3 +232,4 @@ wfLoadExtension( 'RevisionSlider' );
 wfLoadExtension( 'SemanticFormsSelect' );
 require_once "$IP/extensions/GraphViz/GraphViz.php";
 wfLoadExtension( 'ImageMap' );
+require_once('extensions/PlantUML/PlantUML.php');

@@ -92,6 +92,9 @@ RUN cd /var/www/wiki/ && curl -sS https://getcomposer.org/installer | php && \
 # NaN logo. Just because.
 COPY mutables/nanlogo.png /var/www/wiki/resources/assets/nanlogo.png
 
+# needed for PlantUML to function
+RUN curl -L https://downloads.sourceforge.net/project/plantuml/plantuml.jar -o /usr/local/plantuml.jar
+
 # We'll need php to accept bigger file uploads
 RUN sed -i'' "s/upload_max_filesize = 2M/upload_max_filesize = 50M/" /etc/php5/apache2/php.ini &&\
     sed -i'' "s/post_max_size = 8M/post_max_size = 50M/" /etc/php5/apache2/php.ini
