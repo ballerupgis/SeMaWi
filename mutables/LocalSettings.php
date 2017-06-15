@@ -52,10 +52,10 @@ $wgEmailAuthentication = true;
 
 ## Database settings
 $wgDBtype = "mysql";
-$wgDBserver = "CHANGEDBHOST";
-$wgDBname = "CHANGEDBNAME";
-$wgDBuser = "CHANGEDBUSER";
-$wgDBpassword = "CHANGEDBPASS";
+$wgDBserver = "semawi-mysql";
+$wgDBname = "wiki";
+$wgDBuser = "wiki";
+$wgDBpassword = "wiki";
 
 # MySQL specific settings
 $wgDBprefix = "";
