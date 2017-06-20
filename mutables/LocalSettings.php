@@ -160,6 +160,7 @@ $wgGroupPermissions['sysop']['edituser'] = true;
 include_once "$IP/extensions/DataTransfer/DataTransfer.php";
 require_once "$IP/extensions/MasonryMainPage/MasonryMainPage.php";
 wfLoadExtension( 'ImagesLoaded' );
+wfLoadExtension( 'Maintenance' );
 require_once "$IP/extensions/HeaderTabs/HeaderTabs.php";
 
 enableSemantics( 'localhost' );
