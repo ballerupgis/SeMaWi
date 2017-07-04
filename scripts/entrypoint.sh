@@ -99,12 +99,6 @@ if [ ! -d "/var/www/wiki/extensions" ]; then
    git clone https://github.com/pjkersten/PlantUML.git
    curl -L https://downloads.sourceforge.net/project/plantuml/plantuml.jar -o /usr/local/plantuml.jar
 
-   # Update php pear and install a couple of dependencies
-   pear upgrade --force --alldeps http://pear.php.net/get/PEAR-1.10.4
-   pear channel-update pear.php.net
-   pear upgrade-all
-   pear install Mail Net_SMTP
-
    # We'll need a Sysop/Beaureaucrat
    php /var/www/wiki/maintenance/createAndPromote.php --force --bureaucrat \
        --sysop SeMaWi SeMaWiSeMaWi

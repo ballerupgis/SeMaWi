@@ -5,6 +5,10 @@
         "mediawiki/maps": "*",
 	"mediawiki/semantic-result-formats": "2.*",
 	"mediawiki/semantic-forms-select": "~2.0",
-	"mediawiki/graph-viz": "*"
+	"mediawiki/graph-viz": "*",
+	"pear/Net_SMTP": "*",
+	"pear/MAIL": "*",
+	"phpoffice/phpexcel": "*",
+	"mediawiki/open-layers": "*"
     }
 }
