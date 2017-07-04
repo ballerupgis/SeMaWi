@@ -9,7 +9,7 @@ services:
       - "80:80"
     volumes:
       - /srv/semawi/LocalSettings.php:/var/www/wiki/LocalSettings.php
-      - /srv/semawi/php.ini:/etc/php5/apache2/php.ini
+      - /srv/semawi/php.ini:/etc/php/7.0/apache2/php.ini
       - /srv/semawi/images/:/var/www/wiki/images/
       - /srv/semawi/nanlogo.png:/var/www/wiki/resources/assets/nanlogo.png
       - /srv/semawi/gc2smw.cfg:/opt/gc2/gc2smw.cfg
