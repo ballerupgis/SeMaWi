@@ -25,6 +25,7 @@ username = cfg.username
 password = cfg.password
 site = mwclient.Site(cfg.site, path=cfg.path)
 gc2_url = cfg.gc2_url
+table_whitelist = gc2.table_whitelist
 
 site.login(username, password)
 
@@ -158,6 +159,8 @@ def generate(tables):
             f_table_name = table['f_table_name']
         else:
             f_table_name = ''
+        if f_table_name in table_whitelist:
+            included = True
         if table['f_table_title'] != None:
             f_table_title = table['f_table_title']
         else:
