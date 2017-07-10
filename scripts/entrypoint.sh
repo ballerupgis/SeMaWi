@@ -94,13 +94,6 @@ if [ ! -d "/var/www/wiki/extensions" ]; then
    cd /var/www/wiki/extensions/Maintenance
    git checkout -q REL1_27
 
-   # Install SemanticTitle
-   cd /var/www/wiki/extensions/
-   git clone https://github.com/wikimedia/mediawiki-extensions-SemanticTitle.git
-   mv mediawiki-extensions-SemanticTitle SemanticTitle
-   cd /var/www/wiki/extensions/SemanticTitle
-   git checkout -q REL1_27
-
    # Install DisplayTitle
    cd /var/www/wiki/extensions/
    git clone https://github.com/wikimedia/mediawiki-extensions-DisplayTitle.git
