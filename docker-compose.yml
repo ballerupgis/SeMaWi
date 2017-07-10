@@ -18,11 +18,12 @@ services:
       - /srv/semawi/odbc.ini:/etc/odbc.ini
     networks:
       - wiki_network
-    container_name: semawi-mediawiki
     restart: on-failure
     depends_on:
       - wikidb
     hostname: semawi-mediawiki
+    links:
+      - wikidb:semawi-mysql
   wikidb:
     image: mysql:5.7
     ports:
@@ -34,7 +35,6 @@ services:
       MYSQL_PASSWORD: wiki
     networks:
       - wiki_network
-    container_name: semawi-mysql
     hostname: semawi-mysql
     restart: on-failure
 
