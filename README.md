@@ -59,14 +59,12 @@ If you're running SeMaWi in production, you will need to edit the line in `Local
 
 First make sure you have followed the instructions for configuring the GC2 sync in SeMaWi. That is documented in this file in the section "GeoCloud2 Import Cronjob".
 
-The image has a script `/opt/syncgc2.sh` which needs to be called in order to initiate a pull from GC2. You will want the docker host to have a cron job for this purpose. An example of such a command could be:
+The image has a script `/usr/local/bin/gc2smwdaemon.py` which needs to be called in order to initiate a pull from GC2. You will want the docker host to have a cron job for this purpose. An example of such a command could be:
 
 ```cron
-0 5 * * * docker exec your-container-name /opt/syncgc2.sh
+0 5 * * * docker exec your-container-name /usr/local/bin/gc2smwdaemon.py
 0 6 * * * docker exec your-container-name /usr/bin/php /var/www/wiki/maintenance/runJobs.php
 ```
-
-Keep in mind, the cronjob will need sufficient privileges to execute docker commands.
 
 ### Migration of content
 
@@ -116,15 +114,6 @@ There are four settings you need to modify to activate the [Mapcentia GeoCloud2]
 3. site: the URL to the SeMaWi container. Unless you know what you are doing, leave it as-is
 4. gc2_url: The URL to the GC2 API
 
-When you have done this, you must exec into the container to install the GC2 sync environment:
-
-```bash
-docker exec -ti name-of-your-running-container /bin/bash
-cd /opt/
-./installgc2daemon.sh
-
-```
-
-Having set the integration up, you must instruct the docker host to call the script from the host's cronjob. Refer to the section "Pulling geodata from a GeoCloud2 instance" in this document to see how to do this.
+Having set this up, you must instruct the docker host to call the script from the host's cronjob. Refer to the section "Pulling geodata from a GeoCloud2 instance" in this document to see how to do this.
 
 It is strongly recommended you coordinate the time at which the import runs with Mapcentia.
