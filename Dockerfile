@@ -14,7 +14,7 @@ RUN apt-get update && \
     apt-get -y install mysql-client apache2 curl php git php-pear php-mbstring \
     php-mysql php-pgsql libapache2-mod-php cron freetds-bin php-zip \
     zip unzip tdsodbc php-odbc unixodbc odbcinst graphviz graphviz-dev \
-    imagemagick python3 && \
+    imagemagick python3 php-net-smtp php-mail && \
     apt-get -y build-dep python3-lxml
 
 # Copy over the Mediawiki configs needed
