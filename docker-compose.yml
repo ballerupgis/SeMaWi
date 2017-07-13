@@ -6,38 +6,32 @@ services:
       dockerfile: Dockerfile
     image: semawi:2017_01
     ports:
-      - "80:80"
+      - "${SEMAWI_WEB_PORT:-80}:80"
     volumes:
-      - /srv/semawi/LocalSettings.php:/var/www/wiki/LocalSettings.php
-      - /srv/semawi/php.ini:/etc/php/7.0/apache2/php.ini
-      - /srv/semawi/images/:/var/www/wiki/images/
-      - /srv/semawi/nanlogo.png:/var/www/wiki/resources/assets/nanlogo.png
-      - /srv/semawi/gc2smw.cfg:/opt/gc2/gc2smw.cfg
-      - /srv/semawi/freetds.conf:/etc/freetds/freetds.conf
-      - /srv/semawi/odbcinst.ini:/etc/odbcinst.ini
-      - /srv/semawi/odbc.ini:/etc/odbc.ini
-    networks:
-      - wiki_network
+      - ${SEMAWI_MUTABLES_ROOT:-/srv/semawi}/LocalSettings.php:/var/www/wiki/LocalSettings.php
+      - ${SEMAWI_MUTABLES_ROOT:-/srv/semawi}/php.ini:/etc/php/7.0/apache2/php.ini
+      - ${SEMAWI_MUTABLES_ROOT:-/srv/semawi}/images/:/var/www/wiki/images/
+      - ${SEMAWI_MUTABLES_ROOT:-/srv/semawi}/nanlogo.png:/var/www/wiki/resources/assets/nanlogo.png
+      - ${SEMAWI_MUTABLES_ROOT:-/srv/semawi}/gc2smw.cfg:/opt/gc2/gc2smw.cfg
+      - ${SEMAWI_MUTABLES_ROOT:-/srv/semawi}/freetds.conf:/etc/freetds/freetds.conf
+      - ${SEMAWI_MUTABLES_ROOT:-/srv/semawi}/odbcinst.ini:/etc/odbcinst.ini
+      - ${SEMAWI_MUTABLES_ROOT:-/srv/semawi}/odbc.ini:/etc/odbc.ini
     restart: on-failure
     depends_on:
       - wikidb
     hostname: semawi-mediawiki
+    container_name: ${CLIENT:-BALK}-${SEMAWIENV:-DEV}-semawi
     links:
       - wikidb:semawi-mysql
   wikidb:
     image: mysql:5.7
     ports:
-      - "3306:3306"
+      - "${SEMAWI_DB_PORT:-3306}:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: wiki
       MYSQL_USER: wiki
       MYSQL_PASSWORD: wiki
-    networks:
-      - wiki_network
     hostname: semawi-mysql
     restart: on-failure
-
-networks:
-  wiki_network:
-    driver: bridge
+    container_name: ${CLIENT:-BALK}-${SEMAWIENV:-DEV}-semawidb
