@@ -7,7 +7,7 @@ concepts and basic usage.
 
 1. Download these docker source files.
 2. Stand in the parent directory of the directory containing `docker-compose.yml`
-4. Apply the configuration changes also listed earlier.
+4. Apply the configuration changes listed below.
 5. Issue the following command: `docker-compose up -d`
 
 ## Deployment configuration
