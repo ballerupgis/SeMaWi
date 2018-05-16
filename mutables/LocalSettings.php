@@ -29,7 +29,7 @@ $wgScriptPath = "";
 $wgScriptExtension = ".php";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "http://172.17.0.1";
+$wgServer = "http://semawi";
 
 ## The relative URL path to the skins directory
 $wgStylePath = "$wgScriptPath/skins";
@@ -144,7 +144,7 @@ require_once "$IP/extensions/ParserFunctions/ParserFunctions.php";
 require_once "$IP/extensions/PdfHandler/PdfHandler.php";
 require_once "$IP/extensions/Renameuser/Renameuser.php";
 require_once "$IP/extensions/SyntaxHighlight_GeSHi/SyntaxHighlight_GeSHi.php";
-require_once "$IP/extensions/WikiEditor/WikiEditor.php";
+# require_once "$IP/extensions/WikiEditor/WikiEditor.php";
 require_once "$IP/extensions/EditUser/EditUser.php";
 
 # End of automatically generated settings.
