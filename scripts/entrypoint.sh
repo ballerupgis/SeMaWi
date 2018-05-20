@@ -6,10 +6,11 @@ if [ ! -d "/var/www/wiki/extensions" ]; then
 
    LOCALSETTINGS="/var/www/wiki/LocalSettings.php"
    SED="/bin/sed"
-   
+
    # Install Mediawiki
    curl -o /tmp/mediawiki.tar.gz \
-	https://releases.wikimedia.org/mediawiki/1.27/mediawiki-1.27.3.tar.gz
+   https://releases.wikimedia.org/mediawiki/1.30/mediawiki-1.30.0.tar.gz
+   #https://releases.wikimedia.org/mediawiki/1.27/mediawiki-1.27.3.tar.gz
    tar xvf /tmp/mediawiki.tar.gz -C /var/www/wiki/ --strip 1
    chown -R root:root /var/www/wiki
    chown www-data:www-data /var/www/wiki/images/
@@ -22,7 +23,7 @@ if [ ! -d "/var/www/wiki/extensions" ]; then
    until mysqladmin -h semawi-mysql -u wiki -pwiki ping &>/dev/null; do
        echo -n "."; sleep 0.2
    done
-   
+
    # Seed the database
    mysql -h semawi-mysql -u wiki -pwiki wiki < /etc/semawi/db.sql
 
@@ -30,12 +31,12 @@ if [ ! -d "/var/www/wiki/extensions" ]; then
    cd /var/www/wiki/
    curl -sS https://getcomposer.org/installer | php
    /usr/bin/php /var/www/wiki/composer.phar update
-   
+
    # install GeSHi syntax highlighting
    cd /var/www/wiki/extensions/SyntaxHighlight_GeSHi/
    php /var/www/wiki/composer.phar update --no-dev
    # Install DataTransfer
-   
+
    cd /var/www/wiki/extensions/
    git clone https://gerrit.wikimedia.org/r/p/mediawiki/extensions/DataTransfer.git
    cd /var/www/wiki/extensions/DataTransfer
@@ -113,9 +114,6 @@ if [ ! -d "/var/www/wiki/extensions" ]; then
    php /var/www/wiki/maintenance/createAndPromote.php --force --bureaucrat \
        --sysop --bot Sitebot SitebotSitebot
 
-   # Apache needs a virtualhost
-   a2dissite 000-default
-   a2ensite 001-semawi
 
 fi
 

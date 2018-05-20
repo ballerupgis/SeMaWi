@@ -42,4 +42,13 @@ env APACHE_RUN_DIR     /var/run/apache2
 env APACHE_LOCK_DIR    /var/lock/apache2
 env APACHE_LOG_DIR     /var/log/apache2
 env LANG               C
+
+EXPOSE 80
+
+# disable 000-default (localhost) & enable 001-semawi (semawi)
+RUN a2dissite 000-default
+RUN a2ensite 001-semawi
+
+CMD ["/usr/sbin/apache2", "-D",  "FOREGROUND"]
+
 CMD ["/usr/local/bin/entrypoint.sh"]

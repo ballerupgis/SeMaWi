@@ -29,7 +29,7 @@ $wgScriptPath = "";
 $wgScriptExtension = ".php";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "http://172.17.0.1";
+$wgServer = "http://localhost";
 
 ## The relative URL path to the skins directory
 $wgStylePath = "$wgScriptPath/skins";
@@ -43,8 +43,8 @@ $wgLogo = "$wgScriptPath/resources/assets/nanlogo.png";
 $wgEnableEmail = true;
 $wgEnableUserEmail = true; # UPO
 
-$wgEmergencyContact = "josef@josefassad.com";
-$wgPasswordSender = "josef@josefassad.com";
+$wgEmergencyContact = "adam@adam42.dk";
+$wgPasswordSender = "adam@adam42.dk";
 
 $wgEnotifUserTalk = true; # UPO
 $wgEnotifWatchlist = true; # UPO
@@ -131,21 +131,20 @@ require_once "$IP/skins/Modern/Modern.php";
 require_once "$IP/skins/MonoBook/MonoBook.php";
 require_once "$IP/skins/Vector/Vector.php";
 
-
-# Enabled Extensions. Most extensions are enabled by including the base extension file here
+# Enabled Extensions as after version 1.25. Most extensions are enabled by including the base extension file here
 # but check specific extension documentation for more details
-# The following extensions were automatically enabled:
-require_once "$IP/extensions/Gadgets/Gadgets.php";
-require_once "$IP/extensions/ImageMap/ImageMap.php";
-require_once "$IP/extensions/InputBox/InputBox.php";
-require_once "$IP/extensions/LocalisationUpdate/LocalisationUpdate.php";
-require_once "$IP/extensions/Nuke/Nuke.php";
-require_once "$IP/extensions/ParserFunctions/ParserFunctions.php";
-require_once "$IP/extensions/PdfHandler/PdfHandler.php";
-require_once "$IP/extensions/Renameuser/Renameuser.php";
-require_once "$IP/extensions/SyntaxHighlight_GeSHi/SyntaxHighlight_GeSHi.php";
-require_once "$IP/extensions/WikiEditor/WikiEditor.php";
-require_once "$IP/extensions/EditUser/EditUser.php";
+# The following extensions were automatically enabled
+wfLoadExtension( 'Gadgets' );
+wfLoadExtension( 'ImageMap' );
+wfLoadExtension( 'InputBox' );
+wfLoadExtension( 'LocalisationUpdate' );
+wfLoadExtension( 'Nuke' );
+wfLoadExtension( 'ParserFunctions' );
+wfLoadExtension( 'PdfHandler' );
+wfLoadExtension( 'Renameuser' );
+wfLoadExtension( 'SyntaxHighlight_GeSHi' );
+wfLoadExtension( 'WikiEditor' );
+wfLoadExtension( 'EditUser' );
 
 # End of automatically generated settings.
 # Add more configuration options below.
@@ -157,10 +156,10 @@ $wgGroupPermissions['sysop']['edituser'] = true;
 # Uncomment the following line when taking a database dump
 #$wgReadOnly = "Vi tager kopi af databasen. Vent veligst.";
 
-include_once "$IP/extensions/DataTransfer/DataTransfer.php";
-require_once "$IP/extensions/MasonryMainPage/MasonryMainPage.php";
+wfLoadExtension( 'DataTransfer' );
+wfLoadExtension( 'MansonryMainPage' );
 wfLoadExtension( 'ImagesLoaded' );
-require_once "$IP/extensions/HeaderTabs/HeaderTabs.php";
+wfLoadExtension( 'HeaderTabs' );
 
 enableSemantics( 'localhost' );
 
@@ -217,8 +216,8 @@ $wgGroupPermissions['sysop']['deletelogentry'] = true;
 $wgGroupPermissions['sysop']['deleterevision'] = true;
 
 # ExternalData setup
-require_once "$IP/extensions/ExternalData/ExternalData.php";
-require_once "$IP/extensions/OdbcDatabase/OdbcDatabase.php";
+wfLoadExtension( 'ExternalData' );
+wfLoadExtension( 'OdbcDatabase' );
 
 # Eksempel på databasedefinition
 #$edgDBServer['employee-db'] = "127.0.0.1";
@@ -230,6 +229,8 @@ require_once "$IP/extensions/OdbcDatabase/OdbcDatabase.php";
 wfLoadExtension( 'PageForms' );
 wfLoadExtension( 'RevisionSlider' );
 wfLoadExtension( 'SemanticFormsSelect' );
-require_once "$IP/extensions/GraphViz/GraphViz.php";
+wfLoadExtension( 'GraphViz' );
 wfLoadExtension( 'ImageMap' );
-require_once('extensions/PlantUML/PlantUML.php');
+wfLoadExtension( 'PlantUML' );
+
+$wgDefaultUserOptions['usebetatoolbar'] = 1;
