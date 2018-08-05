@@ -7,13 +7,13 @@ if [ ! -d "/var/www/wiki/extensions" ]; then
    LOCALSETTINGS="/var/www/wiki/LocalSettings.php"
    SED="/bin/sed"
 
-   # Install Mediawiki
+   # Install Mediawiki version 1.30.0
    curl -o /tmp/mediawiki.tar.gz \
    https://releases.wikimedia.org/mediawiki/1.30/mediawiki-1.30.0.tar.gz
    #https://releases.wikimedia.org/mediawiki/1.27/mediawiki-1.27.3.tar.gz
    tar xvf /tmp/mediawiki.tar.gz -C /var/www/wiki/ --strip 1
    chown -R root:root /var/www/wiki
-   chown www-data:www-data /var/www/wiki/images/
+   chown -R www-data:www-data /var/www/wiki/images/
 
    # Install the config and database
    mv /etc/semawi/composer.local.json /var/www/wiki/composer.local.json
