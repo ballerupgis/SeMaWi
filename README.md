@@ -1,6 +1,6 @@
 # Installing SeMaWi
 
-This guide assumes you have intermediate understanding of docker
+This guide assumes you have intermediate understanding of the docker/docker-compose
 concepts and basic usage.
 
 ## Building the SeMaWi image
@@ -22,8 +22,8 @@ mounted for you to the running container:
 5. gc2 sync configuration file `gc2smw.cfg`
 6. Various conf files for unixodbc so the wiki can query a SQL Server
 
-These files are expected to be in the location `/srv/semawi/`. You can find usable
-versions of these files in the `mutables` folder distributed with the source.
+These files are expected to be in the location `/srv/semawi/`. You can find and copy usable
+versions of these files in the `mutables` folder distributed with the source to the folder as mentioned.
 
 Please make sure you review the provided configuration files to adapt the system
 to your needs. Notably, you will want to secure the following settings:
@@ -81,7 +81,7 @@ When migrating content to a newly deployed docker build, we are essentially movi
 3. Execute an upgrade; instructions [here](https://www.mediawiki.org/wiki/Manual:Upgrading).
 4. Re-read the structure.xml manually from SeMaWi's github in Speciel:Importere (Special:Import)
 5. Execute `maintenance/rebuildall.php` and `maintenance/runJobs.php`
-6. Remember to `chown -R www-data:www-data /var/www/wiki/images/` in the docker image (with docker exec) after moving the image directory contents.
+6. Remember to `chown -R www-data:www-data /var/www/wiki/images/` in the docker image (`docker exec -it the-name-of-the-running-container`) after moving the image directory contents.
 
 #### Approach B: accounts are external, no uncategorised pages to move
 
@@ -119,7 +119,7 @@ There are four settings you need to modify to activate the [Mapcentia GeoCloud2]
 When you have done this, you must exec into the container to install the GC2 sync environment:
 
 ```bash
-docker exec -ti name-of-your-running-container /bin/bash
+docker exec -it name-of-your-running-container bash
 cd /opt/
 ./installgc2daemon.sh
 
