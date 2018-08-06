@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: semawi:2017_01
+    image: semawi:2018_01
     ports:
       - "80:80"
     volumes:
