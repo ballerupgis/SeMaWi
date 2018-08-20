@@ -9,8 +9,7 @@ if [ ! -d "/var/www/wiki/extensions" ]; then
 
    # Install Mediawiki
    curl -o /tmp/mediawiki.tar.gz \
-   https://releases.wikimedia.org/mediawiki/1.30/mediawiki-1.30.0.tar.gz
-   #https://releases.wikimedia.org/mediawiki/1.27/mediawiki-1.27.3.tar.gz
+   https://releases.wikimedia.org/mediawiki/1.27/mediawiki-1.27.3.tar.gz
    tar xvf /tmp/mediawiki.tar.gz -C /var/www/wiki/ --strip 1
    chown -R root:root /var/www/wiki
    chown -R www-data:www-data /var/www/wiki/images/
