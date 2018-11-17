@@ -102,7 +102,7 @@ if [ ! -d "/var/www/wiki/extensions" ]; then
    # Update php pear and install a couple of dependencies
    pear upgrade --force --alldeps http://pear.php.net/get/PEAR-1.10.4
    pear channel-update pear.php.net
-   pear upgrade-all
+   pear upgrade
    pear install Mail Net_SMTP
 
    # We'll need a Sysop/Beaureaucrat
